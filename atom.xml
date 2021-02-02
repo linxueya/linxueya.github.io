@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-02-01T08:54:32.298Z</updated>
+  <updated>2021-02-02T06:52:09.199Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -21,44 +21,23 @@
     <link href="http://linxueya.github.io/post/400a6e47.html"/>
     <id>http://linxueya.github.io/post/400a6e47.html</id>
     <published>2021-02-01T08:53:11.000Z</published>
-    <updated>2021-02-01T08:54:32.298Z</updated>
+    <updated>2021-02-02T06:52:09.199Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;npm install hexo -g #安装Hexo&lt;br&gt;npm update hexo -g #升级&lt;br&gt;hexo init</summary>
+    <summary type="html">&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 &lt;a</summary>
         
       
     
     
+    
+    <category term="软件工具" scheme="http://linxueya.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
     <category term="tools" scheme="http://linxueya.github.io/tags/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字体测试</title>
-    <link href="http://linxueya.github.io/post/6a1da14c.html"/>
-    <id>http://linxueya.github.io/post/6a1da14c.html</id>
-    <published>2021-02-01T08:20:34.000Z</published>
-    <updated>2021-02-01T08:34:08.574Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;hello，world&quot;&gt;&lt;a href=&quot;#hello，world&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="test" scheme="http://linxueya.github.io/tags/test/"/>
     
   </entry>
   
