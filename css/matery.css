@@ -2139,3 +2139,10 @@ footer .copy-right {
     padding: 0;
     margin: 0;
 }
+
+#tp-weather-widget .sw-container {
+  left: unset;
+  right: 70px;
+  top: unset;
+  bottom: 10px;
+}
