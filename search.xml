@@ -58,7 +58,8 @@ tags:
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>函数调用： 函数名()  fun( )</li>
-<li>形参：在声明函数</li>
+<li>形参：在声明函数小括号里面的参数是形参</li>
+<li>实参：在函数调用小括号里面的参数是实参</li>
 </ul>
 <h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><h2 id="arguments的使用"><a href="#arguments的使用" class="headerlink" title="arguments的使用"></a>arguments的使用</h2><h2 id="函数案例"><a href="#函数案例" class="headerlink" title="函数案例"></a>函数案例</h2><h2 id="函数的两种声明方式"><a href="#函数的两种声明方式" class="headerlink" title="函数的两种声明方式"></a>函数的两种声明方式</h2>]]></content>
       <categories>
