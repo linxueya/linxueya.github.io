@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-02-02T14:06:24.496Z</updated>
+  <updated>2021-02-04T13:24:15.210Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JS基本语法之函数</title>
+    <link href="http://linxueya.github.io/post/877bf8ef.html"/>
+    <id>http://linxueya.github.io/post/877bf8ef.html</id>
+    <published>2021-02-04T12:57:40.000Z</published>
+    <updated>2021-02-04T13:24:15.210Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;函数的概念&quot;&gt;&lt;a href=&quot;#函数的概念&quot; class=&quot;headerlink&quot; title=&quot;函数的概念&quot;&gt;&lt;/a&gt;函数的概念&lt;/h2&gt;&lt;p&gt;函数就是封装了一段可以重复被调用的代码块&lt;/p&gt;
+&lt;h2 id=&quot;函数的使用&quot;&gt;&lt;a href=&quot;#函数的使用&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hexo命令指南</title>
     <link href="http://linxueya.github.io/post/400a6e47.html"/>
     <id>http://linxueya.github.io/post/400a6e47.html</id>
     <published>2021-02-01T08:53:11.000Z</published>
-    <updated>2021-02-02T14:06:24.496Z</updated>
+    <updated>2021-02-04T13:05:55.390Z</updated>
     
     
       
