@@ -47,6 +47,20 @@ tags:
       </tags>
   </entry>
   <entry>
+    <title>JS基本语法之作用域</title>
+    <url>/post/76206bf9.html</url>
+    <content><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
+<li>JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的</li>
+</ul>
+<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2>]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS基本语法之函数</title>
     <url>/post/877bf8ef.html</url>
     <content><![CDATA[<h2 id="函数的概念"><a href="#函数的概念" class="headerlink" title="函数的概念"></a>函数的概念</h2><p>函数就是封装了一段可以重复被调用的代码块</p>
@@ -122,19 +136,5 @@ tags:
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>JS基本语法之作用域</title>
-    <url>/post/76206bf9.html</url>
-    <content><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
-<li>JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的</li>
-</ul>
-<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2>]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-      </tags>
   </entry>
 </search>
