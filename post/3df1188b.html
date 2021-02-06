@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo命令指南, c++ js">
+    <meta name="keywords" content="JS基本语法之预解析, c++ js">
     <meta name="description" content="专注于Web,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo命令指南 | Linxueya&#39;s Blog</title>
+    <title>JS基本语法之预解析 | Linxueya&#39;s Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/libs/awesome/css/all.css">
@@ -377,12 +377,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo命令指南</h1>
+                    <h1 class="description center-align post-title">JS基本语法之预解析</h1>
                 </div>
             </div>
         </div>
@@ -498,8 +498,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/tools/">
-                                <span class="chip bg-color">tools</span>
+                            <a href="/tags/JS/">
+                                <span class="chip bg-color">JS</span>
                             </a>
                         
                     </div>
@@ -510,8 +510,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/" class="post-category">
-                                软件工具
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
                             </a>
                         
                     </div>
@@ -523,7 +523,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-01
+                    2021-02-06
                 </div>
                 
 
@@ -537,7 +537,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    317
+                    220
                 </div>
                 
 
@@ -562,41 +562,67 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class="line-numbers language-none"><code class="language-none">npm install hexo -g #安装Hexo
-npm update hexo -g #升级
-hexo init #初始化博客<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+                <h2 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 1  num is not defined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 2 undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment">// 3</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 4  Uncaught TypeError: fn is not a function</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>JS引擎运行JS代码分为两步</p>
+<ul>
+<li><p>预解析。预解析可以</p>
+</li>
+<li><p>代码执行</p>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h2 id="变量预解析和函数预解析"><a href="#变量预解析和函数预解析" class="headerlink" title="变量预解析和函数预解析"></a>变量预解析和函数预解析</h2><ol>
+<li>变量预解析,就是把变量声明提到当前函数作用域最前面，不提升复制操作</li>
+<li>函数与解析，就是把函数声明提到当前函数作用域最前面，不调用函数</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment">// 相当于执行了以下代码：</span>
+<span class="token keyword">var</span> num；
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 相当于执行了以下代码：</span>
+<span class="token keyword">var</span> fn；
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><pre class="line-numbers language-none"><code class="language-none">f1();
+console.log(c);
+console.log(b);
+console.log(a);
+function f1() {
+	var a = b = c = 9;
+	console.log(a);
+	console.log(b);
+	console.log(c);
+}
+// 输出为 9 9 9 9 9 error<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>matery github仓库<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">介绍</a><br>Yafine大佬 Hexo+github搭建<a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/4ab2.html">博客</a>(超级详细版，精细入微)</p>
-<h2 id="命令简写"><a href="#命令简写" class="headerlink" title="命令简写"></a>命令简写</h2><pre class="line-numbers language-none"><code class="language-none">hexo n "我的博客" == hexo new "我的博客" #新建文章
-hexo g == hexo generate #生成
-hexo s == hexo server #启动服务预览
-hexo d == hexo deploy #部署
-
-hexo server #Hexo会监视文件变动并自动更新，无须重启服务器
-hexo server -s #静态模式
-hexo server -p 5000 #更改端口
-hexo server -i 192.168.1.1 #自定义 IP
-hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<h2 id="博客-Font-Master"><a href="#博客-Font-Master" class="headerlink" title="博客 Font Master"></a>博客 Font Master</h2><pre class="line-numbers language-none"><code class="language-none">title: typora-vue-theme主题介绍
-date: 2018-09-07 09:25:00
-author: 赵奇
-img: /source/images/xxx.jpg
-top: true
-cover: true
-coverImg: /images/1.jpg
-password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
-toc: false
-mathjax: false
-summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-categories: Markdown
-tags:
-  - Typora
-  - Markdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Hexo优化"><a href="#Hexo优化" class="headerlink" title="Hexo优化"></a>Hexo优化</h2><p><a target="_blank" rel="noopener" href="https://blog.sky03.cn/posts/42790.html#toc-heading-18">链接</a></p>
 
                 
             </div>
@@ -623,7 +649,7 @@ tags:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://linxueya.github.io/post/400a6e47.html">http://linxueya.github.io/post/400a6e47.html</a>
+                    <a href="http://linxueya.github.io/post/3df1188b.html">http://linxueya.github.io/post/3df1188b.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -661,8 +687,8 @@ tags:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/tools/">
-                                    <span class="chip bg-color">tools</span>
+                                <a href="/tags/JS/">
+                                    <span class="chip bg-color">JS</span>
                                 </a>
                             
                         </div>
@@ -1104,13 +1130,13 @@ tags:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/post/877bf8ef.html">
+                <a href="/post/686ee723.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/medias/featureimages/19.jpg" class="responsive-img" alt="JS基本语法之函数">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/medias/featureimages/16.jpg" class="responsive-img" alt="JS基本语法之对象">
                         
-                        <span class="card-title">JS基本语法之函数</span>
+                        <span class="card-title">JS基本语法之对象</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1121,7 +1147,7 @@ tags:
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-06
                         </span>
                         <span class="publish-author">
                             
@@ -1153,32 +1179,44 @@ tags:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/16107.html">
+                <a href="/post/76206bf9.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/medias/featureimages/11.jpg" class="responsive-img" alt="JS基本语法之作用域">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">JS基本语法之作用域</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            JS基本语法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-05
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            linxueya
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
+                    </a>
+                    
                 </div>
                 
             </div>
