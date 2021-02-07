@@ -41,9 +41,39 @@
 
 <body>
 
+    <!-- 网站全局深色模式设置开始 -->
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        //  else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        // document.body.classList.add('dark');
+        // } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+    <!-- 网站全局深色模式设置结束 -->
 
-	
-	
+    <!-- 中国节日按钮开始 -->
+    <script>
+        if (localStorage.getItem('themespring') === '1') {
+        document.body.classList.add('themespring');
+        }
+        else if (matchMedia('(prefers-color-scheme: themespring)').matches) {
+        document.body.classList.add('themespring');
+        }
+    </script>
+    <div onclick="switchSpringThemes()" id="switchspring">
+        <img class="chunjiepic" src="/medias/loading.gif" data-original="/medias/spring-img/denglong.png" title="春节主题" />
+    </div>
+    <!-- 中国节日按钮结束  -->
+
+
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -67,17 +97,6 @@
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
       <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/something/time" class="waves-effect waves-light">
-      
-      <i class="fas fa-clock" style="zoom: 0.6;"></i>
-      
-      <span>光阴</span>
     </a>
     
   </li>
@@ -127,23 +146,55 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/about" class="waves-effect waves-light">
+    <a href="/contact" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>关于</span>
+      <span>留言板</span>
     </a>
     
   </li>
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/something/navigate" class="waves-effect waves-light">
+    <a href="" class="waves-effect waves-light">
+
       
-      <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
+      <i class="fas fa-link" style="zoom: 0.6;"></i>
       
-      <span>导航</span>
+      <span>链接</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/about">
+          
+          <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>关于</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/friends">
+          
+          <i class="fas fa-address-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>友链</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/box/navigate">
+          
+          <i class="fas fa-location-arrow" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>导航</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -190,6 +241,49 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-cubes" style="zoom: 0.6;"></i>
+      
+      <span>实验室</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/box/time">
+          
+          <i class="fas fa-clock" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>光阴</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/box/clock">
+          
+          <i class="fas fa-hourglass-half" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>流年</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/box/love">
+          
+          <i class="fas fa-heart" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>绯月</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -223,17 +317,6 @@
 			    <i class="fa-fw fas fa-home"></i>
 			
 			首页
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/something/time" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-clock"></i>
-			
-			光阴
 		</a>
           
         </li>
@@ -285,23 +368,57 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/about" class="waves-effect waves-light">
+		<a href="/contact" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-comments"></i>
 			
-			关于
+			留言板
 		</a>
           
         </li>
         
         <li class="m-nav-item">
 	  
-		<a href="/something/navigate" class="waves-effect waves-light">
+		<a href="javascript:;">
 			
-			    <i class="fa-fw fas fa-location-arrow"></i>
+				<i class="fa-fw fas fa-link"></i>
 			
-			导航
+			链接
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/about " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>关于</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/friends " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-address-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>友链</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/box/navigate " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-location-arrow" style="position: absolute;left:50px" ></i>
+			      
+		          <span>导航</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -343,6 +460,51 @@
 				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
 			      
 		          <span>相册</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-cubes"></i>
+			
+			实验室
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/box/time " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-clock" style="position: absolute;left:50px" ></i>
+			      
+		          <span>光阴</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/box/clock " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-hourglass-half" style="position: absolute;left:50px" ></i>
+			      
+		          <span>流年</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/box/love " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-heart" style="position: absolute;left:50px" ></i>
+			      
+		          <span>绯月</span>
                   </a>
                 </li>
               
@@ -1154,6 +1316,25 @@ $(function () {
     
 
     
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "f4be4df6"
+        });
+        daovoice('update');
+    </script>
+    
 
     <!--腾讯兔小巢-->
     
@@ -1207,19 +1388,29 @@ $(function () {
         })
     </script>
 
-    <!--深色模式-->
-    <script>
-        if (localStorage.getItem('dark') === '1') {
-            document.body.classList.add('dark');
-        } else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
-            document.body.classList.add('dark');
-        } else if (matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark');
-        }
-    </script> 
-	<a onclick="switchNightMode()" id="sma"> 
-		<i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
-    </a>
+
+
+    <div class="denglong">
+        <div class="deng-box">
+            <div class="deng">
+                <div class="xian"></div>
+                <div class="deng-a">
+                    <div class="deng-b"><div class="deng-t">喜迎</div></div>
+                </div>
+                <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+            </div>
+        </div>
+        <div class="deng-box1">
+            <div class="deng">
+                <div class="xian"></div>
+                <div class="deng-a">
+                    <div class="deng-b"><div class="deng-t">春节</div></div>
+                </div>
+                <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+            </div>
+        </div>
+    </div>
+
 
 <script>
             window.imageLazyLoadSetting = {

@@ -62,4 +62,20 @@
     line-height: 42px !important
 }
 
-/* rebuild by neat */
+
+
+/* 心知天气 */
+#tp-weather-widget .sw-container {
+    left: unset;
+    right: 70px;
+    top: unset;
+    bottom: 10px;
+}
+
+
+/* daovoice 定位 */
+#daodream-container .daodream-launcher-button {
+
+    width: 38px !important;
+    height: 38px !important;
+}
