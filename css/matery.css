@@ -4,35 +4,13 @@
     .container {
         width: 95%;
     }
-    .comment-scroll {
-        bottom: 68px!important;
-    }
-    #sma {
-        bottom: 122px!important;
-    }
 }
-@media only screen and (max-width: 601px) {
-    .bozhushuo {
-        font-size: 14px!important;
-        text-align: left!important;
-    }
-}
+
 /*中等屏幕下(平板类)的样式*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .container {
         width: 90%;
     }
-    .comment-scroll {
-        bottom: 68px!important;
-    }
-}
-@media only screen and (min-width: 700px) {
-    .v[data-class=v] .vwrap .vheader .vinput {
-        width: 32.33%!important;
-    }
-    /* #artitalk_main p.shuoshuo_time {
-        font-size: 15px;
-    } */
 }
 
 /*大屏幕下(桌面类)的样式*/
@@ -44,7 +22,7 @@
 
     .head-container {
         position: absolute;
-        padding: 0px 30px;
+        padding: 0 30px;
         width: 100%;
     }
 
@@ -52,35 +30,6 @@
         width: 90%;
         margin: 0 auto;
         max-width: 1250px;
-    }
-}
-@media only screen and (min-width: 1020px) and (max-width: 1030px) {
-    .profile {
-        position: relative;
-        left: 111%;
-    }
-    .xiaomaozitx {
-        right: 16%!important;
-    }
-}
-@media only screen and (min-width: 750px) and (max-width: 800px) {
-    .xiaomaozitx {
-        right: 35%!important;
-    }
-}
-@media only screen and (min-width: 380px) and (max-width: 430px) {
-    .xiaomaozitx {
-        right: 22%!important;
-    }
-}
-@media only screen and (min-width: 360px) and (max-width: 379px) {
-    .xiaomaozitx {
-        right: 18%!important;
-    }
-}
-@media only screen and (max-width: 330px) {
-    .xiaomaozitx {
-        right: 12%!important;
     }
 }
 body {
