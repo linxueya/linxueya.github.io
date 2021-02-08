@@ -1,145 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>JS基本语法之对象</title>
-      <link href="post/686ee723.html"/>
-      <url>post/686ee723.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>在JavaScript中，对象是一组无序的相关属性和方法的集合，如字符串，数值，数组，函数等</p><p>对象是由属性和方法组成的</p><ul><li>属性：对象的特征</li><li>方法：事物的行为</li></ul><h2 id="创建对象的三种方式"><a href="#创建对象的三种方式" class="headerlink" title="创建对象的三种方式"></a>创建对象的三种方式</h2><ol><li><p>利用字面量创建对象 { }</p><ol><li>其中属性或方法采用键值对的形式</li><li>多个属性或方法之间用逗号隔开</li><li>方法后面跟的是一个匿名函数 </li><li>调用对象的属性 对象名.属性名  或  对象名[‘属性名’]</li></ol></li></ol><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>； <span class="token comment">//  创建一个空对象</span><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> linxueya<span class="token punctuation">,</span>age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span><span class="token function-variable function">sayhi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"hi~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="2"><li>利用new object() 方法创建属性 </li></ol><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//创建了一个空的对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="3"><li>利用构造函数创建对象</li></ol><ul><li><p>·构造函数：把对象里面一些相同的属性和方法抽象出来封装导函数里面</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>属性 <span class="token operator">=</span> 值；<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">方法</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">new</span> <span class="token class-name">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="变量、属性、函数和方法的区别"><a href="#变量、属性、函数和方法的区别" class="headerlink" title="变量、属性、函数和方法的区别"></a>变量、属性、函数和方法的区别</h2></li><li><p>变量和属性</p><ul><li>变量：单独声明赋值，单独存在</li><li>属性：对象里面的变量称为属性，不需要声明，用来描述该对象的特征</li><li>函数：单独存在的，通过函数名调用</li><li>方法：对象里的函数称为方法，方法不需要声明，通过对象名.函数名的方法调用</li></ul></li></ul><h2 id="new关键字"><a href="#new关键字" class="headerlink" title="new关键字"></a>new关键字</h2><ul><li>new关键字执行过程<ol><li>new 构造函数可以在内存中创建一个空的对象</li><li>this 就会指向刚才创建的空对象</li><li>执行构造函数里面的代码，给这个空对象添加属性和方法</li><li>返回这个对象</li></ol></li></ul><h2 id="遍历对象属性"><a href="#遍历对象属性" class="headerlink" title="遍历对象属性"></a>遍历对象属性</h2><ul><li><p>for in 遍历对象</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token operator">:</span> linxueya<span class="token punctuation">,</span>age<span class="token operator">:</span> <span class="token number">18</span>sex<span class="token operator">:</span> 男<span class="token punctuation">}</span><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出属性名</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obk<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// obj[k] 输出属性值</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul><h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><ul><li><p>内置对象就是JS语言自带的一些对象，这些对象供开发者使用，并提供了一些基础而必要的方法和属性</p></li><li><p>如何学习对象中的方法   <a href="https://developer.mozilla.org/zh-CN/">MDN</a></p><ol><li>查阅该方法的功能</li><li>查看里面参数的意义和类型</li><li>查看返回值的意义和类型</li><li>通过demo进行测试</li></ol></li></ul><h2 id="MATH对象"><a href="#MATH对象" class="headerlink" title="MATH对象"></a>MATH对象</h2><pre><code>Math 是一个对象不是构造函数</code></pre><ul><li>Math 对象随机数方法 random( )</li><li></li></ul><h2 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h2><h2 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h2><h2 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h2>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>hexo命令指南</title>
+    <url>/post/400a6e47.html</url>
+    <content><![CDATA[<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class="line-numbers language-none"><code class="language-none">npm install hexo -g #安装Hexo
+npm update hexo -g #升级
+hexo init #初始化博客<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>matery github仓库<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">介绍</a><br>Yafine大佬 Hexo+github搭建<a href="https://yafine-blog.cn/posts/4ab2.html">博客</a>(超级详细版，精细入微)</p>
+<h2 id="命令简写"><a href="#命令简写" class="headerlink" title="命令简写"></a>命令简写</h2><pre class="line-numbers language-none"><code class="language-none">hexo n "我的博客" == hexo new "我的博客" #新建文章
+hexo g == hexo generate #生成
+hexo s == hexo server #启动服务预览
+hexo d == hexo deploy #部署
+
+hexo server #Hexo会监视文件变动并自动更新，无须重启服务器
+hexo server -s #静态模式
+hexo server -p 5000 #更改端口
+hexo server -i 192.168.1.1 #自定义 IP
+hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="博客-Font-Master"><a href="#博客-Font-Master" class="headerlink" title="博客 Font Master"></a>博客 Font Master</h2><pre class="line-numbers language-none"><code class="language-none">title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+author: 赵奇
+img: /source/images/xxx.jpg
+top: true
+cover: true
+coverImg: /images/1.jpg
+password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+toc: false
+mathjax: false
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+categories: Markdown
+tags:
+  - Typora
+  - Markdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Hexo优化"><a href="#Hexo优化" class="headerlink" title="Hexo优化"></a>Hexo优化</h2><p><a href="https://blog.sky03.cn/posts/42790.html#toc-heading-18">链接</a></p>
+]]></content>
       <categories>
-          
-          <category> 编程 </category>
-          
+        <category>软件工具</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> JS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>JS基本语法之预解析</title>
-      <link href="post/3df1188b.html"/>
-      <url>post/3df1188b.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 1  num is not defined</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 2 undefined</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token comment">// 3</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">// 4  Uncaught TypeError: fn is not a function</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">var</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">{</span>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li><p>JS引擎运行JS代码分为两步</p><ul><li><p>预解析。预解析可以</p></li><li><p>代码执行</p></li></ul></li><li></li></ul><h2 id="变量预解析和函数预解析"><a href="#变量预解析和函数预解析" class="headerlink" title="变量预解析和函数预解析"></a>变量预解析和函数预解析</h2><ol><li>变量预解析,就是把变量声明提到当前函数作用域最前面，不提升复制操作</li><li>函数与解析，就是把函数声明提到当前函数作用域最前面，不调用函数</li></ol><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token comment">// 相当于执行了以下代码：</span><span class="token keyword">var</span> num；console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">var</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">// 相当于执行了以下代码：</span><span class="token keyword">var</span> fn；<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><pre class="line-numbers language-none"><code class="language-none">f1();console.log(c);console.log(b);console.log(a);function f1() {var a = b = c = 9;console.log(a);console.log(b);console.log(c);}// 输出为 9 9 9 9 9 error<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
+      <tags>
+        <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS基本语法之作用域</title>
+    <url>/post/76206bf9.html</url>
+    <content><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
+<li>JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的</li>
+<li>全局作用域 ：整个script标签</li>
+<li>局部作用域：在函数内部</li>
+</ul>
+<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><blockquote>
+<p>类似C/C++ 中的全局变量和局部变量</p>
+</blockquote>
+<ul>
+<li>全局变量： 在全局作用域中的变量<ul>
+<li>在函数内未声明的变量也为全局变量      </li>
+</ul>
+</li>
+<li> 局部变量： 在局部作用域下的变量</li>
+<li>执行效率：<ul>
+<li>全局变量浏览器关闭才会销毁，比较占内存</li>
+<li>局部变量在函数结束时才会销毁</li>
+</ul>
+</li>
+<li>JS中没有块级作用域 { }  // if {}   for {]}</li>
+</ul>
+<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><blockquote>
+<p>内部函数访问外部函数的变量，采取的是链式查找的方式</p>
+</blockquote>
+]]></content>
       <categories>
-          
-          <category> 编程 </category>
-          
+        <category>编程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> JS </tag>
-            
-        </tags>
-      
-    </entry>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS基本语法之函数</title>
+    <url>/post/877bf8ef.html</url>
+    <content><![CDATA[<h2 id="函数的概念"><a href="#函数的概念" class="headerlink" title="函数的概念"></a>函数的概念</h2><p>函数就是封装了一段可以重复被调用的代码块</p>
+<h2 id="函数的使用"><a href="#函数的使用" class="headerlink" title="函数的使用"></a>函数的使用</h2><ul>
+<li>函数声明：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">function () {  //function 为声明函数的关键字  //全部小写
+   action;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>函数调用： 函数名()  fun( )</li>
+</ul>
+<h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><ul>
+<li><p>形参：在声明函数小括号里面的参数是形参</p>
+</li>
+<li><p>实参：在函数调用小括号里面的参数是实参</p>
+</li>
+<li><p>实参和形参匹配</p>
+<ul>
+<li>如果实参个数等于形参个数，输出正常结果</li>
+<li>如果实参个数大于形参个数，会取到形参的个数</li>
+<li>如果实参个数小于形参个数，多余的参数为NaN</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><ul>
+<li>如果有return，则返回return后面的值</li>
+<li>如果没有return，则返回undefined</li>
+</ul>
+<h2 id="arguments的使用"><a href="#arguments的使用" class="headerlink" title="arguments的使用"></a>arguments的使用</h2><ul>
+<li>arguments存放了传递的所有实参</li>
+<li>arguments是一种 === 伪数组 ===<ul>
+<li>具有数组的length属性</li>
+<li>按照索引的方式进行存储</li>
+<li>它没有真实数组的一些方法   //pop</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数的两种声明方式"><a href="#函数的两种声明方式" class="headerlink" title="函数的两种声明方式"></a>函数的两种声明方式</h2><ul>
+<li><p>利用函数关键字自定义函数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     
-    
-    
-    <entry>
-      <title>JS基本语法之作用域</title>
-      <link href="post/76206bf9.html"/>
-      <url>post/76206bf9.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul><li>JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的</li><li>全局作用域 ：整个script标签</li><li>局部作用域：在函数内部</li></ul><h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><blockquote><p>类似C/C++ 中的全局变量和局部变量</p></blockquote><ul><li>全局变量： 在全局作用域中的变量<ul><li>在函数内未声明的变量也为全局变量      </li></ul></li><li> 局部变量： 在局部作用域下的变量</li><li>执行效率：<ul><li>全局变量浏览器关闭才会销毁，比较占内存</li><li>局部变量在函数结束时才会销毁</li></ul></li><li>JS中没有块级作用域 { }  // if {}   for {]}</li></ul><h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><blockquote><p>内部函数访问外部函数的变量，采取的是链式查找的方式</p></blockquote>]]></content>
-      
-      
+<span class="token punctuation">}</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>函数表达式</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">func</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// func 是变量名，不是函数名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+</ul>
+]]></content>
       <categories>
-          
-          <category> 编程 </category>
-          
+        <category>编程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> JS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>JS基本语法之函数</title>
-      <link href="post/877bf8ef.html"/>
-      <url>post/877bf8ef.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="函数的概念"><a href="#函数的概念" class="headerlink" title="函数的概念"></a>函数的概念</h2><p>函数就是封装了一段可以重复被调用的代码块</p><h2 id="函数的使用"><a href="#函数的使用" class="headerlink" title="函数的使用"></a>函数的使用</h2><ul><li>函数声明：</li></ul><pre class="line-numbers language-none"><code class="language-none">function () {  //function 为声明函数的关键字  //全部小写   action;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ul><li>函数调用： 函数名()  fun( )</li></ul><h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><ul><li><p>形参：在声明函数小括号里面的参数是形参</p></li><li><p>实参：在函数调用小括号里面的参数是实参</p></li><li><p>实参和形参匹配</p><ul><li>如果实参个数等于形参个数，输出正常结果</li><li>如果实参个数大于形参个数，会取到形参的个数</li><li>如果实参个数小于形参个数，多余的参数为NaN</li></ul></li></ul><h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><ul><li>如果有return，则返回return后面的值</li><li>如果没有return，则返回undefined</li></ul><h2 id="arguments的使用"><a href="#arguments的使用" class="headerlink" title="arguments的使用"></a>arguments的使用</h2><ul><li>arguments存放了传递的所有实参</li><li>arguments是一种 === 伪数组 ===<ul><li>具有数组的length属性</li><li>按照索引的方式进行存储</li><li>它没有真实数组的一些方法   //pop</li></ul></li></ul><h2 id="函数的两种声明方式"><a href="#函数的两种声明方式" class="headerlink" title="函数的两种声明方式"></a>函数的两种声明方式</h2><ul><li><p>利用函数关键字自定义函数</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token punctuation">}</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>函数表达式</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">func</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// func 是变量名，不是函数名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS基本语法之对象</title>
+    <url>/post/686ee723.html</url>
+    <content><![CDATA[<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>在JavaScript中，对象是一组无序的相关属性和方法的集合，如字符串，数值，数组，函数等</p>
+<p>对象是由属性和方法组成的</p>
+<ul>
+<li>属性：对象的特征</li>
+<li>方法：事物的行为</li>
+</ul>
+<h2 id="创建对象的三种方式"><a href="#创建对象的三种方式" class="headerlink" title="创建对象的三种方式"></a>创建对象的三种方式</h2><ol>
+<li><p>利用字面量创建对象 { }</p>
+<ol>
+<li>其中属性或方法采用键值对的形式</li>
+<li>多个属性或方法之间用逗号隔开</li>
+<li>方法后面跟的是一个匿名函数 </li>
+<li>调用对象的属性 对象名.属性名  或  对象名[‘属性名’]</li>
+</ol>
+</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>； <span class="token comment">//  创建一个空对象</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> 
+name<span class="token operator">:</span> linxueya<span class="token punctuation">,</span>
+age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+<span class="token function-variable function">sayhi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"hi~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>利用new object() 方法创建属性 </li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//创建了一个空的对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol start="3">
+<li>利用构造函数创建对象</li>
+</ol>
+<ul>
+<li><p>·构造函数：把对象里面一些相同的属性和方法抽象出来封装导函数里面</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>属性 <span class="token operator">=</span> 值；
+	<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">方法</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">new</span> <span class="token class-name">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="变量、属性、函数和方法的区别"><a href="#变量、属性、函数和方法的区别" class="headerlink" title="变量、属性、函数和方法的区别"></a>变量、属性、函数和方法的区别</h2></li>
+<li><p>变量和属性</p>
+<ul>
+<li>变量：单独声明赋值，单独存在</li>
+<li>属性：对象里面的变量称为属性，不需要声明，用来描述该对象的特征</li>
+<li>函数：单独存在的，通过函数名调用</li>
+<li>方法：对象里的函数称为方法，方法不需要声明，通过对象名.函数名的方法调用</li>
+</ul>
+</li>
+</ul>
+<h2 id="new关键字"><a href="#new关键字" class="headerlink" title="new关键字"></a>new关键字</h2><ul>
+<li>new关键字执行过程<ol>
+<li>new 构造函数可以在内存中创建一个空的对象</li>
+<li>this 就会指向刚才创建的空对象</li>
+<li>执行构造函数里面的代码，给这个空对象添加属性和方法</li>
+<li>返回这个对象</li>
+</ol>
+</li>
+</ul>
+<h2 id="遍历对象属性"><a href="#遍历对象属性" class="headerlink" title="遍历对象属性"></a>遍历对象属性</h2><ul>
+<li><p>for in 遍历对象</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span> linxueya<span class="token punctuation">,</span>
+	age<span class="token operator">:</span> <span class="token number">18</span>
+	sex<span class="token operator">:</span> 男
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出属性名</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obk<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// obj[k] 输出属性值</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+</ul>
+<h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><ul>
+<li><p>内置对象就是JS语言自带的一些对象，这些对象供开发者使用，并提供了一些基础而必要的方法和属性</p>
+</li>
+<li><p>如何学习对象中的方法   <a href="https://developer.mozilla.org/zh-CN/">MDN</a></p>
+<ol>
+<li>查阅该方法的功能</li>
+<li>查看里面参数的意义和类型</li>
+<li>查看返回值的意义和类型</li>
+<li>通过demo进行测试</li>
+</ol>
+</li>
+</ul>
+<h2 id="MATH对象"><a href="#MATH对象" class="headerlink" title="MATH对象"></a>MATH对象</h2><pre><code>Math 是一个对象不是构造函数
+</code></pre>
+<ul>
+<li>Math 对象随机数方法 random( )</li>
+<li></li>
+</ul>
+<h2 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h2><h2 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h2><h2 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h2>]]></content>
       <categories>
-          
-          <category> 编程 </category>
-          
+        <category>编程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> JS </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hexo命令指南</title>
-      <link href="post/400a6e47.html"/>
-      <url>post/400a6e47.html</url>
-      
-        <content type="html"><![CDATA[<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class="line-numbers language-none"><code class="language-none">npm install hexo -g #安装Hexonpm update hexo -g #升级hexo init #初始化博客<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>matery github仓库<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">介绍</a><br>Yafine大佬 Hexo+github搭建<a href="https://yafine-blog.cn/posts/4ab2.html">博客</a>(超级详细版，精细入微)</p><h2 id="命令简写"><a href="#命令简写" class="headerlink" title="命令简写"></a>命令简写</h2><pre class="line-numbers language-none"><code class="language-none">hexo n "我的博客" == hexo new "我的博客" #新建文章hexo g == hexo generate #生成hexo s == hexo server #启动服务预览hexo d == hexo deploy #部署hexo server #Hexo会监视文件变动并自动更新，无须重启服务器hexo server -s #静态模式hexo server -p 5000 #更改端口hexo server -i 192.168.1.1 #自定义 IPhexo clean #清除缓存，若是网页正常情况下可以忽略这条命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="博客-Font-Master"><a href="#博客-Font-Master" class="headerlink" title="博客 Font Master"></a>博客 Font Master</h2><pre class="line-numbers language-none"><code class="language-none">title: typora-vue-theme主题介绍date: 2018-09-07 09:25:00author: 赵奇img: /source/images/xxx.jpgtop: truecover: truecoverImg: /images/1.jpgpassword: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92toc: falsemathjax: falsesummary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要categories: Markdowntags:  - Typora  - Markdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Hexo优化"><a href="#Hexo优化" class="headerlink" title="Hexo优化"></a>Hexo优化</h2><p><a href="https://blog.sky03.cn/posts/42790.html#toc-heading-18">链接</a></p>]]></content>
-      
-      
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS基本语法之预解析</title>
+    <url>/post/3df1188b.html</url>
+    <content><![CDATA[<h2 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 1  num is not defined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 2 undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment">// 3</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 4  Uncaught TypeError: fn is not a function</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>JS引擎运行JS代码分为两步</p>
+<ul>
+<li><p>预解析。预解析可以</p>
+</li>
+<li><p>代码执行</p>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h2 id="变量预解析和函数预解析"><a href="#变量预解析和函数预解析" class="headerlink" title="变量预解析和函数预解析"></a>变量预解析和函数预解析</h2><ol>
+<li>变量预解析,就是把变量声明提到当前函数作用域最前面，不提升复制操作</li>
+<li>函数与解析，就是把函数声明提到当前函数作用域最前面，不调用函数</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment">// 相当于执行了以下代码：</span>
+<span class="token keyword">var</span> num；
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 相当于执行了以下代码：</span>
+<span class="token keyword">var</span> fn；
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">{</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><pre class="line-numbers language-none"><code class="language-none">f1();
+console.log(c);
+console.log(b);
+console.log(a);
+function f1() {
+	var a = b = c = 9;
+	console.log(a);
+	console.log(b);
+	console.log(c);
+}
+// 输出为 9 9 9 9 9 error<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+]]></content>
       <categories>
-          
-          <category> 软件工具 </category>
-          
+        <category>编程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> tools </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="post/16107.html"/>
-      <url>post/16107.html</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new "My New Post"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/post/16107.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new "My New Post"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
 </search>
