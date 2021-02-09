@@ -19,7 +19,7 @@
     <title>movies | Linxueya&#39;s Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.1/source/medias/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.1/source/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.1/source/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.1/source/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.1/source/libs/animate/animate.min.css">
@@ -30,14 +30,202 @@
     <script src="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.1/source/libs/jquery/jquery.min.js"></script>
 	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
 
+<style>
+	 /* 春节主题模式样式开始  */
+	.denglong {
+		display: none;
+	}
+	body.themespring .denglong {
+		display: block;
+	}
+	@media only screen and (min-width: 1124px) {
+		.nav-menu {
+			padding-right: 0px;
+		}
+		body.themespring .nav-menu {
+			padding-right: 96px;
+		}
+	}
+	@media only screen and (max-width: 760px) {
+		.deng-box, .deng-box1 {
+			width: 40%;
+		}
+		body.themespring .right {
+			float: left!important;
+		}
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1024px) {
+		.right {
+			float: left!important;
+		}
+	}
+	.deng-box {
+		position: fixed;
+		top: -40px;
+		right: -20px;
+		z-index: 999;
+	}
+	.deng-box1 {
+		position: fixed;
+		top: -30px;
+		right: 10px;
+		z-index: 999;
+	}
+	.deng-box1 .deng {
+		position: relative;
+		width: 120px;
+		height: 90px;
+		margin: 50px;
+		background: #d8000f;
+		background: rgba(216, 0, 15, 0.8);
+		border-radius: 50% 50%;
+		-webkit-transform-origin: 50% -100px;
+		-webkit-animation: swing 5s infinite ease-in-out;
+		box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+	}
+	.deng {
+		position: relative;
+		width: 120px;
+		height: 90px;
+		margin: 50px;
+		background: #d8000f;
+		background: rgba(216, 0, 15, 0.8);
+		border-radius: 50% 50%;
+		-webkit-transform-origin: 50% -100px;
+		-webkit-animation: swing 3s infinite ease-in-out;
+		box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+	}
+	.deng-a {
+		width: 100px;
+		height: 90px;
+		background: #d8000f;
+		background: rgba(216, 0, 15, 0.1);
+		margin: 12px 8px 8px 10px;
+		border-radius: 50% 50%;
+		border: 2px solid #dc8f03;
+	}
+	.deng-b {
+		width: 45px;
+		height: 90px;
+		background: #d8000f;
+		background: rgba(216, 0, 15, 0.1);
+		margin: -4px 8px 8px 26px;
+		border-radius: 50% 50%;
+		border: 2px solid #dc8f03;
+	}
+	.xian {
+		position: absolute;
+		top: -20px;
+		left: 60px;
+		width: 2px;
+		height: 20px;
+		background: #dc8f03;
+	}
+	.shui-a {
+		position: relative;
+		width: 5px;
+		height: 20px;
+		margin: -5px 0 0 59px;
+		-webkit-animation: swing 4s infinite ease-in-out;
+		-webkit-transform-origin: 50% -45px;
+		background: #ffa500;
+		border-radius: 0 0 5px 5px;
+	}
+	.shui-b {
+		position: absolute;
+		top: 14px;
+		left: -2px;
+		width: 10px;
+		height: 10px;
+		background: #dc8f03;
+		border-radius: 50%;
+	}
+	.shui-c {
+		position: absolute;
+		top: 18px;
+		left: -2px;
+		width: 10px;
+		height: 35px;
+		background: #ffa500;
+		border-radius: 0 0 0 5px;
+	}
+	.deng:before {
+		position: absolute;
+		top: -7px;
+		left: 29px;
+		height: 12px;
+		width: 60px;
+		content: " ";
+		display: block;
+		z-index: 999;
+		border-radius: 5px 5px 0 0;
+		border: solid 1px #dc8f03;
+		background: #ffa500;
+		background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+	}
+	.deng:after {
+		position: absolute;
+		bottom: -7px;
+		left: 10px;
+		height: 12px;
+		width: 60px;
+		content: " ";
+		display: block;
+		margin-left: 20px;
+		border-radius: 0 0 5px 5px;
+		border: solid 1px #dc8f03;
+		background: #ffa500;
+		background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+	}
+	@font-face {
+		font-family: "华文行楷";
+		src: url('/fonts/华文行楷.ttf');
+	}
+	.deng-t {
+		font-family: 华文行楷;
+		font-size: 26px;
+		color: #dc8f03;
+		font-weight: bold;
+		line-height: 44px;
+		text-align: center;
+	}
+	.night .deng-t,
+	.night .deng-box,
+	.night .deng-box1 {
+		background: transparent !important;
+	}
+	@-moz-keyframes swing {
+		0% {
+				-moz-transform: rotate(-10deg)
+		}
+		50% {
+			-moz-transform: rotate(10deg)
+		}
+		100% {
+				-moz-transform: rotate(-10deg)
+		}
+	}
+	@-webkit-keyframes swing {
+		0% {
+				-webkit-transform: rotate(-10deg)
+		}
+		50% {
+				-webkit-transform: rotate(10deg)
+		}
+		100% {
+				-webkit-transform: rotate(-10deg)
+		}
+	}
+	 /* 春节主题模式样式结束  */
+</style>
 
 <body>
 
@@ -1097,7 +1285,16 @@
 
 
 
-    <footer class="page-footer bg-color">
+    <style>
+    .youpaiyunlogo {
+        height: 26px;
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+
+
+<footer class="page-footer bg-color">
     
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
@@ -1110,9 +1307,13 @@
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.7k</span>&nbsp;字
+			
+			<a>Cloud storage</a> service and <a>CDN</a> acceleration provider
+            <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" title="本站CDN加速/云存储由又拍云提供">
+                <img src="/medias/loading.gif" data-original="/medias/youpaiyun-logo.png" class="youpaiyunlogo" />
+            </a>
+            <br>
+			
             
             
             
