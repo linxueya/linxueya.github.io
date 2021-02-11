@@ -47,6 +47,41 @@ tags:
       </tags>
   </entry>
   <entry>
+    <title>JS基本语法之作用域</title>
+    <url>/post/76206bf9.html</url>
+    <content><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
+<li>JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的</li>
+<li>全局作用域 ：整个script标签</li>
+<li>局部作用域：在函数内部</li>
+</ul>
+<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><blockquote>
+<p>类似C/C++ 中的全局变量和局部变量</p>
+</blockquote>
+<ul>
+<li>全局变量： 在全局作用域中的变量<ul>
+<li>在函数内未声明的变量也为全局变量      </li>
+</ul>
+</li>
+<li> 局部变量： 在局部作用域下的变量</li>
+<li>执行效率：<ul>
+<li>全局变量浏览器关闭才会销毁，比较占内存</li>
+<li>局部变量在函数结束时才会销毁</li>
+</ul>
+</li>
+<li>JS中没有块级作用域 { }  // if {}   for {]}</li>
+</ul>
+<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><blockquote>
+<p>内部函数访问外部函数的变量，采取的是链式查找的方式</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS基本语法之函数</title>
     <url>/post/877bf8ef.html</url>
     <content><![CDATA[<h2 id="函数的概念"><a href="#函数的概念" class="headerlink" title="函数的概念"></a>函数的概念</h2><p>函数就是封装了一段可以重复被调用的代码块</p>
@@ -101,41 +136,6 @@ tags:
 
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS基本语法之作用域</title>
-    <url>/post/76206bf9.html</url>
-    <content><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
-<li>JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的</li>
-<li>全局作用域 ：整个script标签</li>
-<li>局部作用域：在函数内部</li>
-</ul>
-<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><blockquote>
-<p>类似C/C++ 中的全局变量和局部变量</p>
-</blockquote>
-<ul>
-<li>全局变量： 在全局作用域中的变量<ul>
-<li>在函数内未声明的变量也为全局变量      </li>
-</ul>
-</li>
-<li> 局部变量： 在局部作用域下的变量</li>
-<li>执行效率：<ul>
-<li>全局变量浏览器关闭才会销毁，比较占内存</li>
-<li>局部变量在函数结束时才会销毁</li>
-</ul>
-</li>
-<li>JS中没有块级作用域 { }  // if {}   for {]}</li>
-</ul>
-<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><blockquote>
-<p>内部函数访问外部函数的变量，采取的是链式查找的方式</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>编程</category>
