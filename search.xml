@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>鲸鱼</title>
+      <link href="post/ab725d99.html"/>
+      <url>post/ab725d99.html</url>
+      
+        <content type="html"><![CDATA[<main class="content">    <div class="container">        <div class="card">            <div class="card-content">                <!-- video 模块 1 -->                <div style="position: relative; padding: 30% 45%;">                     <iframe style=" position: absolute;                        width: 100%;                         height: 100%;                         left: 0;                        top: 0;" src="//player.bilibili.com/player.html?aid=204129921&amp;bvid=BV1kh411C7EE&amp;cid=296074833&amp;page=2&amp;high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">                         </iframe>                </div>            </div>        </div>    </div></main>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> star </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS基本语法之对象</title>
       <link href="post/686ee723.html"/>
       <url>post/686ee723.html</url>
