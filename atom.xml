@@ -3,11 +3,11 @@
   <title>Linxueya&#39;s Blog</title>
   
   <subtitle>但行好事，莫问前程</subtitle>
-  <link href="http://linxueya.github.io/atom.xml" rel="self"/>
+  <link href="http://blog.linxueya.cn/atom.xml" rel="self"/>
   
-  <link href="http://linxueya.github.io/"/>
+  <link href="http://blog.linxueya.cn/"/>
   <updated>2021-02-11T13:49:19.856Z</updated>
-  <id>http://linxueya.github.io/</id>
+  <id>http://blog.linxueya.cn/</id>
   
   <author>
     <name>linxueya</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>鲸鱼</title>
-    <link href="http://linxueya.github.io/post/ab725d99.html"/>
-    <id>http://linxueya.github.io/post/ab725d99.html</id>
+    <link href="http://blog.linxueya.cn/post/ab725d99.html"/>
+    <id>http://blog.linxueya.cn/post/ab725d99.html</id>
     <published>2021-02-11T13:42:36.000Z</published>
     <updated>2021-02-11T13:49:19.856Z</updated>
     
@@ -35,19 +35,19 @@
     
     
     
-    <category term="日常" scheme="http://linxueya.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="http://blog.linxueya.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="star" scheme="http://linxueya.github.io/tags/star/"/>
+    <category term="star" scheme="http://blog.linxueya.cn/tags/star/"/>
     
   </entry>
   
   <entry>
     <title>JS基本语法之对象</title>
-    <link href="http://linxueya.github.io/post/686ee723.html"/>
-    <id>http://linxueya.github.io/post/686ee723.html</id>
+    <link href="http://blog.linxueya.cn/post/686ee723.html"/>
+    <id>http://blog.linxueya.cn/post/686ee723.html</id>
     <published>2021-02-06T07:36:06.000Z</published>
-    <updated>2021-02-10T09:13:06.839Z</updated>
+    <updated>2021-02-14T13:50:24.165Z</updated>
     
     
       
@@ -60,17 +60,17 @@
     
     
     
-    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    <category term="编程" scheme="http://blog.linxueya.cn/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
+    <category term="JS" scheme="http://blog.linxueya.cn/tags/JS/"/>
     
   </entry>
   
   <entry>
     <title>JS基本语法之预解析</title>
-    <link href="http://linxueya.github.io/post/3df1188b.html"/>
-    <id>http://linxueya.github.io/post/3df1188b.html</id>
+    <link href="http://blog.linxueya.cn/post/3df1188b.html"/>
+    <id>http://blog.linxueya.cn/post/3df1188b.html</id>
     <published>2021-02-06T07:35:39.000Z</published>
     <updated>2021-02-06T11:25:28.535Z</updated>
     
@@ -85,17 +85,17 @@
     
     
     
-    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    <category term="编程" scheme="http://blog.linxueya.cn/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
+    <category term="JS" scheme="http://blog.linxueya.cn/tags/JS/"/>
     
   </entry>
   
   <entry>
     <title>JS基本语法之作用域</title>
-    <link href="http://linxueya.github.io/post/76206bf9.html"/>
-    <id>http://linxueya.github.io/post/76206bf9.html</id>
+    <link href="http://blog.linxueya.cn/post/76206bf9.html"/>
+    <id>http://blog.linxueya.cn/post/76206bf9.html</id>
     <published>2021-02-05T09:28:00.000Z</published>
     <updated>2021-02-06T07:33:06.830Z</updated>
     
@@ -112,17 +112,17 @@
     
     
     
-    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    <category term="编程" scheme="http://blog.linxueya.cn/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
+    <category term="JS" scheme="http://blog.linxueya.cn/tags/JS/"/>
     
   </entry>
   
   <entry>
     <title>JS基本语法之函数</title>
-    <link href="http://linxueya.github.io/post/877bf8ef.html"/>
-    <id>http://linxueya.github.io/post/877bf8ef.html</id>
+    <link href="http://blog.linxueya.cn/post/877bf8ef.html"/>
+    <id>http://blog.linxueya.cn/post/877bf8ef.html</id>
     <published>2021-02-04T12:57:40.000Z</published>
     <updated>2021-02-05T09:27:26.027Z</updated>
     
@@ -138,17 +138,17 @@
     
     
     
-    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    <category term="编程" scheme="http://blog.linxueya.cn/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
+    <category term="JS" scheme="http://blog.linxueya.cn/tags/JS/"/>
     
   </entry>
   
   <entry>
     <title>hexo命令指南</title>
-    <link href="http://linxueya.github.io/post/400a6e47.html"/>
-    <id>http://linxueya.github.io/post/400a6e47.html</id>
+    <link href="http://blog.linxueya.cn/post/400a6e47.html"/>
+    <id>http://blog.linxueya.cn/post/400a6e47.html</id>
     <published>2021-02-01T08:53:11.000Z</published>
     <updated>2021-02-06T08:19:09.849Z</updated>
     
@@ -163,17 +163,17 @@
     
     
     
-    <category term="软件工具" scheme="http://linxueya.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    <category term="软件工具" scheme="http://blog.linxueya.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="tools" scheme="http://linxueya.github.io/tags/tools/"/>
+    <category term="tools" scheme="http://blog.linxueya.cn/tags/tools/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://linxueya.github.io/post/16107.html"/>
-    <id>http://linxueya.github.io/post/16107.html</id>
+    <link href="http://blog.linxueya.cn/post/16107.html"/>
+    <id>http://blog.linxueya.cn/post/16107.html</id>
     <published>2021-01-31T13:21:47.265Z</published>
     <updated>2021-02-01T06:07:44.442Z</updated>
     

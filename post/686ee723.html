@@ -38,6 +38,8 @@
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css">
+
 <style>
 	 /* 春节主题模式样式开始  */
 	.denglong {
@@ -888,7 +890,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-10
+                    2021-02-14
                 </div>
                 
 
@@ -944,20 +946,18 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>利用new object() 方法创建属性 </p>
-</li>
-</ol>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//创建了一个空的对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ol start="3">
-<li>利用构造函数创建对象</li>
-</ol>
-<p>构造函数：把对象里面一些相同的属性和方法抽象出来封装导函数里面</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token keyword">this</span><span class="token punctuation">.</span>属性 <span class="token operator">=</span> 值；
-	<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">方法</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//创建了一个空的对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>利用构造函数创建对象</p>
+<p> 构造函数：把对象里面一些相同的属性和方法抽象出来封装导函数里面</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>属性 <span class="token operator">=</span> 值；
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">方法</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">new</span> <span class="token class-name">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
+</li>
+</ol>
 <h2 id="变量、属性、函数和方法的区别"><a href="#变量、属性、函数和方法的区别" class="headerlink" title="变量、属性、函数和方法的区别"></a>变量、属性、函数和方法的区别</h2><ul>
 <li>变量：单独声明赋值，单独存在</li>
 <li>属性：对象里面的变量称为属性，不需要声明，用来描述该对象的特征</li>
@@ -1002,21 +1002,20 @@
 <h2 id="MATH对象"><a href="#MATH对象" class="headerlink" title="MATH对象"></a>MATH对象</h2><p>​    Math 是一个对象不是构造函数</p>
 <ul>
 <li><p>Math 对象随机数方法 random( )</p>
-<ul>
+</li>
 <li><p>得到两个数之间的随机整数，并且包含这两个整数</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span>min <span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p>随机取数</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">arr<span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>arr<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h2><p>Date() 是一个构造函数，必须使用new来调用</p>
+
+
 </li>
 </ul>
-</li>
-<li><p>使用 如果没有参数，则返回系统的当前时间</p>
-</li>
-<li><p>参数常用的写法 数字型 2019,10,1 ；或者是字符串型 ‘2019-10-1 8:8:8’</p>
-</li>
-<li><p>返回的月份，日期，星期比正常小1  </p>
-</li>
+<h2 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h2><p> Date() 是一个构造函数，必须使用new来调用</p>
+<ul>
+<li>使用 如果没有参数，则返回系统的当前时间</li>
+<li>参数常用的写法 数字型 2019,10,1 ；或者是字符串型 ‘2019-10-1 8:8:8’</li>
+<li>返回的月份，日期，星期比正常小1  </li>
 </ul>
 <p>通过Date() 获取总的毫秒数</p>
 <ul>
@@ -1055,8 +1054,10 @@ temp <span class="token operator">=</span> <span class="token keyword">null</spa
 <span class="token keyword">while</span><span class="token punctuation">(</span>index <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
 	index <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">,</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>根据位置返回字符 ，charAt(index)   str[index]  ;返回指定位置字符的ASCII码</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>根据位置返回字符 ，str.charAt(index)   str[index]  // H5 新增;返回指定位置字符的ASCII码   str.charCodeAt(index) ;  </li>
+</ul>
 </li>
 </ul>
 
@@ -1085,7 +1086,7 @@ temp <span class="token operator">=</span> <span class="token keyword">null</spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://linxueya.github.io/post/686ee723.html">http://linxueya.github.io/post/686ee723.html</a>
+                    <a href="http://blog.linxueya.cn/post/686ee723.html">http://blog.linxueya.cn/post/686ee723.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1905,10 +1906,6 @@ temp <span class="token operator">=</span> <span class="token keyword">null</spa
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>
