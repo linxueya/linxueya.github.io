@@ -6,7 +6,7 @@
   <link href="http://blog.linxueya.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.linxueya.cn/"/>
-  <updated>2021-02-11T13:49:19.856Z</updated>
+  <updated>2021-02-15T13:59:32.925Z</updated>
   <id>http://blog.linxueya.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>valine添加邮箱提醒</title>
+    <link href="http://blog.linxueya.cn/post/eadbc16a.html"/>
+    <id>http://blog.linxueya.cn/post/eadbc16a.html</id>
+    <published>2021-02-15T13:12:30.000Z</published>
+    <updated>2021-02-15T13:59:32.925Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Valine 诞生于2017年8月7日，是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。&lt;/p&gt;
+&lt;p&gt;理论上支持但不限于静态博客，目前已有Hexo、Jekyll、Typecho、Hugo、Ghost 等博客程序在使用Valine。&lt;/p&gt;
+&lt;div</summary>
+        
+      
+    
+    
+    
+    <category term="软件工具" scheme="http://blog.linxueya.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="hexo" scheme="http://blog.linxueya.cn/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>鲸鱼</title>
@@ -47,7 +74,7 @@
     <link href="http://blog.linxueya.cn/post/686ee723.html"/>
     <id>http://blog.linxueya.cn/post/686ee723.html</id>
     <published>2021-02-06T07:36:06.000Z</published>
-    <updated>2021-02-14T13:50:24.165Z</updated>
+    <updated>2021-02-15T07:19:33.322Z</updated>
     
     
       
@@ -150,7 +177,7 @@
     <link href="http://blog.linxueya.cn/post/400a6e47.html"/>
     <id>http://blog.linxueya.cn/post/400a6e47.html</id>
     <published>2021-02-01T08:53:11.000Z</published>
-    <updated>2021-02-06T08:19:09.849Z</updated>
+    <updated>2021-02-15T13:46:36.958Z</updated>
     
     
       
@@ -166,7 +193,7 @@
     <category term="软件工具" scheme="http://blog.linxueya.cn/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="tools" scheme="http://blog.linxueya.cn/tags/tools/"/>
+    <category term="hexo" scheme="http://blog.linxueya.cn/tags/hexo/"/>
     
   </entry>
   

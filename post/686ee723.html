@@ -30,10 +30,10 @@
     <script src="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.1/source/libs/jquery/jquery.min.js"></script>
 	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -890,14 +890,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-14
+                    2021-02-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.1k
                 </div>
                 
 
@@ -1048,7 +1048,7 @@ temp <span class="token operator">=</span> <span class="token keyword">null</spa
 <p>字符串的不可变：指的是里面的值不可变，虽然看上去可以改变内容，但其实是地址变量，内存中开辟了一个新的内存空间</p>
 <p>字符串相关方法： </p>
 <ul>
-<li><p>返回字符串索引，indexOf() ;</p>
+<li><p>返回字符串索引，indexOf(‘要查找的字符’，[其实的位置]) ; </p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//查找字符串中所有o出现的次数</span>
 <span class="token keyword">var</span> index <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'o'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">while</span><span class="token punctuation">(</span>index <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -1056,7 +1056,27 @@ temp <span class="token operator">=</span> <span class="token keyword">null</spa
 	index <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">,</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>根据位置返回字符 ，str.charAt(index)   str[index]  // H5 新增;返回指定位置字符的ASCII码   str.charCodeAt(index) ;  </li>
+<li><p>根据位置返回字符 ，str.charAt(index)   str[index]  // H5 新增;返回指定位置字符的ASCII码   str.charCodeAt(index) ;  </p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 找出字符串中出现最多的字符,统计其出现的次数</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'abcoefoxyozzopp'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> o<span class="token punctuation">;</span>i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">var</span> chars <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span> o<span class="token punctuation">[</span>chars<span class="token punctuation">]</span><span class="token punctuation">)</span> o<span class="token punctuation">[</span>chars<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+	<span class="token keyword">else</span> o<span class="token punctuation">[</span>chars<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span>  o<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>o<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">&gt;</span> max<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        max <span class="token operator">=</span> o<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+<li><p>字符串操作：拼接字符串concat(str1,str2,str3…) 截取字符串  substr(start,length)  ; slice(start,end)     substring(start,end) ；  替换字符串replace(char1 char2);   字符串转换为数组 split(‘分隔符’)   // join   把数组转换为字符串；</p>
+</li>
 </ul>
 </li>
 </ul>

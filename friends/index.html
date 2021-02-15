@@ -30,10 +30,10 @@
     <script src="https://cdn.jsdelivr.net/gh/linxueya/cdn@1.1/source/libs/jquery/jquery.min.js"></script>
 	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -763,6 +763,96 @@
 
     </div>
 </div>
+
+<style>
+    .triangle{
+        margin: 0 auto;
+        background-color: #ebebe9;
+    }
+    .triangle ul{
+        padding: 10px;
+    }
+    .triangle li{
+        position: relative;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+    }
+    .triangle li span{
+        position: relative;
+        border-radius: 7px;
+        background-color: #a6e860;
+        padding: 20px 15px 20px 15px;
+        z-index: 1;
+    }
+    .triangle .textLeft span{
+        background-color: white;
+        position: absolute;
+        top: 18px;
+        left: 86px;
+    }
+    .triangle .textRight span{
+        position: absolute;
+        top: 18px;
+        right: 86px;
+        text-align: left;
+    }
+    .triangle li.textLeft:before{
+        content: "";
+        background: url("https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/medias/avatar.jpg") no-repeat;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+        box-sizing: border-box;
+        position: relative;
+        left: -10px;
+        top: 9px;
+    }
+    .triangle li.textLeft span:before{
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-right: 8px solid white;
+        position: absolute;
+        top: 8px;
+        left: -16px;
+    }
+    .triangle li.textRight:after{
+        content: "";
+        background: url("https://gitee.com/linxueya/pic-bed/raw/master/img/9812b003b06dcaad3dacb7d4f9caa6f6_1.jpg") no-repeat;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+        box-sizing: border-box;
+        position: relative;
+        right: -10px;
+        top: 9px;
+    }
+    .triangle li.textRight span:after{
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-left: 8px solid #a6e860;
+        position: absolute;
+        top: 8px;
+        right: -16px;
+    }
+    li{
+        list-style: none;
+    }
+    .textRight{
+        text-align: right;
+    }
+
+</style>
+
+
+
 <style>
     .friends-container {
         margin-top: -100px;
@@ -954,6 +1044,28 @@
 
 <main class="content">
     <div class="container friends-container">
+        <div class="card">
+            <div class="triangle">
+                <ul>
+                    <li class="textRight">
+                        <span>🐈欢迎大佬们交换友链,请留言告诉我</span>
+                    </li>
+                    <li class="textLeft">
+                        <span>name: Linxueya's Blog</span>
+                    </li>
+                    <li class="textLeft">
+                        <span>url: https://blog.linxueya.cn</span>
+                    </li>
+                    <li class="textLeft">
+                        <span>img: https://cdn.jsdelivr.net/gh/linxueya/cdn@1.0/source/medias/avatar.jpg</span>
+                    </li>
+                    <li class="textLeft">
+                        <span>desc: 分享生活,分享知识</span>
+                    </li>
+                    </ul>
+                </div>
+        </div>
+
         <div class="card">
             <div class="card-content">
                 <div class="tag-title center-align">
