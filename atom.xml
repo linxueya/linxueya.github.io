@@ -6,7 +6,7 @@
   <link href="http://blog.linxueya.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.linxueya.cn/"/>
-  <updated>2021-02-15T13:59:32.925Z</updated>
+  <updated>2021-02-28T14:37:53.538Z</updated>
   <id>http://blog.linxueya.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web APIs</title>
+    <link href="http://blog.linxueya.cn/post/c0110283.html"/>
+    <id>http://blog.linxueya.cn/post/c0110283.html</id>
+    <published>2021-02-20T06:43:03.000Z</published>
+    <updated>2021-02-28T14:37:53.538Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;API是我们程序员提供的一个接口，帮助我们实现某种功能，但我们不必纠结其内部实现。而Web API主要是针对于浏览器提供的接口，主要用于浏览器实现交互效果。&lt;/p&gt;
+&lt;h2 id=&quot;DOM简介&quot;&gt;&lt;a href=&quot;#DOM简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://blog.linxueya.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="api" scheme="http://blog.linxueya.cn/tags/api/"/>
+    
+  </entry>
   
   <entry>
     <title>valine添加邮箱提醒</title>
