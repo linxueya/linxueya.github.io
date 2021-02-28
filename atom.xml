@@ -6,7 +6,7 @@
   <link href="http://blog.linxueya.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.linxueya.cn/"/>
-  <updated>2021-02-28T14:37:53.538Z</updated>
+  <updated>2021-02-28T15:01:21.424Z</updated>
   <id>http://blog.linxueya.cn/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTML5+CCS3</title>
+    <link href="http://blog.linxueya.cn/post/47f7d4a9.html"/>
+    <id>http://blog.linxueya.cn/post/47f7d4a9.html</id>
+    <published>2021-02-28T14:51:21.000Z</published>
+    <updated>2021-02-28T15:01:21.424Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;新增语义化标签&quot;&gt;&lt;a href=&quot;#新增语义化标签&quot; class=&quot;headerlink&quot; title=&quot;新增语义化标签&quot;&gt;&lt;/a&gt;新增语义化标签&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;header 头部标签&lt;/li&gt;
+&lt;li&gt;nav</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://blog.linxueya.cn/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="HTML CCS" scheme="http://blog.linxueya.cn/tags/HTML-CCS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Web APIs</title>
     <link href="http://blog.linxueya.cn/post/c0110283.html"/>
     <id>http://blog.linxueya.cn/post/c0110283.html</id>
     <published>2021-02-20T06:43:03.000Z</published>
-    <updated>2021-02-28T14:37:53.538Z</updated>
+    <updated>2021-02-28T14:42:36.918Z</updated>
     
     
       
@@ -38,7 +65,7 @@
     <category term="编程" scheme="http://blog.linxueya.cn/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="api" scheme="http://blog.linxueya.cn/tags/api/"/>
+    <category term="JS api" scheme="http://blog.linxueya.cn/tags/JS-api/"/>
     
   </entry>
   
