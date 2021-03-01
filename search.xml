@@ -462,7 +462,22 @@ function f1() {
   <entry>
     <title>Web APIs</title>
     <url>/post/c0110283.html</url>
-    <content><![CDATA[<p>API是我们程序员提供的一个接口，帮助我们实现某种功能，但我们不必纠结其内部实现。而Web API主要是针对于浏览器提供的接口，主要用于浏览器实现交互效果。</p>
+    <content><![CDATA[<ul>
+<li><p><input disabled="" type="checkbox">  能够说出什么是DOM</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够获取页面元素</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够元素注册事件</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够操作DOM元素的属性</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够创建元素</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够操作DOM节点</p>
+</li>
+</ul>
+<hr>
+<p>API是我们程序员提供的一个接口，帮助我们实现某种功能，但我们不必纠结其内部实现。而Web API主要是针对于浏览器提供的接口，主要用于浏览器实现交互效果。</p>
 <h2 id="DOM简介"><a href="#DOM简介" class="headerlink" title="DOM简介"></a>DOM简介</h2><p>文档对象模型是W3C组织推荐的处理HTML的标准编程接口。</p>
 <p>W3C已经定义了一些DOM接口，通过这些DOM接口可以改变网页的内容样式和结构</p>
 <p><img src="https://cdn.linxueya.cn/img/20210220155327.png"></p>
@@ -480,7 +495,7 @@ function f1() {
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
-<li><p>根据标签名获取</p>
+<li><p>根据标签名获取 getElementsByTagName()</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>hello,world!1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
@@ -516,7 +531,7 @@ function f1() {
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
-<li><p>通过HTML5新增的方法获取 </p>
+<li><p>通过==HTML5==新增的方法获取 </p>
 <ol>
 <li>getElementsByClassName 根据类名获取元素</li>
 <li>querySelector 返回选择器的第一个元素对象</li>
@@ -654,12 +669,61 @@ function f1() {
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="排它思想"><a href="#排它思想" class="headerlink" title="排它思想"></a>排它思想</h3><h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2>]]></content>
+<h3 id="排它思想"><a href="#排它思想" class="headerlink" title="排它思想"></a>排它思想</h3><p>案例：百度换肤</p>
+<p>案例：全选与取消</p>
+<p>获取属性值</p>
+<ul>
+<li>element.属性   //内置属性</li>
+<li>element.getAttribute(‘属性 ‘)  //程序员自定义属性 </li>
+</ul>
+<p>设置属性值</p>
+<ul>
+<li>element.属性 = 值</li>
+<li>element.setAttribute(‘属性’， ‘值’) </li>
+</ul>
+<p>移除属性</p>
+<ul>
+<li>element.removeAttribute(‘属性 ‘) </li>
+</ul>
+<p>案例：tab栏切换 （重点）</p>
+<p>H5自定义属性 ==data-属性== ，dataset存放着所有以data-开头的数据，dataset[‘属性’] 或者 dataset.属性 （ie11 以上）</p>
+<h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2><p><del>利用DOM提供的方法获取元素逻辑性不清，繁琐</del></p>
+<p>网页中所有的内容都是节点（标签，属性，文本，注释），在DOM中，节点使用node来表示。一般地，节点至少拥有节点类型，节点名称，节点值这三个属性。</p>
+<p>子节点</p>
+<ul>
+<li>获取所有子节点   node.childNodes</li>
+<li>获取子元素节点   node.children</li>
+<li>第一个节点   node.firstChild  </li>
+<li>第一个元素节点  node.firstElenmentChild （ie9 以上）</li>
+<li>第一个元素节点(开发中使用) node.children[0]</li>
+</ul>
+<p>案例：下拉菜单</p>
+<p>兄弟节点</p>
+<ul>
+<li><p>下一个兄弟节点   node.nextSibling</p>
+</li>
+<li><p>下一个兄弟元素节点  node.nextElementSibling</p>
+</li>
+</ul>
+<p>创建元素节点  document.createElement( )</p>
+<p>添加节点  node.append( )   or   node.insertBefore(child,指定元素)</p>
+<p>案例： 简易发布留言</p>
+<p>删除节点  node.removeChild()</p>
+<p>案例：删除留言</p>
+<p>复制接点  node.cloneNode() 如果括号为空或者为false，则为浅拷贝，只复制标签不复制内容；如果为true，则为深拷贝 </p>
+<p>案例：动态生成表格</p>
+<p>三种动态创建元素方式的区别</p>
+<ul>
+<li>document.write()  如果页面文档加载完毕，会重绘页面</li>
+<li>document.innerHTML   通过拼接插入多个元素   效率低   通过数组插入元素 效率高</li>
+<li>document.createElement  效率较高  结构清晰</li>
+</ul>
+]]></content>
       <categories>
         <category>编程</category>
       </categories>
       <tags>
-        <tag>JS, api</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -914,7 +978,36 @@ function f1() {
         <category>编程</category>
       </categories>
       <tags>
-        <tag>HTML, CCS</tag>
+        <tag>HTML</tag>
+        <tag>CCS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Web-APIs2</title>
+    <url>/post/d23a6e4b.html</url>
+    <content><![CDATA[<ul>
+<li><p><input disabled="" type="checkbox">  能够写出元素注册事件的两种方式</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够说出删除事件的两种方式</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够说出DOM事件流的三个阶段</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够利用事件对象完成跟随鼠标案例</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够封装阻止冒泡的兼容性函数</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够说出事件委托的原理</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够说出常用的鼠标和键盘事件</p>
+</li>
+</ul>
+<hr>
+<h2 id="注册事件"><a href="#注册事件" class="headerlink" title="注册事件"></a>注册事件</h2><h2 id="删除事件"><a href="#删除事件" class="headerlink" title="删除事件"></a>删除事件</h2><h2 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h2><h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><h2 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h2><h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><h2 id="常用鼠标事件"><a href="#常用鼠标事件" class="headerlink" title="常用鼠标事件"></a>常用鼠标事件</h2><h2 id="常用键盘事件"><a href="#常用键盘事件" class="headerlink" title="常用键盘事件"></a>常用键盘事件</h2>]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
       </tags>
   </entry>
 </search>

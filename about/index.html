@@ -19,7 +19,9 @@
     <title>关于 | Linxueya&#39;s Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.linxueya.cn/medias/favicon.png">
 
+	<link rel="stylesheet" type="text/css" href="https://cdn.linxueya.cn/lib/artitalk/artitalk.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.linxueya.cn/lib/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.linxueya.cn/lib/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.linxueya.cn/lib/animate/animate.min.css">
@@ -32,8 +34,8 @@
 
 <meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
-</head>
+<link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -347,6 +349,17 @@
   
   <li class="hide-on-med-and-down nav-item">
     
+    <a href="/artitalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>说说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
     <a href="" class="waves-effect waves-light">
 
       
@@ -578,6 +591,17 @@
         
         <li class="m-nav-item">
 	  
+		<a href="/artitalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			ArtiTalk
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
 		<a href="javascript:;">
 			
 				<i class="fa-fw fas fa-link"></i>
@@ -780,7 +804,7 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">10</a></span>
+    <span class="count"><a href="/">11</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -810,7 +834,7 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">10</a></span>
+    <span class="count"><a href="/">11</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -960,7 +984,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,1,9,0],
+                data: [0,0,0,0,0,0,0,0,0,0,1,9,1],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -1002,7 +1026,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"软件工具","value":2},{"name":"编程","value":6},{"name":"日常","value":1}],
+                data: [{"name":"软件工具","value":2},{"name":"编程","value":7},{"name":"日常","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -1026,7 +1050,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["JS","hexo","star","HTML, CCS","JS, api"]
+                data: ["JS","hexo","star","HTML","CCS"]
             }
         ],
         yAxis: [
@@ -1039,7 +1063,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [4,2,1,1,1],
+                data: [6,2,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -1216,14 +1240,14 @@
             
             
             
-            <a href="/tags/HTML-CCS/">
-                <span class="chip center-align waves-effect waves-light chip-default">HTML, CCS</span>
+            <a href="/tags/HTML/">
+                <span class="chip center-align waves-effect waves-light chip-default">HTML</span>
             </a>
             
             
             
-            <a href="/tags/JS-api/">
-                <span class="chip center-align waves-effect waves-light chip-default">JS, api</span>
+            <a href="/tags/CCS/">
+                <span class="chip center-align waves-effect waves-light chip-default">CCS</span>
             </a>
             
             
@@ -1237,6 +1261,15 @@
 
                 
                 
+                
+                <script type="text/javascript" src="//cdn.jsdelivr.net/npm/artitalk"></script>
+<div id="artitalk_main"></div>
+<script>
+    new Artitalk({
+        appId: 'RfvhLjKvPsj4015y8xCiasHv-MdYXbMMI',
+        appKey: 'P2p6VfJ07UtTR5FkCHWGKAFn',
+    })
+</script>
                 
                 
             </div>
