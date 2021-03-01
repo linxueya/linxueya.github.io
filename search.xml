@@ -543,8 +543,7 @@ function f1() {
 <li>绑定事件 注册事件 </li>
 <li>添加事件处理程序</li>
 </ul>
-<h2 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h2><p>改变元素内容： element.innerText 和 element.innerHTML（W3C标准 保留换行和空格） </p>
-<p>案例：通过鼠标点击获取时间  <a href="https://cdn.linxueya.cn/code/web/web-api/1.html">效果</a></p>
+<h2 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h2><h3 id="改变元素内容：-element-innerText-和-element-innerHTML（W3C标准-保留换行和空格）"><a href="#改变元素内容：-element-innerText-和-element-innerHTML（W3C标准-保留换行和空格）" class="headerlink" title="改变元素内容： element.innerText 和 element.innerHTML（W3C标准 保留换行和空格）"></a>改变元素内容： element.innerText 和 element.innerHTML（W3C标准 保留换行和空格）</h3><p>案例：通过鼠标点击获取时间  <a href="https://cdn.linxueya.cn/code/web/web-api/1.html">效果</a></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>获取时间<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>out<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
@@ -564,8 +563,7 @@ function f1() {
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<p>改变常见元素属性：src、href、 id、alt和title</p>
-<p>案例：分时显示不同图片， 不同问候语 。 <a href="https://cdn.linxueya.cn/code/web/web-api/2.html">效果</a></p>
+<h3 id="改变常见元素属性：src、href、-id、alt和title"><a href="#改变常见元素属性：src、href、-id、alt和title" class="headerlink" title="改变常见元素属性：src、href、 id、alt和title"></a>改变常见元素属性：src、href、 id、alt和title</h3><p>案例：分时显示不同图片， 不同问候语 。 <a href="https://cdn.linxueya.cn/code/web/web-api/2.html">效果</a></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./images/s.gif<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">id</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">"</span>img<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
@@ -588,8 +586,7 @@ function f1() {
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<p>改变==表单==的属性：type、value、checked、selected、disabled</p>
-<p>案例：查看明文密码   <a href="https://cdn.linxueya.cn/code/web/web-api/3.html">效果</a></p>
+<h3 id="改变-表单-的属性：type、value、checked、selected、disabled"><a href="#改变-表单-的属性：type、value、checked、selected、disabled" class="headerlink" title="改变==表单==的属性：type、value、checked、selected、disabled"></a>改变==表单==的属性：type、value、checked、selected、disabled</h3><p>案例：查看明文密码   <a href="https://cdn.linxueya.cn/code/web/web-api/3.html">效果</a></p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./images/close.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">id</span> <span class="token attr-value"><span class="token punctuation attr-equals">=</span> <span class="token punctuation">'</span>eye<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
@@ -615,8 +612,7 @@ function f1() {
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<p>改变元素的大小、颜色、位置等 </p>
-<div class="note info">JS修改style样式操作,产生的是行内样式，权重比较高</div>
+<h3 id="改变元素的大小、颜色、位置等"><a href="#改变元素的大小、颜色、位置等" class="headerlink" title="改变元素的大小、颜色、位置等"></a>改变元素的大小、颜色、位置等</h3><div class="note info">JS修改style样式操作,产生的是行内样式，权重比较高</div>
 
 <ul>
 <li>element.style  样式比较少或功能比较少的情况下适用</li>
@@ -658,14 +654,12 @@ function f1() {
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2>]]></content>
+<h3 id="排它思想"><a href="#排它思想" class="headerlink" title="排它思想"></a>排它思想</h3><h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2>]]></content>
       <categories>
         <category>编程</category>
       </categories>
       <tags>
-        <tag>JS api</tag>
+        <tag>JS, api</tag>
       </tags>
   </entry>
   <entry>
@@ -920,7 +914,7 @@ function f1() {
         <category>编程</category>
       </categories>
       <tags>
-        <tag>HTML CCS</tag>
+        <tag>HTML, CCS</tag>
       </tags>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="http://blog.linxueya.cn/atom.xml" rel="self"/>
   
   <link href="http://blog.linxueya.cn/"/>
-  <updated>2021-02-28T15:01:21.424Z</updated>
+  <updated>2021-03-01T04:52:27.632Z</updated>
   <id>http://blog.linxueya.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://blog.linxueya.cn/post/47f7d4a9.html"/>
     <id>http://blog.linxueya.cn/post/47f7d4a9.html</id>
     <published>2021-02-28T14:51:21.000Z</published>
-    <updated>2021-02-28T15:01:21.424Z</updated>
+    <updated>2021-03-01T04:52:27.632Z</updated>
     
     
       
@@ -39,7 +39,7 @@
     <category term="编程" scheme="http://blog.linxueya.cn/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="HTML CCS" scheme="http://blog.linxueya.cn/tags/HTML-CCS/"/>
+    <category term="HTML, CCS" scheme="http://blog.linxueya.cn/tags/HTML-CCS/"/>
     
   </entry>
   
@@ -48,7 +48,7 @@
     <link href="http://blog.linxueya.cn/post/c0110283.html"/>
     <id>http://blog.linxueya.cn/post/c0110283.html</id>
     <published>2021-02-20T06:43:03.000Z</published>
-    <updated>2021-02-28T14:42:36.918Z</updated>
+    <updated>2021-03-01T04:52:07.251Z</updated>
     
     
       
@@ -65,7 +65,7 @@
     <category term="编程" scheme="http://blog.linxueya.cn/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="JS api" scheme="http://blog.linxueya.cn/tags/JS-api/"/>
+    <category term="JS, api" scheme="http://blog.linxueya.cn/tags/JS-api/"/>
     
   </entry>
   
