@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-03-01T14:23:58.590Z</updated>
+  <updated>2021-03-03T08:57:39.280Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Web-APIs3</title>
+    <link href="http://linxueya.github.io/post/a53d5edd.html"/>
+    <id>http://linxueya.github.io/post/a53d5edd.html</id>
+    <published>2021-03-03T08:37:11.000Z</published>
+    <updated>2021-03-03T08:57:39.280Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt;  能够说出什么是BOM&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Web-APIs2</title>
     <link href="http://linxueya.github.io/post/d23a6e4b.html"/>
     <id>http://linxueya.github.io/post/d23a6e4b.html</id>
     <published>2021-03-01T14:07:51.000Z</published>
-    <updated>2021-03-01T14:23:58.590Z</updated>
+    <updated>2021-03-03T08:33:21.596Z</updated>
     
     
       
@@ -78,7 +106,7 @@
     <link href="http://linxueya.github.io/post/c0110283.html"/>
     <id>http://linxueya.github.io/post/c0110283.html</id>
     <published>2021-02-20T06:43:03.000Z</published>
-    <updated>2021-03-01T14:28:03.759Z</updated>
+    <updated>2021-03-01T15:28:09.730Z</updated>
     
     
       
@@ -236,7 +264,7 @@
     <link href="http://linxueya.github.io/post/877bf8ef.html"/>
     <id>http://linxueya.github.io/post/877bf8ef.html</id>
     <published>2021-02-04T12:57:40.000Z</published>
-    <updated>2021-02-05T09:27:26.027Z</updated>
+    <updated>2021-03-03T06:52:43.021Z</updated>
     
     
       
@@ -262,7 +290,7 @@
     <link href="http://linxueya.github.io/post/400a6e47.html"/>
     <id>http://linxueya.github.io/post/400a6e47.html</id>
     <published>2021-02-01T08:53:11.000Z</published>
-    <updated>2021-02-15T13:46:36.958Z</updated>
+    <updated>2021-03-01T15:27:07.415Z</updated>
     
     
       
