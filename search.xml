@@ -1014,10 +1014,9 @@ function f1() {
 <li>捕获阶段：father -&gt; son</li>
 <li>冒泡阶段:  son -&gt; father   (实际开发中使用多)</li>
 </ul>
-<!--JS代码中只能执行捕获或者冒泡阶段-->
-
-<p>onclick 和 attachEvent 只能得到冒泡事件</p>
-<p>addEventListener 第三个参数为true 时使用捕获，为 false时使用冒泡</p>
+<p><code>JS代码中只能执行捕获或者冒泡阶段</code></p>
+<p><code>onclick 和 attachEvent 只能得到冒泡事件</code></p>
+<p><code>addEventListener 第三个参数为true 时使用捕获，为 false时使用冒泡</code></p>
 <h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>div.onclick = function(event){}   </p>
 <p>div.addEventListener(‘click’,fn(event))</p>
 <p>event  就是一个事件对象，可以当做形参来看。它是系统创建的，不需要我们传递参数。事件对象是一系列相关数据的集合。</p>
@@ -1096,9 +1095,10 @@ function f1() {
 <p><img src="https://cdn.linxueya.cn/img/BOM-dif.png"></p>
 <p><img src="https://cdn.linxueya.cn/img/BOM-desc.png"></p>
 <p>window是浏览器的顶级对象，它具有双重角色。1. 它是JS访问浏览器窗口的一个接口。2. 它是一个全局对象。定义在全局作用域中的变量，函数都会变成window对象的属性和方法</p>
-<!--window下的一个特殊属性 window.name-->
-
-<h2 id="window对象的常见事件"><a href="#window对象的常见事件" class="headerlink" title="window对象的常见事件"></a>window对象的常见事件</h2><h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><h2 id="JS执行机制"><a href="#JS执行机制" class="headerlink" title="JS执行机制"></a>JS执行机制</h2><h2 id="location-对象"><a href="#location-对象" class="headerlink" title="location 对象"></a>location 对象</h2><h2 id="navigator-对象"><a href="#navigator-对象" class="headerlink" title="navigator 对象"></a>navigator 对象</h2><h2 id="history-对象"><a href="#history-对象" class="headerlink" title="history 对象"></a>history 对象</h2>]]></content>
+<p>window的一个特殊属性 window.name</p>
+<h2 id="window对象的常见事件"><a href="#window对象的常见事件" class="headerlink" title="window对象的常见事件"></a>window对象的常见事件</h2><p>窗口加载事件  window.onload 放文档完全加载完成才会触发事件</p>
+<p>window.onload 传统注册事件方式只能写一次，如果有多个，会以最后一个为准</p>
+<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><h2 id="JS执行机制"><a href="#JS执行机制" class="headerlink" title="JS执行机制"></a>JS执行机制</h2><h2 id="location-对象"><a href="#location-对象" class="headerlink" title="location 对象"></a>location 对象</h2><h2 id="navigator-对象"><a href="#navigator-对象" class="headerlink" title="navigator 对象"></a>navigator 对象</h2><h2 id="history-对象"><a href="#history-对象" class="headerlink" title="history 对象"></a>history 对象</h2>]]></content>
       <categories>
         <category>编程</category>
       </categories>

@@ -34,8 +34,8 @@
 
 <meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
-</head>
+<link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -921,7 +921,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    812
+                    828
                 </div>
                 
 
@@ -974,10 +974,9 @@
 <li>捕获阶段：father -&gt; son</li>
 <li>冒泡阶段:  son -&gt; father   (实际开发中使用多)</li>
 </ul>
-<!--JS代码中只能执行捕获或者冒泡阶段-->
-
-<p>onclick 和 attachEvent 只能得到冒泡事件</p>
-<p>addEventListener 第三个参数为true 时使用捕获，为 false时使用冒泡</p>
+<p><code>JS代码中只能执行捕获或者冒泡阶段</code></p>
+<p><code>onclick 和 attachEvent 只能得到冒泡事件</code></p>
+<p><code>addEventListener 第三个参数为true 时使用捕获，为 false时使用冒泡</code></p>
 <h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>div.onclick = function(event){}   </p>
 <p>div.addEventListener(‘click’,fn(event))</p>
 <p>event  就是一个事件对象，可以当做形参来看。它是系统创建的，不需要我们传递参数。事件对象是一系列相关数据的集合。</p>
