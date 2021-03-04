@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-03-03T09:08:06.494Z</updated>
+  <updated>2021-03-04T08:48:56.954Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,90 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Web-APIs4</title>
+    <link href="http://linxueya.github.io/post/3b59cb7e.html"/>
+    <id>http://linxueya.github.io/post/3b59cb7e.html</id>
+    <published>2021-03-04T08:42:27.000Z</published>
+    <updated>2021-03-04T08:48:56.954Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt;  能够说出常见的offset系列属性的作用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>排序算法汇总</title>
+    <link href="http://linxueya.github.io/post/e31c83b1.html"/>
+    <id>http://linxueya.github.io/post/e31c83b1.html</id>
+    <published>2021-03-04T05:40:52.000Z</published>
+    <updated>2021-03-04T08:44:09.119Z</updated>
+    
+    
+    
+    
+    <category term="算法" scheme="http://linxueya.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="排序" scheme="http://linxueya.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web前端面试</title>
+    <link href="http://linxueya.github.io/post/82dc1122.html"/>
+    <id>http://linxueya.github.io/post/82dc1122.html</id>
+    <published>2021-03-03T15:13:04.000Z</published>
+    <updated>2021-03-03T15:42:10.425Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;手写jsonp的实现&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;手写链表倒数第K个查找&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;http请求头，请求体，cookie在哪个里面？url在哪里面？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;原型链的解释&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="面经" scheme="http://linxueya.github.io/categories/%E9%9D%A2%E7%BB%8F/"/>
+    
+    
+    <category term="前端" scheme="http://linxueya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Web-APIs3</title>
     <link href="http://linxueya.github.io/post/a53d5edd.html"/>
     <id>http://linxueya.github.io/post/a53d5edd.html</id>
     <published>2021-03-03T08:37:11.000Z</published>
-    <updated>2021-03-03T09:08:06.494Z</updated>
+    <updated>2021-03-04T08:42:31.262Z</updated>
     
     
       
