@@ -914,14 +914,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-04
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    102
+                    826
                 </div>
                 
 
@@ -958,7 +958,132 @@
 <li><p><input disabled="" type="checkbox">  能够写出网页轮播案例</p>
 </li>
 </ul>
-<h2 id="元素偏移量offset系列"><a href="#元素偏移量offset系列" class="headerlink" title="元素偏移量offset系列"></a>元素偏移量offset系列</h2><h2 id="元素可视区client系列"><a href="#元素可视区client系列" class="headerlink" title="元素可视区client系列"></a>元素可视区client系列</h2><h2 id="元素滚动-scroll系列"><a href="#元素滚动-scroll系列" class="headerlink" title="元素滚动 scroll系列"></a>元素滚动 scroll系列</h2><h2 id="动画函数封装"><a href="#动画函数封装" class="headerlink" title="动画函数封装"></a>动画函数封装</h2><h2 id="常见网页特效案例"><a href="#常见网页特效案例" class="headerlink" title="常见网页特效案例"></a>常见网页特效案例</h2>
+<h2 id="元素偏移量offset系列"><a href="#元素偏移量offset系列" class="headerlink" title="元素偏移量offset系列"></a>元素偏移量offset系列</h2><p>offset概述：使用offset系列的相关属性可以获得元素的位置、大小等</p>
+<ul>
+<li>获得元素距离带有定位元素的位置</li>
+<li>获得元素自身的大小</li>
+<li>注意：返回的数值都不带单位</li>
+</ul>
+<p>offset系列常见属性：</p>
+<table>
+<thead>
+<tr>
+<th>element.offsetParent</th>
+<th>返回该元素带有定位的父级元素，如果父级都没有定位则返回body</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>element.offsetTop</td>
+<td>返回元素相对带有定位父元素上方的偏移</td>
+</tr>
+<tr>
+<td>element.offsetLeft</td>
+<td>返回元素相对带有定位父元素左方的偏移</td>
+</tr>
+<tr>
+<td>element.offsetWidth</td>
+<td>返回自身padding+边框+内容区的宽度</td>
+</tr>
+<tr>
+<td>element.offsetHeight</td>
+<td>返回自身padding+边框+内容区的高度</td>
+</tr>
+</tbody></table>
+<p>​     给元素赋值用style，获取元素用offset</p>
+<p>案例：获取鼠标在盒子内的坐标</p>
+<!--通过鼠标在页面的距离和盒子在页面的距离计算得出，事件：mousemove -->
+
+<p>案例：拖动的模态框</p>
+<!--拖拽：鼠标按下 移动 松开-->
+
+<p>案例：图片放大镜</p>
+<!--黄色蒙版跟随鼠标移动，大图跟随小图 等比例移动-->
+
+<h2 id="元素可视区client系列"><a href="#元素可视区client系列" class="headerlink" title="元素可视区client系列"></a>元素可视区client系列</h2><p>概述：client为客户端，使用client系列的相关属性来获取可视区的相关信息。通过client的属性可以动态的得到该元素的边框大小，元素大小</p>
+<table>
+<thead>
+<tr>
+<th>element.offsetTop</th>
+<th>返回元素上边框的大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>element.offsetLeft</td>
+<td>返回元素左边框的大小</td>
+</tr>
+<tr>
+<td>element.offsetWidth</td>
+<td>返回自身padding+内容区的宽度</td>
+</tr>
+<tr>
+<td>element.offsetHeight</td>
+<td>返回自身paddin+内容区的高度</td>
+</tr>
+</tbody></table>
+<p>案例：淘宝flexible.js 源码分析</p>
+<p>立即执行函数，创建了一个独立作用域，避免命名冲突</p>
+<ul>
+<li>(function( ){ })(传递参数)</li>
+<li>(function( ){ }(传递参数))</li>
+</ul>
+<p>load事件触发条件</p>
+<ul>
+<li>a标签的超链接</li>
+<li>F5或者刷新按钮</li>
+<li>前进后退按钮  </li>
+</ul>
+<p>由于火狐浏览器中的“往返缓存”，后退无法刷新页面。此时可以使用pageshow事件来触发，pageload 会在load事件触发后触发，根据事件对象中的persisted来判断时候缓存中的页面触发的pageshow事件，注意这个事件给window添加                 </p>
+<h2 id="元素滚动-scroll系列"><a href="#元素滚动-scroll系列" class="headerlink" title="元素滚动 scroll系列"></a>元素滚动 scroll系列</h2><p>概述：滚动的，使用scroll 可以动态的获取该元素的大小和滚动距离   // 事件 onscroll</p>
+<table>
+<thead>
+<tr>
+<th>element.offsetTop</th>
+<th>返回元素被卷去的上侧距离</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>element.offsetLeft</td>
+<td>返回元素被卷去的左侧距离</td>
+</tr>
+<tr>
+<td>element.offsetWidth</td>
+<td>返回自身自身实际的宽度</td>
+</tr>
+<tr>
+<td>element.offsetHeight</td>
+<td>返回自身自身实际的高度</td>
+</tr>
+</tbody></table>
+<p>案例：仿淘宝右侧侧边栏</p>
+<p>页面被卷去的头部  </p>
+<ul>
+<li><p>新写法：window.pageYOffset</p>
+</li>
+<li><p>兼容性：声明DTD: document.documentElement.scrollTop   未声明DTD：    document.body.scrollTop</p>
+</li>
+</ul>
+<p>mouseenter  和 mouseover</p>
+<ul>
+<li>mouseover  经过子盒子和自身盒子都会触发</li>
+<li>mouseenter 经过自身盒子触发 // 不会冒泡</li>
+</ul>
+<h2 id="动画函数封装"><a href="#动画函数封装" class="headerlink" title="动画函数封装"></a>动画函数封装</h2><p>核心原理：通过setInterval() 不断移动盒子位置</p>
+<p>案例：盒子移动</p>
+<!--封装obj目标对象，给不同的元素指定不同的定时器-->
+
+<!--调用动画函数时，清除原有的定时器； 左右移动时的取整问题-->
+
+<p>缓动动画效果</p>
+<p>缓动动画就是让元素运动速度有所变化，常见的思路是通过每次移动的距离慢慢变小</p>
+<p>引用自定义动画函数</p>
+<h2 id="常见网页特效案例"><a href="#常见网页特效案例" class="headerlink" title="常见网页特效案例"></a>常见网页特效案例</h2><p>案例：网页轮播图</p>
+<p>节流阀：防止轮播图点击过快</p>
+<p>案例效果：GO</p>
+<!--动态生成小圆圈 创建li节点；自动播放-->
+
+<p>案例：带有动画地返回顶部</p>
+<p>案例：筋斗云</p>
+
                 
             </div>
             <hr/>
@@ -1461,30 +1586,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/post/3b59cb7e.html">
+                <a href="/post/4c5efbe8.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/14.jpg" class="responsive-img" alt="Web-APIs4">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/13.jpg" class="responsive-img" alt="Web-APIs5">
                         
-                        <span class="card-title">Web-APIs4</span>
+                        <span class="card-title">Web-APIs5</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PC 端网页特效
+                            移动 端网页特效
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1497,7 +1621,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

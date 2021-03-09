@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-03-04T12:13:28.412Z</updated>
+  <updated>2021-03-08T14:48:42.428Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Web-APIs5</title>
+    <link href="http://linxueya.github.io/post/4c5efbe8.html"/>
+    <id>http://linxueya.github.io/post/4c5efbe8.html</id>
+    <published>2021-03-08T06:52:34.000Z</published>
+    <updated>2021-03-08T14:48:42.428Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt;  能够写出移动端触屏事件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Web-APIs4</title>
     <link href="http://linxueya.github.io/post/3b59cb7e.html"/>
     <id>http://linxueya.github.io/post/3b59cb7e.html</id>
     <published>2021-03-04T08:42:27.000Z</published>
-    <updated>2021-03-04T12:13:28.412Z</updated>
+    <updated>2021-03-08T06:50:48.958Z</updated>
     
     
       
@@ -100,7 +128,7 @@
     <link href="http://linxueya.github.io/post/a53d5edd.html"/>
     <id>http://linxueya.github.io/post/a53d5edd.html</id>
     <published>2021-03-03T08:37:11.000Z</published>
-    <updated>2021-03-04T14:30:02.379Z</updated>
+    <updated>2021-03-05T13:02:09.278Z</updated>
     
     
       
