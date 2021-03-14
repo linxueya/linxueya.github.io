@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS基本语法之作用域, c++ js">
+    <meta name="keywords" content="前端代码规范, c++ js">
     <meta name="description" content="分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JS基本语法之作用域 | Linxueya&#39;s Blog</title>
+    <title>前端代码规范 | Linxueya&#39;s Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.linxueya.cn/medias/favicon.png">
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.linxueya.cn/lib/artitalk/artitalk.min.css">
@@ -761,12 +761,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JS基本语法之作用域</h1>
+                    <h1 class="description center-align post-title">前端代码规范</h1>
                 </div>
             </div>
         </div>
@@ -882,8 +882,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JS/">
-                                <span class="chip bg-color">JS</span>
+                            <a href="/tags/HTML/">
+                                <span class="chip bg-color">HTML</span>
+                            </a>
+                        
+                            <a href="/tags/CCS/">
+                                <span class="chip bg-color">CCS</span>
                             </a>
                         
                     </div>
@@ -907,21 +911,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-05
+                    2021-03-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-06
+                    2021-03-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    190
+                    2.8k
                 </div>
                 
 
@@ -946,30 +950,685 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
-<li>JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的</li>
-<li>全局作用域 ：整个script标签</li>
-<li>局部作用域：在函数内部</li>
+                <h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>欢迎使用品优购代码规范， 这个是我借鉴京东前端代码规范，组织的品优购内部规范。旨在增强团队开发协作、提高代码质量和打造开发基石的编码规范，</p>
+<p>以下规范是团队基本约定的内容，必须严格遵循。</p>
+<h4 id="HTML规范"><a href="#HTML规范" class="headerlink" title="HTML规范"></a>HTML规范</h4><p>基于 <a target="_blank" rel="noopener" href="http://www.w3.org/">W3C</a>、<a target="_blank" rel="noopener" href="https://developer.apple.com/">苹果开发者</a> 等官方文档，并结合团队业务和开发过程中总结的规范约定，让页面HTML代码更具语义性。</p>
+<h4 id="图片规范"><a href="#图片规范" class="headerlink" title="图片规范"></a>图片规范</h4><p>了解各种图片格式特性，根据特性制定图片规范，包括但不限于图片的质量约定、图片引入方式、图片合并处理等，旨在从图片层面优化页面性能。</p>
+<h4 id="CSS规范"><a href="#CSS规范" class="headerlink" title="CSS规范"></a>CSS规范</h4><p>统一规范团队 CSS 代码书写风格和使用 CSS 预编译语言语法风格，提供常用媒体查询语句和浏览器私有属性引用，并从业务层面统一规范常用模块的引用。</p>
+<h4 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h4><p>从 <code>目录</code>、<code>图片</code>、<code>HTML/CSS文件</code>、<code>ClassName</code> 的命名等层面约定规范团队的命名习惯，增强团队代码的可读性。</p>
+<h2 id="2-HTML-规范"><a href="#2-HTML-规范" class="headerlink" title="2. HTML 规范"></a>2. HTML 规范</h2><h3 id="DOCTYPE-声明"><a href="#DOCTYPE-声明" class="headerlink" title="DOCTYPE 声明"></a>DOCTYPE 声明</h3><p>HTML文件必须加上 DOCTYPE 声明，并统一使用 HTML5 的文档声明：</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>HTML5标准模版</strong></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>zh-CN<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>HTML5标准模版<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="页面语言lang"><a href="#页面语言lang" class="headerlink" title="页面语言lang"></a>页面语言lang</h3><p>推荐使用属性值 <code>cmn-Hans-CN</code>（简体, 中国大陆），但是考虑浏览器和操作系统的兼容性，目前仍然使用 <code>zh-CN</code> 属性值</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;html lang="zh-CN"&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>更多地区语言参考：</p>
+<pre class="line-numbers language-none"><code class="language-none">zh-SG 中文 (简体, 新加坡)   对应 cmn-Hans-SG 普通话 (简体, 新加坡)
+zh-HK 中文 (繁体, 香港)     对应 cmn-Hant-HK 普通话 (繁体, 香港)
+zh-MO 中文 (繁体, 澳门)     对应 cmn-Hant-MO 普通话 (繁体, 澳门)
+zh-TW 中文 (繁体, 台湾)     对应 cmn-Hant-TW 普通话 (繁体, 台湾)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="charset-字符集合"><a href="#charset-字符集合" class="headerlink" title="charset 字符集合"></a>charset 字符集合</h3><p>一般情况下统一使用 “UTF-8” 编码</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;meta charset="UTF-8"&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>由于历史原因，有些业务可能会使用 “GBK” 编码</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;meta charset="GBK"&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>请尽量统一写成标准的 “UTF-8”，不要写成 “utf-8” 或 “utf8” 或 “UTF8”。根据 <a target="_blank" rel="noopener" href="http://www.ietf.org/rfc/rfc3629">IETF对UTF-8的定义</a>，其编码标准的写法是 “UTF-8”；而 UTF8 或 utf8 的写法只是出现在某些编程系统中，如 .NET framework 的类 System.Text.Encoding 中的一个属性名就叫 UTF8。</p>
+<h3 id="书写风格"><a href="#书写风格" class="headerlink" title="书写风格"></a>书写风格</h3><h4 id="HTML代码大小写"><a href="#HTML代码大小写" class="headerlink" title="HTML代码大小写"></a>HTML代码大小写</h4><p>HTML标签名、类名、标签属性和大部分属性值统一用小写</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div class="demo"&gt;&lt;/div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div class="DEMO"&gt;&lt;/div&gt;
+	
+&lt;DIV CLASS="DEMO"&gt;&lt;/DIV&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="类型属性"><a href="#类型属性" class="headerlink" title="类型属性"></a>类型属性</h3><p>不需要为 CSS、JS 指定类型属性，HTML5 中默认已包含</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;link rel="stylesheet" href="" &gt;
+&lt;script src=""&gt;&lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;link rel="stylesheet" type="text/css" href="" &gt;
+&lt;script type="text/javascript" src="" &gt;&lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="元素属性"><a href="#元素属性" class="headerlink" title="元素属性"></a>元素属性</h3><ul>
+<li>元素属性值使用双引号语法</li>
+<li>元素属性值可以写上的都写上</li>
 </ul>
-<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><blockquote>
-<p>类似C/C++ 中的全局变量和局部变量</p>
-</blockquote>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input type="text"&gt;
+&lt;input type="radio" name="name" checked="checked" &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input type=text&gt;	
+&lt;input type='text'&gt;
+&lt;input type="radio" name="name" checked &gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="特殊字符引用"><a href="#特殊字符引用" class="headerlink" title="特殊字符引用"></a>特殊字符引用</h3><p>文本可以和字符引用混合出现。这种方法可以用来转义在文本中不能合法出现的字符。</p>
+<p>在 HTML 中不能使用小于号 “&lt;” 和大于号 “&gt;”特殊字符，浏览器会将它们作为标签解析，若要正确显示，在 HTML 源代码中使用字符实体</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;a href="#"&gt;more&gt;&gt;&lt;/a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;a href="#"&gt;more&gt;&gt;&lt;/a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="代码缩进"><a href="#代码缩进" class="headerlink" title="代码缩进"></a>代码缩进</h3><p>统一使用四个空格进行代码缩进，使得各编辑器表现一致（各编辑器有相关配置）</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div class="jdc"&gt;
+    &lt;a href="#"&gt;&lt;/a&gt;
+&lt;/div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="代码嵌套"><a href="#代码嵌套" class="headerlink" title="代码嵌套"></a>代码嵌套</h3><p>元素嵌套规范，每个块状元素独立一行，内联元素可选</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div&gt;
+    &lt;h1&gt;&lt;/h1&gt;
+    &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;	
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div&gt;
+    &lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;	
+&lt;p&gt; 
+    &lt;span&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;/span&gt;
+&lt;/p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>段落元素与标题元素只能嵌套内联元素</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;h1&gt;&lt;span&gt;&lt;/span&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;h1&gt;&lt;div&gt;&lt;/div&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/p&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="3-图片规范"><a href="#3-图片规范" class="headerlink" title="3. 图片规范"></a>3. 图片规范</h2><h3 id="内容图"><a href="#内容图" class="headerlink" title="内容图"></a>内容图</h3><p>内容图多以商品图等照片类图片形式存在，颜色较为丰富，文件体积较大</p>
 <ul>
-<li>全局变量： 在全局作用域中的变量<ul>
-<li>在函数内未声明的变量也为全局变量      </li>
+<li>优先考虑 JPEG 格式，条件允许的话优先考虑 WebP 格式</li>
+<li>尽量不使用PNG格式，PNG8 色位太低，PNG24 压缩率低，文件体积大</li>
+<li><strong>PC平台单张的图片的大小不应大于 200KB。</strong></li>
 </ul>
-</li>
-<li> 局部变量： 在局部作用域下的变量</li>
-<li>执行效率：<ul>
-<li>全局变量浏览器关闭才会销毁，比较占内存</li>
-<li>局部变量在函数结束时才会销毁</li>
+<h3 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h3><p>背景图多为图标等颜色比较简单、文件体积不大、起修饰作用的图片</p>
+<ul>
+<li>PNG 与 GIF 格式，优先考虑使用 PNG 格式,PNG格式允许更多的颜色并提供更好的压缩率</li>
+<li>图像颜色比较简单的，如纯色块线条图标，优先考虑使用 PNG8 格式，避免不使用 JPEG 格式</li>
+<li>图像颜色丰富而且图片文件不太大的（40KB 以下）或有半透明效果的优先考虑 PNG24 格式</li>
+<li>图像颜色丰富而且文件比较大的（40KB - 200KB）优先考虑 JPEG 格式</li>
+<li>条件允许的，优先考虑 WebP 代替 PNG 和 JPEG 格式</li>
 </ul>
-</li>
-<li>JS中没有块级作用域 { }  // if {}   for {]}</li>
+<h2 id="4-CSS规范"><a href="#4-CSS规范" class="headerlink" title="4. CSS规范"></a>4. CSS规范</h2><h3 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h3><p>样式书写一般有两种：一种是紧凑格式 (Compact)</p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc{ display: block;width: 50px;}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>一种是展开格式（Expanded）</p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc {
+    display: block;
+    width: 50px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>团队约定</strong></p>
+<p>统一使用展开格式书写样式</p>
+<h3 id="代码大小写"><a href="#代码大小写" class="headerlink" title="代码大小写"></a>代码大小写</h3><p>样式选择器，属性名，属性值关键字全部使用小写字母书写，属性字符串允许使用大小写。</p>
+<pre class="line-numbers language-none"><code class="language-none">/* 推荐 */
+.jdc{
+	display:block;
+}
+	
+/* 不推荐 */
+.JDC{
+	DISPLAY:BLOCK;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ul>
+<li>尽量少用通用选择器 <code>*</code></li>
+<li>不使用 ID 选择器</li>
+<li>不使用无具体语义定义的标签选择器</li>
 </ul>
-<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><blockquote>
-<p>内部函数访问外部函数的变量，采取的是链式查找的方式</p>
-</blockquote>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 推荐 */</span>
+<span class="token selector">.jdc</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector">.jdc li</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector">.jdc li p</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">/* 不推荐 */</span>
+<span class="token selector">*</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector">#jdc</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector">.jdc div</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="代码缩进-1"><a href="#代码缩进-1" class="headerlink" title="代码缩进"></a>代码缩进</h3><p>统一使用四个空格进行代码缩进，使得各编辑器表现一致（各编辑器有相关配置）</p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc {
+    width: 100%;
+    height: 100%;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h3><p>每个属性声明末尾都要加分号；</p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc {
+    width: 100%;
+    height: 100%;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="代码易读性"><a href="#代码易读性" class="headerlink" title="代码易读性"></a>代码易读性</h3><p>左括号与类名之间一个空格，冒号与属性值之间一个空格</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc { 
+    width: 100%; 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc{ 
+    width:100%;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>逗号分隔的取值，逗号之后一个空格</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc {
+    box-shadow: 1px 1px 1px #333, 2px 2px 2px #ccc;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc {
+    box-shadow: 1px 1px 1px #333,2px 2px 2px #ccc;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>为单个css选择器或新申明开启新行</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.jdc, 
+.jdc_logo, 
+.jdc_hd</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #ff0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.nav</span><span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.jdc,jdc_logo,.jdc_hd</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #ff0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token selector">.nav</span><span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>颜色值 <code>rgb()</code> <code>rgba()</code> <code>hsl()</code> <code>hsla()</code> <code>rect()</code> 中不需有空格，且取值不要带有不必要的 0</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc {
+    color: rgba(255,255,255,.5);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc {
+    color: rgba( 255, 255, 255, 0.5 );
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>属性值十六进制数值能用简写的尽量用简写</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-none"><code class="language-none">.jdc {
+    color: #fff;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.jdc</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #ffffff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>不要为 <code>0</code> 指明单位</p>
+<p><em>推荐：</em></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.jdc</span> <span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><em>不推荐：</em></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.jdc</span> <span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0px 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="属性值引号"><a href="#属性值引号" class="headerlink" title="属性值引号"></a>属性值引号</h3><p>css属性值需要用到引号时，统一使用单引号</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 推荐 */</span>
+<span class="token selector">.jdc</span> <span class="token punctuation">{</span> 
+	<span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Hiragino Sans GB'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 不推荐 */</span>
+<span class="token selector">.jdc</span> <span class="token punctuation">{</span> 
+	<span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Hiragino Sans GB"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="属性书写顺序"><a href="#属性书写顺序" class="headerlink" title="属性书写顺序"></a>属性书写顺序</h3><p>建议遵循以下顺序：</p>
+<ol>
+<li>布局定位属性：display / position / float / clear / visibility / overflow（建议 display 第一个写，毕竟关系到模式）</li>
+<li>自身属性：width / height / margin / padding / border / background</li>
+<li>文本属性：color / font / text-decoration / text-align / vertical-align / white- space / break-word</li>
+<li>其他属性（CSS3）：content / cursor / border-radius / box-shadow / text-shadow / background:linear-gradient …</li>
+</ol>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.jdc</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0 10px<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 20px 0<span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> Arial<span class="token punctuation">,</span> <span class="token string">'Helvetica Neue'</span><span class="token punctuation">,</span> Helvetica<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #333<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>.5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">-moz-border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">-o-border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">-ms-border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a target="_blank" rel="noopener" href="https://www.mozilla.org/css/base/content.css">mozilla官方属性顺序推荐</a></p>
+<h2 id="命名规范-1"><a href="#命名规范-1" class="headerlink" title="命名规范"></a>命名规范</h2><p>由历史原因及个人习惯引起的 DOM 结构、命名不统一，导致不同成员在维护同一页面时，效率低下，迭代、维护成本极高。</p>
+<h3 id="目录命名"><a href="#目录命名" class="headerlink" title="目录命名"></a>目录命名</h3><ul>
+<li>项目文件夹：pinyougou</li>
+<li>样式文件夹：css</li>
+<li>脚本文件夹：js</li>
+<li>样式类图片文件夹：img</li>
+<li>产品类图片文件夹： upload</li>
+<li>字体类文件夹： fonts</li>
+</ul>
+<h3 id="ClassName命名"><a href="#ClassName命名" class="headerlink" title="ClassName命名"></a>ClassName命名</h3><p>ClassName的命名应该尽量精短、明确，必须以<strong>字母开头命名</strong>，且<strong>全部字母为小写</strong>，单词之间<strong>统一使用下划线</strong> “_” 连接</p>
+<p>.nav_top</p>
+<h4 id="常用命名推荐"><a href="#常用命名推荐" class="headerlink" title="常用命名推荐"></a>常用命名推荐</h4><p><strong>注意</strong>：ad、banner、gg、guanggao 等有机会和广告挂勾的字眠不建议直接用来做ClassName，因为有些浏览器插件（Chrome的广告拦截插件等）会直接过滤这些类名，因此</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div class="ad"&gt;&lt;/div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这种广告的英文或拼音类名不应该出现</p>
+<p>另外，<strong>敏感不和谐字眼</strong>也不应该出现，如：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div class="fuck"&gt;&lt;/div&gt;
+&lt;div class="jer"&gt;&lt;/div&gt;
+&lt;div class="sm"&gt;&lt;/div&gt;
+&lt;div class="gcd"&gt;&lt;/div&gt; 
+&lt;div class="ass"&gt;&lt;/div&gt; 
+&lt;div class="KMT"&gt;&lt;/div&gt; 
+...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>ClassName</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>about</td>
+<td>关于</td>
+</tr>
+<tr>
+<td>account</td>
+<td>账户</td>
+</tr>
+<tr>
+<td>arrow</td>
+<td>箭头图标</td>
+</tr>
+<tr>
+<td>article</td>
+<td>文章</td>
+</tr>
+<tr>
+<td>aside</td>
+<td>边栏</td>
+</tr>
+<tr>
+<td>audio</td>
+<td>音频</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>头像</td>
+</tr>
+<tr>
+<td>bg,background</td>
+<td>背景</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>栏（工具类）</td>
+</tr>
+<tr>
+<td>branding</td>
+<td>品牌化</td>
+</tr>
+<tr>
+<td>crumb,breadcrumbs</td>
+<td>面包屑</td>
+</tr>
+<tr>
+<td>btn,button</td>
+<td>按钮</td>
+</tr>
+<tr>
+<td>caption</td>
+<td>标题，说明</td>
+</tr>
+<tr>
+<td>category</td>
+<td>分类</td>
+</tr>
+<tr>
+<td>chart</td>
+<td>图表</td>
+</tr>
+<tr>
+<td>clearfix</td>
+<td>清除浮动</td>
+</tr>
+<tr>
+<td>close</td>
+<td>关闭</td>
+</tr>
+<tr>
+<td>col,column</td>
+<td>列</td>
+</tr>
+<tr>
+<td>comment</td>
+<td>评论</td>
+</tr>
+<tr>
+<td>community</td>
+<td>社区</td>
+</tr>
+<tr>
+<td>container</td>
+<td>容器</td>
+</tr>
+<tr>
+<td>content</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>copyright</td>
+<td>版权</td>
+</tr>
+<tr>
+<td>current</td>
+<td>当前态，选中态</td>
+</tr>
+<tr>
+<td>default</td>
+<td>默认</td>
+</tr>
+<tr>
+<td>description</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>details</td>
+<td>细节</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>不可用</td>
+</tr>
+<tr>
+<td>entry</td>
+<td>文章，博文</td>
+</tr>
+<tr>
+<td>error</td>
+<td>错误</td>
+</tr>
+<tr>
+<td>even</td>
+<td>偶数，常用于多行列表或表格中</td>
+</tr>
+<tr>
+<td>fail</td>
+<td>失败（提示）</td>
+</tr>
+<tr>
+<td>feature</td>
+<td>专题</td>
+</tr>
+<tr>
+<td>fewer</td>
+<td>收起</td>
+</tr>
+<tr>
+<td>field</td>
+<td>用于表单的输入区域</td>
+</tr>
+<tr>
+<td>figure</td>
+<td>图</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>筛选</td>
+</tr>
+<tr>
+<td>first</td>
+<td>第一个，常用于列表中</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>页脚</td>
+</tr>
+<tr>
+<td>forum</td>
+<td>论坛</td>
+</tr>
+<tr>
+<td>gallery</td>
+<td>画廊</td>
+</tr>
+<tr>
+<td>group</td>
+<td>模块，清除浮动</td>
+</tr>
+<tr>
+<td>header</td>
+<td>页头</td>
+</tr>
+<tr>
+<td>help</td>
+<td>帮助</td>
+</tr>
+<tr>
+<td>hide</td>
+<td>隐藏</td>
+</tr>
+<tr>
+<td>hightlight</td>
+<td>高亮</td>
+</tr>
+<tr>
+<td>home</td>
+<td>主页</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>图标</td>
+</tr>
+<tr>
+<td>info,information</td>
+<td>信息</td>
+</tr>
+<tr>
+<td>last</td>
+<td>最后一个，常用于列表中</td>
+</tr>
+<tr>
+<td>links</td>
+<td>链接</td>
+</tr>
+<tr>
+<td>login</td>
+<td>登录</td>
+</tr>
+<tr>
+<td>logout</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>logo</td>
+<td>标志</td>
+</tr>
+<tr>
+<td>main</td>
+<td>主体</td>
+</tr>
+<tr>
+<td>menu</td>
+<td>菜单</td>
+</tr>
+<tr>
+<td>meta</td>
+<td>作者、更新时间等信息栏，一般位于标题之下</td>
+</tr>
+<tr>
+<td>module</td>
+<td>模块</td>
+</tr>
+<tr>
+<td>more</td>
+<td>更多（展开）</td>
+</tr>
+<tr>
+<td>msg,message</td>
+<td>消息</td>
+</tr>
+<tr>
+<td>nav,navigation</td>
+<td>导航</td>
+</tr>
+<tr>
+<td>next</td>
+<td>下一页</td>
+</tr>
+<tr>
+<td>nub</td>
+<td>小块</td>
+</tr>
+<tr>
+<td>odd</td>
+<td>奇数，常用于多行列表或表格中</td>
+</tr>
+<tr>
+<td>off</td>
+<td>鼠标离开</td>
+</tr>
+<tr>
+<td>on</td>
+<td>鼠标移过</td>
+</tr>
+<tr>
+<td>output</td>
+<td>输出</td>
+</tr>
+<tr>
+<td>pagination</td>
+<td>分页</td>
+</tr>
+<tr>
+<td>pop,popup</td>
+<td>弹窗</td>
+</tr>
+<tr>
+<td>preview</td>
+<td>预览</td>
+</tr>
+<tr>
+<td>previous</td>
+<td>上一页</td>
+</tr>
+<tr>
+<td>primary</td>
+<td>主要</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>进度条</td>
+</tr>
+<tr>
+<td>promotion</td>
+<td>促销</td>
+</tr>
+<tr>
+<td>rcommd,recommendations</td>
+<td>推荐</td>
+</tr>
+<tr>
+<td>reg,register</td>
+<td>注册</td>
+</tr>
+<tr>
+<td>save</td>
+<td>保存</td>
+</tr>
+<tr>
+<td>search</td>
+<td>搜索</td>
+</tr>
+<tr>
+<td>secondary</td>
+<td>次要</td>
+</tr>
+<tr>
+<td>section</td>
+<td>区块</td>
+</tr>
+<tr>
+<td>selected</td>
+<td>已选</td>
+</tr>
+<tr>
+<td>share</td>
+<td>分享</td>
+</tr>
+<tr>
+<td>show</td>
+<td>显示</td>
+</tr>
+<tr>
+<td>sidebar</td>
+<td>边栏，侧栏</td>
+</tr>
+<tr>
+<td>slide</td>
+<td>幻灯片，图片切换</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>排序</td>
+</tr>
+<tr>
+<td>sub</td>
+<td>次级的，子级的</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>提交</td>
+</tr>
+<tr>
+<td>subscribe</td>
+<td>订阅</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>副标题</td>
+</tr>
+<tr>
+<td>success</td>
+<td>成功（提示）</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>摘要</td>
+</tr>
+<tr>
+<td>tab</td>
+<td>标签页</td>
+</tr>
+<tr>
+<td>table</td>
+<td>表格</td>
+</tr>
+<tr>
+<td>txt,text</td>
+<td>文本</td>
+</tr>
+<tr>
+<td>thumbnail</td>
+<td>缩略图</td>
+</tr>
+<tr>
+<td>time</td>
+<td>时间</td>
+</tr>
+<tr>
+<td>tips</td>
+<td>提示</td>
+</tr>
+<tr>
+<td>title</td>
+<td>标题</td>
+</tr>
+<tr>
+<td>video</td>
+<td>视频</td>
+</tr>
+<tr>
+<td>wrap</td>
+<td>容器，包，一般用于最外层</td>
+</tr>
+<tr>
+<td>wrapper</td>
+<td>容器，包，一般用于最外层</td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -996,7 +1655,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://linxueya.github.io/post/76206bf9.html">http://linxueya.github.io/post/76206bf9.html</a>
+                    <a href="http://linxueya.github.io/post/574f280b.html">http://linxueya.github.io/post/574f280b.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1034,8 +1693,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JS/">
-                                    <span class="chip bg-color">JS</span>
+                                <a href="/tags/HTML/">
+                                    <span class="chip bg-color">HTML</span>
+                                </a>
+                            
+                                <a href="/tags/CCS/">
+                                    <span class="chip bg-color">CCS</span>
                                 </a>
                             
                         </div>
@@ -1473,29 +2136,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/post/3df1188b.html">
+                <a href="/post/574f280b.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/1.jpg" class="responsive-img" alt="JS基本语法之预解析">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/15.jpg" class="responsive-img" alt="前端代码规范">
                         
-                        <span class="card-title">JS基本语法之预解析</span>
+                        <span class="card-title">前端代码规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JS基本语法
+                            前端代码规范
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1508,11 +2172,16 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                    <a href="/tags/CCS/">
+                        <span class="chip bg-color">CCS</span>
                     </a>
                     
                 </div>
@@ -1526,24 +2195,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/877bf8ef.html">
+                <a href="/post/c60c369d.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/19.jpg" class="responsive-img" alt="JS基本语法之函数">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/11.jpg" class="responsive-img" alt="jQuery快速开发">
                         
-                        <span class="card-title">JS基本语法之函数</span>
+                        <span class="card-title">jQuery快速开发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JS基本语法
+                            jQuery快速开发
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-10
                             </span>
                         <span class="publish-author">
                             
@@ -1560,8 +2229,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
+                    <a href="/tags/jQuery/">
+                        <span class="chip bg-color">jQuery</span>
                     </a>
                     
                 </div>

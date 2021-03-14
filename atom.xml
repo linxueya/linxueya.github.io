@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-03-08T14:48:42.428Z</updated>
+  <updated>2021-03-13T08:03:58.905Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,66 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>前端代码规范</title>
+    <link href="http://linxueya.github.io/post/574f280b.html"/>
+    <id>http://linxueya.github.io/post/574f280b.html</id>
+    <published>2021-03-13T04:41:14.000Z</published>
+    <updated>2021-03-13T08:03:58.905Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;代码规范&quot;&gt;&lt;a href=&quot;#代码规范&quot; class=&quot;headerlink&quot; title=&quot;代码规范&quot;&gt;&lt;/a&gt;代码规范&lt;/h1&gt;&lt;h2 id=&quot;1-概述&quot;&gt;&lt;a href=&quot;#1-概述&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="HTML" scheme="http://linxueya.github.io/tags/HTML/"/>
+    
+    <category term="CCS" scheme="http://linxueya.github.io/tags/CCS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery快速开发</title>
+    <link href="http://linxueya.github.io/post/c60c369d.html"/>
+    <id>http://linxueya.github.io/post/c60c369d.html</id>
+    <published>2021-03-10T08:37:56.000Z</published>
+    <updated>2021-03-10T11:48:18.586Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt;  能够说出jQuery的特点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="jQuery" scheme="http://linxueya.github.io/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Web-APIs5</title>
     <link href="http://linxueya.github.io/post/4c5efbe8.html"/>
     <id>http://linxueya.github.io/post/4c5efbe8.html</id>
     <published>2021-03-08T06:52:34.000Z</published>
-    <updated>2021-03-08T14:48:42.428Z</updated>
+    <updated>2021-03-10T08:38:14.962Z</updated>
     
     
       
@@ -49,7 +104,7 @@
     <link href="http://linxueya.github.io/post/3b59cb7e.html"/>
     <id>http://linxueya.github.io/post/3b59cb7e.html</id>
     <published>2021-03-04T08:42:27.000Z</published>
-    <updated>2021-03-08T06:50:48.958Z</updated>
+    <updated>2021-03-13T09:05:17.559Z</updated>
     
     
       

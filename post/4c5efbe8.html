@@ -34,8 +34,8 @@
 
 <meta name="generator" content="Hexo 5.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
-</head>
+<link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -914,14 +914,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-08
+                    2021-03-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    201
+                    732
                 </div>
                 
 
@@ -984,7 +984,61 @@
 <h2 id="移动端常见特效"><a href="#移动端常见特效" class="headerlink" title="移动端常见特效"></a>移动端常见特效</h2><p>案例：移动端轮播图</p>
 <!--拖动翻页  过度完成之后再判断是否轮播完-->
 
-<h2 id="移动端常用开发插件"><a href="#移动端常用开发插件" class="headerlink" title="移动端常用开发插件"></a>移动端常用开发插件</h2><h2 id="移动端常用开发框架"><a href="#移动端常用开发框架" class="headerlink" title="移动端常用开发框架"></a>移动端常用开发框架</h2>
+<p>classList 属性</p>
+<p>classList.add(类名)   添加类名</p>
+<p>案例：手指滑动轮播图</p>
+<p>拖动结束后切换轮播图</p>
+<p>案例：返回顶部</p>
+<p>click 延时：移动端click事件会有300ms的延时，原因是移动端双击会缩放页面 </p>
+<p>解决方案</p>
+<ul>
+<li>禁止缩放</li>
+<li>自定义函数</li>
+<li>fastclick</li>
+</ul>
+<h2 id="移动端常用开发插件"><a href="#移动端常用开发插件" class="headerlink" title="移动端常用开发插件"></a>移动端常用开发插件</h2><p>JS文件就是JS插件，它遵循一定的编写规范，方便程序展示效果，拥有特定功能且方便调用。 // 比如轮播图和瀑布流插件</p>
+<ul>
+<li><p>fastclick插件：解决click延时</p>
+</li>
+<li><p>swiper插件：轮播图</p>
+</li>
+<li><p>superslide：焦点图 tab标签切换  图片滚动</p>
+</li>
+</ul>
+<h3 id="插件的使用"><a href="#插件的使用" class="headerlink" title="插件的使用"></a>插件的使用</h3><ol>
+<li>确认插件实现的功能</li>
+<li>去官网查看使用说明</li>
+<li>下载插件</li>
+<li>打开demo实例文件，查看需要引入的相关文件</li>
+<li>复制demo实例文件中的结构HTML，CSS 以及JS</li>
+</ol>
+<p>练习：移动端视频插件  zy.media.js</p>
+<h2 id="移动端常用开发框架"><a href="#移动端常用开发框架" class="headerlink" title="移动端常用开发框架"></a>移动端常用开发框架</h2><p>框架就是一套架构，他会基于自身的特点向用户提供一套较为完整的解决方案。</p>
+<p>插件一般是为了解决某个问题而专门存在，其功能单一，并且比较小</p>
+<h2 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h2><p>随着互联网的快速发展，基于网页的应用越来越普遍，同时也变得越来越复杂，为了满足各种这样的需求，会经常在本地存储大量的数据。</p>
+<p>本地存储特性</p>
+<ol>
+<li>数据存储在用户浏览器中</li>
+<li>设置、读取甚至页面刷新也不丢失数据</li>
+<li>容量较大， sessionStorage 约 5M   localStorage 约 20M</li>
+<li>只能存储字符串</li>
+</ol>
+<p>window.sessionStorage </p>
+<ol>
+<li>生命周期为关闭浏览器窗口</li>
+<li>在同一个窗口（页面）下数据可以共享</li>
+<li>以键值对的形式存储使用   sessionStorage.setItem (key,value)</li>
+<li>sessionStorage.setItem  增加  sessionStorage.getItem 获取  sessionStorage.removeItem  删除  sessionStorage.clear  全部清除</li>
+</ol>
+<p>window.sessionStorage </p>
+<ol>
+<li>生命周期永久生效，除非手动删除，否则关闭页面也会存在</li>
+<li>可以多窗口（页面）共享</li>
+<li>以键值对的形式存储使用   localStorage.setItem (key,value)</li>
+<li>localStorage.setItem  增加  localStorage.getItem 获取  localStorage.removeItem  删除  localStorage.clear  全部清除</li>
+</ol>
+<p>案例：记住用户名</p>
+
                 
             </div>
             <hr/>
@@ -1487,30 +1541,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/post/4c5efbe8.html">
+                <a href="/post/c60c369d.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/13.jpg" class="responsive-img" alt="Web-APIs5">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/11.jpg" class="responsive-img" alt="jQuery快速开发">
                         
-                        <span class="card-title">Web-APIs5</span>
+                        <span class="card-title">jQuery快速开发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            移动 端网页特效
+                            jQuery快速开发
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-10
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1523,12 +1576,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
+                    <a href="/tags/jQuery/">
+                        <span class="chip bg-color">jQuery</span>
                     </a>
                     
                 </div>
