@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-03-13T08:03:58.905Z</updated>
+  <updated>2021-03-16T04:35:04.833Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>心之语</title>
+    <link href="http://linxueya.github.io/post/acd318ce.html"/>
+    <id>http://linxueya.github.io/post/acd318ce.html</id>
+    <published>2021-03-16T04:31:19.000Z</published>
+    <updated>2021-03-16T04:35:04.833Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;   你是精灵，生长自我的灵魂。&lt;br&gt;   许多年前，你走进我的梦境。我看的清楚记得分明。梦醒时分，我看到一束阳光，从瓦缝中斜斜的泻下来。在那最明亮的光束中，有无数的精灵。&lt;br&gt;    那是你吗，不可捉摸的精灵？&lt;/p&gt;
+&lt;p&gt;  </summary>
+        
+      
+    
+    
+    
+    <category term="日常" scheme="http://linxueya.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="散文集" scheme="http://linxueya.github.io/tags/%E6%95%A3%E6%96%87%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>背包九讲</title>
+    <link href="http://linxueya.github.io/post/e45f505b.html"/>
+    <id>http://linxueya.github.io/post/e45f505b.html</id>
+    <published>2021-03-15T12:00:05.000Z</published>
+    <updated>2021-03-15T13:09:54.679Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;01背包&quot;&gt;&lt;a href=&quot;#01背包&quot; class=&quot;headerlink&quot; title=&quot;01背包&quot;&gt;&lt;/a&gt;01背包&lt;/h2&gt;&lt;p&gt;有 &lt;em&gt;N&lt;/em&gt; 件物品和一个容量是 &lt;em&gt;V&lt;/em&gt; 的背包。每件物品只能使用一次。&lt;/p&gt;
+&lt;p&gt;第</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="http://linxueya.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="动态规划" scheme="http://linxueya.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
     <title>前端代码规范</title>
     <link href="http://linxueya.github.io/post/574f280b.html"/>
     <id>http://linxueya.github.io/post/574f280b.html</id>
     <published>2021-03-13T04:41:14.000Z</published>
-    <updated>2021-03-13T08:03:58.905Z</updated>
+    <updated>2021-03-14T12:21:33.894Z</updated>
     
     
       
@@ -48,7 +100,7 @@
     <link href="http://linxueya.github.io/post/c60c369d.html"/>
     <id>http://linxueya.github.io/post/c60c369d.html</id>
     <published>2021-03-10T08:37:56.000Z</published>
-    <updated>2021-03-10T11:48:18.586Z</updated>
+    <updated>2021-03-14T12:18:31.956Z</updated>
     
     
       
@@ -104,7 +156,7 @@
     <link href="http://linxueya.github.io/post/3b59cb7e.html"/>
     <id>http://linxueya.github.io/post/3b59cb7e.html</id>
     <published>2021-03-04T08:42:27.000Z</published>
-    <updated>2021-03-13T09:05:17.559Z</updated>
+    <updated>2021-03-15T14:14:02.903Z</updated>
     
     
       
