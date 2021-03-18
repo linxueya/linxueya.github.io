@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-03-16T04:35:04.833Z</updated>
+  <updated>2021-03-17T13:21:49.145Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>BFS算法模板</title>
+    <link href="http://linxueya.github.io/post/ef821204.html"/>
+    <id>http://linxueya.github.io/post/ef821204.html</id>
+    <published>2021-03-17T13:15:31.000Z</published>
+    <updated>2021-03-17T13:21:49.145Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;BFS使用队列，把每个还没有搜索到的点依次放入队列，然后再弹出队列的头部元素当做当前遍历点。BFS总共有两个模板：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果不需要确定当前遍历到了哪一层，BFS模板如下。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="http://linxueya.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="BFS" scheme="http://linxueya.github.io/tags/BFS/"/>
+    
+    <category term="迭代" scheme="http://linxueya.github.io/tags/%E8%BF%AD%E4%BB%A3/"/>
+    
+  </entry>
+  
+  <entry>
     <title>心之语</title>
     <link href="http://linxueya.github.io/post/acd318ce.html"/>
     <id>http://linxueya.github.io/post/acd318ce.html</id>
     <published>2021-03-16T04:31:19.000Z</published>
-    <updated>2021-03-16T04:35:04.833Z</updated>
+    <updated>2021-03-16T04:36:05.134Z</updated>
     
     
       
@@ -47,7 +78,7 @@
     <link href="http://linxueya.github.io/post/e45f505b.html"/>
     <id>http://linxueya.github.io/post/e45f505b.html</id>
     <published>2021-03-15T12:00:05.000Z</published>
-    <updated>2021-03-15T13:09:54.679Z</updated>
+    <updated>2021-03-16T04:36:05.160Z</updated>
     
     
       
@@ -128,7 +159,7 @@
     <link href="http://linxueya.github.io/post/4c5efbe8.html"/>
     <id>http://linxueya.github.io/post/4c5efbe8.html</id>
     <published>2021-03-08T06:52:34.000Z</published>
-    <updated>2021-03-10T08:38:14.962Z</updated>
+    <updated>2021-03-17T13:16:02.472Z</updated>
     
     
       
@@ -156,7 +187,7 @@
     <link href="http://linxueya.github.io/post/3b59cb7e.html"/>
     <id>http://linxueya.github.io/post/3b59cb7e.html</id>
     <published>2021-03-04T08:42:27.000Z</published>
-    <updated>2021-03-15T14:14:02.903Z</updated>
+    <updated>2021-03-16T05:37:30.540Z</updated>
     
     
       
@@ -521,27 +552,6 @@
     
     
     <category term="hexo" scheme="http://linxueya.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://linxueya.github.io/post/16107.html"/>
-    <id>http://linxueya.github.io/post/16107.html</id>
-    <published>2021-01-31T13:21:47.265Z</published>
-    <updated>2021-02-01T06:07:44.442Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
