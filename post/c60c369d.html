@@ -914,14 +914,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-14
+                    2021-03-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    122
+                    1.1k
                 </div>
                 
 
@@ -949,9 +949,15 @@
                 <ul>
 <li><p><input disabled="" type="checkbox">  能够说出jQuery的特点</p>
 </li>
-<li><p><input disabled="" type="checkbox">  能够简单使用jQuery</p>
-</li>
 <li><p><input disabled="" type="checkbox">  能够说出DOM对象和jQuery对象的区别</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够写出常用的jQuery选择器</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够操作jQuery样式</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够写出常用的jQuery动画</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够操作jQuery属性和元素</p>
 </li>
 </ul>
 <h2 id="jQuery概述"><a href="#jQuery概述" class="headerlink" title="jQuery概述"></a>jQuery概述</h2><h3 id="JavaScript库"><a href="#JavaScript库" class="headerlink" title="JavaScript库"></a>JavaScript库</h3><p>JavaScript库是一个封装好的特定的集合（方法和函数）。比尔动画animate、hide、show等</p>
@@ -965,7 +971,122 @@
 <li>移动端的  zepto</li>
 </ul>
 <h3 id="jQuery的概念"><a href="#jQuery的概念" class="headerlink" title="jQuery的概念"></a>jQuery的概念</h3><p>jQuery是一个快速、简介的JavaScript库。jQuery封装了JavaScript常见的功能代码，优化了DOM操作，事件处理、动画设计和Ajia交互</p>
-<h2 id="jQuery基本使用"><a href="#jQuery基本使用" class="headerlink" title="jQuery基本使用"></a>jQuery基本使用</h2>
+<h2 id="jQuery基本使用"><a href="#jQuery基本使用" class="headerlink" title="jQuery基本使用"></a>jQuery基本使用</h2><h3 id="jQuery入口函数"><a href="#jQuery入口函数" class="headerlink" title="jQuery入口函数"></a>jQuery入口函数</h3><ul>
+<li>```<br>$(function(){<pre><code>... //此处是页面DOM加载完成的入口
+</code></pre>
+});<pre class="line-numbers language-none"><code class="language-none">
+- ```
+  $(document).ready(fuction(){
+  	... //此处是页面DOM加载完成的入口
+  });<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>$ 是jQuery的别称，同时也是jQuery的顶级对象</li>
+</ul>
+<h3 id="jQuery对象和DOM对象"><a href="#jQuery对象和DOM对象" class="headerlink" title="jQuery对象和DOM对象"></a>jQuery对象和DOM对象</h3><p>jQuery对象只能使用jQuery方法，DOM对象只能使用原生的JavaScript属性和方法</p>
+<p>原生js比jQuery更大，因此需要互相转换</p>
+<ul>
+<li>DOM转jQuery:  $(DOM)</li>
+<li>jQuery转DOM: jQuery[index]  ||  jQuery.get(index)</li>
+</ul>
+<h2 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h2><p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/jQuery-choose.png"></p>
+<p>获取元素： $(“div”);</p>
+<p>设置样式： $(“div”).css(“background”,”pink”);</p>
+<p>隐式迭代（重要）：遍历内部DOM元素（伪数组形式存储）的过程就叫做隐式迭代。</p>
+<p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/jQuery-choose2.png"></p>
+<p>案例：新浪下拉菜单</p>
+<p>案例效果：GO</p>
+<h3 id="筛选元素"><a href="#筛选元素" class="headerlink" title="筛选元素 :"></a>筛选元素 :</h3><p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/jQuery-choose3.png"></p>
+<ul>
+<li>兄弟元素siblings, 除了自身元素之外的亲兄弟： <code> $(0l .item).siblings("li").css("color","red");</code></li>
+<li>第n个元素（1）利用选择器的方式来选择：<code>$("ul li:eq(2)").css("color","red")</code>;</li>
+<li>第n个元素（2）==利用选择方法的方式来选择==：<code>$("ul li").eq(2).css("color","red")</code>;</li>
+<li>判断是都有某个类名</li>
+</ul>
+<p>重点记住：parent()   children()   find()   siblings()  eq()</p>
+<h3 id="排它思想"><a href="#排它思想" class="headerlink" title="排它思想"></a>排它思想</h3><p>案例：淘宝服饰tab栏切换</p>
+<!--得到当前索引号：$(this).index()-->
+
+<h3 id="链式编程"><a href="#链式编程" class="headerlink" title="链式编程"></a>链式编程</h3><p>$(this).css(‘color’,’red’).sibling().css(‘color’,’’);</p>
+<h2 id="jQuery样式操作"><a href="#jQuery样式操作" class="headerlink" title="jQuery样式操作"></a>jQuery样式操作</h2><h3 id="操作ccs样式"><a href="#操作ccs样式" class="headerlink" title="操作ccs样式"></a>操作ccs样式</h3><ul>
+<li>参数只写属性名，则返回属性值 <code>$(this).css("color");</code></li>
+<li>参数是属性名，属性值，逗号隔开 <code>$(this).css("color","red");</code></li>
+<li>可以是使用对象的方式来操作，如果复合属性必须使用驼峰命名法 <code>$(this).css({color":"red","font-size":"20px"});</code></li>
+</ul>
+<h3 id="设置类样式方法"><a href="#设置类样式方法" class="headerlink" title="设置类样式方法"></a>设置类样式方法</h3><ul>
+<li>添加类： addClass</li>
+<li>删除类： removeClass</li>
+<li>切换类：toggleClass</li>
+</ul>
+<p>案例： tab栏切换</p>
+<h2 id="jQuery效果"><a href="#jQuery效果" class="headerlink" title="jQuery效果"></a>jQuery效果</h2><p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/jQuery-animate.png"></p>
+<h3 id="显示隐藏效果"><a href="#显示隐藏效果" class="headerlink" title="显示隐藏效果"></a>显示隐藏效果</h3><ul>
+<li>显示 <code> show([speed,[easing],[fn]])</code> // 参数可省略，无动画直接显示</li>
+<li>隐藏 <code> hide([speed,[easing],[fn]])</code></li>
+<li>切换 <code>toggle([speed,[easing],[fn]])</code></li>
+</ul>
+<p>案例</p>
+<h3 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h3><ul>
+<li>向下滑动 <code>slideDown([easing],[fn]])</code> // 参数可省略，无动画直接显示</li>
+<li>向上滑动 <code> slideUp([speed,[easing],[fn]])</code></li>
+<li>滑动切换 <code>slideToggle([speed,[easing],[fn]])</code></li>
+</ul>
+<h3 id="事件切换"><a href="#事件切换" class="headerlink" title="事件切换"></a>事件切换</h3><ul>
+<li>hover就是鼠标经过和离开的复合写法 ：<code>hover(function(){ },function(){ })</code></li>
+<li>hover, 一个function：  <code>hover(function(){  toggle   })</code></li>
+</ul>
+<h3 id="动画效果队列"><a href="#动画效果队列" class="headerlink" title="动画效果队列"></a>动画效果队列</h3><p>停止排队： stop（）</p>
+<p>stop() 写到动画或者效果的前面，相当于停止上一次动画</p>
+<h3 id="淡入淡出"><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h3><ul>
+<li>淡入 <code>fadeIn([easing],[fn]])</code> // 参数可省略，无动画直接显示</li>
+<li>淡出 <code>fadeOut([speed,[easing],[fn]])</code></li>
+<li>淡入淡出切换 <code>fadeToggle([speed,[easing],[fn]])</code></li>
+<li>透明度切换 <code>fadeTo([[speed],opacity,[easing],[fn]])</code></li>
+</ul>
+<p>案例</p>
+<h3 id="自定义动画"><a href="#自定义动画" class="headerlink" title="自定义动画"></a>自定义动画</h3><ul>
+<li><code>animate(params,[speed],opacity,[easing],[fn])</code></li>
+<li>params 想要更改的样式属性，以对象的形式传递</li>
+</ul>
+<p>案例：王者荣耀手风琴</p>
+<h2 id="jQuery属性操作"><a href="#jQuery属性操作" class="headerlink" title="jQuery属性操作"></a>jQuery属性操作</h2><ul>
+<li>设置或获取固有属性值  prop(“属性名”)   prop(“属性名”，属性值)   </li>
+<li>设置或获取自定义属性值  attr (“属性名”)   attr(“属性名”，属性值)   </li>
+</ul>
+<p>案例：购物车全选</p>
+<h2 id="jQuery文本属性值"><a href="#jQuery文本属性值" class="headerlink" title="jQuery文本属性值"></a>jQuery文本属性值</h2><p>普通元素内容 html()  // 相当于innerHTML</p>
+<p>普通元素文本内容text()  // 相当于innerTEXT</p>
+<p>获取表单的值   val()</p>
+<p>案例：购物车案例模块</p>
+<!--增减商品数量分析-->
+
+<!--修改商品小计  返回指定父元素-->
+
+<h2 id="jQuery元素操作"><a href="#jQuery元素操作" class="headerlink" title="jQuery元素操作"></a>jQuery元素操作</h2><h3 id="遍历元素"><a href="#遍历元素" class="headerlink" title="遍历元素"></a>遍历元素</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span>domEle</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	xxx<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>each() 方法遍历匹配每一个元素，index是每个元素的索引号；domEle是每个DOM元素对象（需要转化为jQuery对象）</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">$<span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span>object<span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span>element</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	xxx<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>$.each() 方法可用于遍历任何对象，主要用于数据处理。index是每个元素的索引号；element为遍历内容    </li>
+</ol>
+<p>案例：购物车案例模块-计算总和</p>
+<h3 id="创建元素"><a href="#创建元素" class="headerlink" title="创建元素"></a>创建元素</h3><p><code>$("&lt;li&gt;&lt;/li&gt;");</code>  </p>
+<p>内部后面添加   append    // 父子关系</p>
+<p>内部前面添加  prepend</p>
+<p>外部后面添加   after    //  兄弟关系</p>
+<p>外部前面添加  before</p>
+<p>删除元素</p>
+<ul>
+<li>remove()   //  删除匹配的元素</li>
+<li>empty()   //  删除匹配的元素集合中的所有子节点</li>
+<li>html(“ “)   // 清空匹配的元素内容</li>
+</ul>
+<p>案例：购物车案例模块-删除商品模块</p>
+<p>案例：购物车案例模块-选中商品添加背景</p>
+
                 
             </div>
             <hr/>
