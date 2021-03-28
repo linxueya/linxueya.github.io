@@ -914,7 +914,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-24
+                    2021-03-27
                 </div>
                 
 
@@ -993,7 +993,7 @@
 <p>隐式迭代（重要）：遍历内部DOM元素（伪数组形式存储）的过程就叫做隐式迭代。</p>
 <p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/jQuery-choose2.png"></p>
 <p>案例：新浪下拉菜单</p>
-<p>案例效果：GO</p>
+<p>案例效果：<a target="_blank" rel="noopener" href="https://cdn.linxueya.cn/code/web/jQuery/quick/sina.html">GO</a></p>
 <h3 id="筛选元素"><a href="#筛选元素" class="headerlink" title="筛选元素 :"></a>筛选元素 :</h3><p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/jQuery-choose3.png"></p>
 <ul>
 <li>兄弟元素siblings, 除了自身元素之外的亲兄弟： <code> $(0l .item).siblings("li").css("color","red");</code></li>
@@ -1002,8 +1002,9 @@
 <li>判断是都有某个类名</li>
 </ul>
 <p>重点记住：parent()   children()   find()   siblings()  eq()</p>
-<h3 id="排它思想"><a href="#排它思想" class="headerlink" title="排它思想"></a>排它思想</h3><p>案例：淘宝服饰tab栏切换</p>
-<!--得到当前索引号：$(this).index()-->
+<h3 id="排它思想"><a href="#排它思想" class="headerlink" title="排它思想"></a>排它思想</h3><!--得到当前索引号：$(this).index()-->
+
+
 
 <h3 id="链式编程"><a href="#链式编程" class="headerlink" title="链式编程"></a>链式编程</h3><p>$(this).css(‘color’,’red’).sibling().css(‘color’,’’);</p>
 <h2 id="jQuery样式操作"><a href="#jQuery样式操作" class="headerlink" title="jQuery样式操作"></a>jQuery样式操作</h2><h3 id="操作ccs样式"><a href="#操作ccs样式" class="headerlink" title="操作ccs样式"></a>操作ccs样式</h3><ul>
@@ -1017,13 +1018,13 @@
 <li>切换类：toggleClass</li>
 </ul>
 <p>案例： tab栏切换</p>
+<p>案例效果：<a target="_blank" rel="noopener" href="https://cdn.linxueya.cn/code/web/jQuery/quick/tab.html">GO</a></p>
 <h2 id="jQuery效果"><a href="#jQuery效果" class="headerlink" title="jQuery效果"></a>jQuery效果</h2><p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/jQuery-animate.png"></p>
 <h3 id="显示隐藏效果"><a href="#显示隐藏效果" class="headerlink" title="显示隐藏效果"></a>显示隐藏效果</h3><ul>
 <li>显示 <code> show([speed,[easing],[fn]])</code> // 参数可省略，无动画直接显示</li>
 <li>隐藏 <code> hide([speed,[easing],[fn]])</code></li>
 <li>切换 <code>toggle([speed,[easing],[fn]])</code></li>
 </ul>
-<p>案例</p>
 <h3 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h3><ul>
 <li>向下滑动 <code>slideDown([easing],[fn]])</code> // 参数可省略，无动画直接显示</li>
 <li>向上滑动 <code> slideUp([speed,[easing],[fn]])</code></li>
@@ -1041,25 +1042,21 @@
 <li>淡入淡出切换 <code>fadeToggle([speed,[easing],[fn]])</code></li>
 <li>透明度切换 <code>fadeTo([[speed],opacity,[easing],[fn]])</code></li>
 </ul>
-<p>案例</p>
+<p>案例：高亮显示</p>
+<p>案例效果：<a target="_blank" rel="noopener" href="https://cdn.linxueya.cn/code/web/jQuery/quick/highlight/index.html">GO</a></p>
 <h3 id="自定义动画"><a href="#自定义动画" class="headerlink" title="自定义动画"></a>自定义动画</h3><ul>
 <li><code>animate(params,[speed],opacity,[easing],[fn])</code></li>
 <li>params 想要更改的样式属性，以对象的形式传递</li>
 </ul>
 <p>案例：王者荣耀手风琴</p>
+<p>案例：<a target="_blank" rel="noopener" href="https://cdn.linxueya.cn/code/web/jQuery/quick/king/index.html">GO</a></p>
 <h2 id="jQuery属性操作"><a href="#jQuery属性操作" class="headerlink" title="jQuery属性操作"></a>jQuery属性操作</h2><ul>
 <li>设置或获取固有属性值  prop(“属性名”)   prop(“属性名”，属性值)   </li>
 <li>设置或获取自定义属性值  attr (“属性名”)   attr(“属性名”，属性值)   </li>
 </ul>
-<p>案例：购物车全选</p>
 <h2 id="jQuery文本属性值"><a href="#jQuery文本属性值" class="headerlink" title="jQuery文本属性值"></a>jQuery文本属性值</h2><p>普通元素内容 html()  // 相当于innerHTML</p>
 <p>普通元素文本内容text()  // 相当于innerTEXT</p>
 <p>获取表单的值   val()</p>
-<p>案例：购物车案例模块</p>
-<!--增减商品数量分析-->
-
-<!--修改商品小计  返回指定父元素-->
-
 <h2 id="jQuery元素操作"><a href="#jQuery元素操作" class="headerlink" title="jQuery元素操作"></a>jQuery元素操作</h2><h3 id="遍历元素"><a href="#遍历元素" class="headerlink" title="遍历元素"></a>遍历元素</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span>domEle</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	xxx<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -1072,7 +1069,6 @@
 <ol>
 <li>$.each() 方法可用于遍历任何对象，主要用于数据处理。index是每个元素的索引号；element为遍历内容    </li>
 </ol>
-<p>案例：购物车案例模块-计算总和</p>
 <h3 id="创建元素"><a href="#创建元素" class="headerlink" title="创建元素"></a>创建元素</h3><p><code>$("&lt;li&gt;&lt;/li&gt;");</code>  </p>
 <p>内部后面添加   append    // 父子关系</p>
 <p>内部前面添加  prepend</p>
@@ -1084,8 +1080,23 @@
 <li>empty()   //  删除匹配的元素集合中的所有子节点</li>
 <li>html(“ “)   // 清空匹配的元素内容</li>
 </ul>
-<p>案例：购物车案例模块-删除商品模块</p>
-<p>案例：购物车案例模块-选中商品添加背景</p>
+<p>综合案例：购物车</p>
+<p>案例效果： <a target="_blank" rel="noopener" href="https://cdn.linxueya.cn/code/web/jQuery/quick/cart/index.html">GO</a></p>
+<ul>
+<li><p>全选</p>
+</li>
+<li><p>修改商品小计</p>
+<!--增减商品数量分析-->
+
+<!--修改商品小计  返回指定父元素-->
+</li>
+<li><p>计算总和</p>
+</li>
+<li><p>删除商品模块</p>
+</li>
+<li><p>选中商品添加背景</p>
+</li>
+</ul>
 
                 
             </div>

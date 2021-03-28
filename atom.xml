@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-03-24T07:22:43.102Z</updated>
+  <updated>2021-03-28T03:06:29.848Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,69 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>软件开发工程师面经</title>
+    <link href="http://linxueya.github.io/post/e540de51.html"/>
+    <id>http://linxueya.github.io/post/e540de51.html</id>
+    <published>2021-03-28T03:03:57.000Z</published>
+    <updated>2021-03-28T03:06:29.848Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;一个线程崩溃了，影响其他线程的正常运行吗&lt;/li&gt;
+&lt;li&gt;视频通话所用到的协议&lt;/li&gt;
+&lt;li&gt;虚拟内存&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="面经" scheme="http://linxueya.github.io/categories/%E9%9D%A2%E7%BB%8F/"/>
+    
+    
+    <category term="面经" scheme="http://linxueya.github.io/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript构造函数和原型</title>
+    <link href="http://linxueya.github.io/post/5096785c.html"/>
+    <id>http://linxueya.github.io/post/5096785c.html</id>
+    <published>2021-03-28T03:02:39.000Z</published>
+    <updated>2021-03-28T12:10:19.870Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 能够使用构造函数创建对象&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 能够说出原型的作用&lt;/li&gt;
+&lt;li&gt;&lt;input</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="ES6" scheme="http://linxueya.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript面向对象</title>
     <link href="http://linxueya.github.io/post/f818a4a.html"/>
     <id>http://linxueya.github.io/post/f818a4a.html</id>
     <published>2021-03-23T11:56:50.000Z</published>
-    <updated>2021-03-24T07:22:43.102Z</updated>
+    <updated>2021-03-28T03:00:31.964Z</updated>
     
     
       
@@ -40,7 +98,7 @@
     <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
-    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
+    <category term="ES6" scheme="http://linxueya.github.io/tags/ES6/"/>
     
   </entry>
   
@@ -49,7 +107,7 @@
     <link href="http://linxueya.github.io/post/f7b3a86d.html"/>
     <id>http://linxueya.github.io/post/f7b3a86d.html</id>
     <published>2021-03-21T12:03:38.000Z</published>
-    <updated>2021-03-24T07:34:29.458Z</updated>
+    <updated>2021-03-27T12:51:13.290Z</updated>
     
     
       
@@ -187,7 +245,7 @@
     <link href="http://linxueya.github.io/post/c60c369d.html"/>
     <id>http://linxueya.github.io/post/c60c369d.html</id>
     <published>2021-03-10T08:37:56.000Z</published>
-    <updated>2021-03-24T07:56:57.336Z</updated>
+    <updated>2021-03-27T12:33:28.647Z</updated>
     
     
       
@@ -288,7 +346,7 @@
     <link href="http://linxueya.github.io/post/82dc1122.html"/>
     <id>http://linxueya.github.io/post/82dc1122.html</id>
     <published>2021-03-03T15:13:04.000Z</published>
-    <updated>2021-03-04T12:13:28.559Z</updated>
+    <updated>2021-03-28T03:05:29.566Z</updated>
     
     
       
@@ -313,7 +371,7 @@
     <category term="面经" scheme="http://linxueya.github.io/categories/%E9%9D%A2%E7%BB%8F/"/>
     
     
-    <category term="前端" scheme="http://linxueya.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="面经" scheme="http://linxueya.github.io/tags/%E9%9D%A2%E7%BB%8F/"/>
     
   </entry>
   
@@ -496,58 +554,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;对象&quot;&gt;&lt;a href=&quot;#对象&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS基本语法之预解析</title>
-    <link href="http://linxueya.github.io/post/3df1188b.html"/>
-    <id>http://linxueya.github.io/post/3df1188b.html</id>
-    <published>2021-02-06T07:35:39.000Z</published>
-    <updated>2021-02-06T11:25:28.535Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;预解析&quot;&gt;&lt;a href=&quot;#预解析&quot; class=&quot;headerlink&quot; title=&quot;预解析&quot;&gt;&lt;/a&gt;预解析&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-javascript&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS基本语法之作用域</title>
-    <link href="http://linxueya.github.io/post/76206bf9.html"/>
-    <id>http://linxueya.github.io/post/76206bf9.html</id>
-    <published>2021-02-05T09:28:00.000Z</published>
-    <updated>2021-02-06T07:33:06.830Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;作用域&quot;&gt;&lt;a href=&quot;#作用域&quot; class=&quot;headerlink&quot; title=&quot;作用域&quot;&gt;&lt;/a&gt;作用域&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的&lt;/li&gt;
-&lt;li&gt;全局作用域</summary>
         
       
     

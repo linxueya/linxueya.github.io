@@ -2478,7 +2478,7 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
         <category>面经</category>
       </categories>
       <tags>
-        <tag>前端</tag>
+        <tag>面经</tag>
       </tags>
   </entry>
   <entry>
@@ -2646,7 +2646,7 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
 <p>隐式迭代（重要）：遍历内部DOM元素（伪数组形式存储）的过程就叫做隐式迭代。</p>
 <p><img src="https://cdn.linxueya.cn/img/jQuery-choose2.png"></p>
 <p>案例：新浪下拉菜单</p>
-<p>案例效果：GO</p>
+<p>案例效果：<a href="https://cdn.linxueya.cn/code/web/jQuery/quick/sina.html">GO</a></p>
 <h3 id="筛选元素"><a href="#筛选元素" class="headerlink" title="筛选元素 :"></a>筛选元素 :</h3><p><img src="https://cdn.linxueya.cn/img/jQuery-choose3.png"></p>
 <ul>
 <li>兄弟元素siblings, 除了自身元素之外的亲兄弟： <code> $(0l .item).siblings("li").css("color","red");</code></li>
@@ -2655,8 +2655,9 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
 <li>判断是都有某个类名</li>
 </ul>
 <p>重点记住：parent()   children()   find()   siblings()  eq()</p>
-<h3 id="排它思想"><a href="#排它思想" class="headerlink" title="排它思想"></a>排它思想</h3><p>案例：淘宝服饰tab栏切换</p>
-<!--得到当前索引号：$(this).index()-->
+<h3 id="排它思想"><a href="#排它思想" class="headerlink" title="排它思想"></a>排它思想</h3><!--得到当前索引号：$(this).index()-->
+
+
 
 <h3 id="链式编程"><a href="#链式编程" class="headerlink" title="链式编程"></a>链式编程</h3><p>$(this).css(‘color’,’red’).sibling().css(‘color’,’’);</p>
 <h2 id="jQuery样式操作"><a href="#jQuery样式操作" class="headerlink" title="jQuery样式操作"></a>jQuery样式操作</h2><h3 id="操作ccs样式"><a href="#操作ccs样式" class="headerlink" title="操作ccs样式"></a>操作ccs样式</h3><ul>
@@ -2670,13 +2671,13 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
 <li>切换类：toggleClass</li>
 </ul>
 <p>案例： tab栏切换</p>
+<p>案例效果：<a href="https://cdn.linxueya.cn/code/web/jQuery/quick/tab.html">GO</a></p>
 <h2 id="jQuery效果"><a href="#jQuery效果" class="headerlink" title="jQuery效果"></a>jQuery效果</h2><p><img src="https://cdn.linxueya.cn/img/jQuery-animate.png"></p>
 <h3 id="显示隐藏效果"><a href="#显示隐藏效果" class="headerlink" title="显示隐藏效果"></a>显示隐藏效果</h3><ul>
 <li>显示 <code> show([speed,[easing],[fn]])</code> // 参数可省略，无动画直接显示</li>
 <li>隐藏 <code> hide([speed,[easing],[fn]])</code></li>
 <li>切换 <code>toggle([speed,[easing],[fn]])</code></li>
 </ul>
-<p>案例</p>
 <h3 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h3><ul>
 <li>向下滑动 <code>slideDown([easing],[fn]])</code> // 参数可省略，无动画直接显示</li>
 <li>向上滑动 <code> slideUp([speed,[easing],[fn]])</code></li>
@@ -2694,25 +2695,21 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
 <li>淡入淡出切换 <code>fadeToggle([speed,[easing],[fn]])</code></li>
 <li>透明度切换 <code>fadeTo([[speed],opacity,[easing],[fn]])</code></li>
 </ul>
-<p>案例</p>
+<p>案例：高亮显示</p>
+<p>案例效果：<a href="https://cdn.linxueya.cn/code/web/jQuery/quick/highlight/index.html">GO</a></p>
 <h3 id="自定义动画"><a href="#自定义动画" class="headerlink" title="自定义动画"></a>自定义动画</h3><ul>
 <li><code>animate(params,[speed],opacity,[easing],[fn])</code></li>
 <li>params 想要更改的样式属性，以对象的形式传递</li>
 </ul>
 <p>案例：王者荣耀手风琴</p>
+<p>案例：<a href="https://cdn.linxueya.cn/code/web/jQuery/quick/king/index.html">GO</a></p>
 <h2 id="jQuery属性操作"><a href="#jQuery属性操作" class="headerlink" title="jQuery属性操作"></a>jQuery属性操作</h2><ul>
 <li>设置或获取固有属性值  prop(“属性名”)   prop(“属性名”，属性值)   </li>
 <li>设置或获取自定义属性值  attr (“属性名”)   attr(“属性名”，属性值)   </li>
 </ul>
-<p>案例：购物车全选</p>
 <h2 id="jQuery文本属性值"><a href="#jQuery文本属性值" class="headerlink" title="jQuery文本属性值"></a>jQuery文本属性值</h2><p>普通元素内容 html()  // 相当于innerHTML</p>
 <p>普通元素文本内容text()  // 相当于innerTEXT</p>
 <p>获取表单的值   val()</p>
-<p>案例：购物车案例模块</p>
-<!--增减商品数量分析-->
-
-<!--修改商品小计  返回指定父元素-->
-
 <h2 id="jQuery元素操作"><a href="#jQuery元素操作" class="headerlink" title="jQuery元素操作"></a>jQuery元素操作</h2><h3 id="遍历元素"><a href="#遍历元素" class="headerlink" title="遍历元素"></a>遍历元素</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span>domEle</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	xxx<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -2725,7 +2722,6 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
 <ol>
 <li>$.each() 方法可用于遍历任何对象，主要用于数据处理。index是每个元素的索引号；element为遍历内容    </li>
 </ol>
-<p>案例：购物车案例模块-计算总和</p>
 <h3 id="创建元素"><a href="#创建元素" class="headerlink" title="创建元素"></a>创建元素</h3><p><code>$("&lt;li&gt;&lt;/li&gt;");</code>  </p>
 <p>内部后面添加   append    // 父子关系</p>
 <p>内部前面添加  prepend</p>
@@ -2737,8 +2733,23 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
 <li>empty()   //  删除匹配的元素集合中的所有子节点</li>
 <li>html(“ “)   // 清空匹配的元素内容</li>
 </ul>
-<p>案例：购物车案例模块-删除商品模块</p>
-<p>案例：购物车案例模块-选中商品添加背景</p>
+<p>综合案例：购物车</p>
+<p>案例效果： <a href="https://cdn.linxueya.cn/code/web/jQuery/quick/cart/index.html">GO</a></p>
+<ul>
+<li><p>全选</p>
+</li>
+<li><p>修改商品小计</p>
+<!--增减商品数量分析-->
+
+<!--修改商品小计  返回指定父元素-->
+</li>
+<li><p>计算总和</p>
+</li>
+<li><p>删除商品模块</p>
+</li>
+<li><p>选中商品添加背景</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -3612,7 +3623,7 @@ while queue 不空：
         <category>编程</category>
       </categories>
       <tags>
-        <tag>JS</tag>
+        <tag>ES6</tag>
       </tags>
   </entry>
   <entry>
@@ -3630,18 +3641,16 @@ while queue 不空：
 <h2 id="jQuery事件注册"><a href="#jQuery事件注册" class="headerlink" title="jQuery事件注册"></a>jQuery事件注册</h2><h3 id="单个事件注册"><a href="#单个事件注册" class="headerlink" title="单个事件注册"></a>单个事件注册</h3><p>element.事件(function(){ })</p>
 <p>事件类型和DOM 类似</p>
 <h2 id="jQuery事件处理"><a href="#jQuery事件处理" class="headerlink" title="jQuery事件处理"></a>jQuery事件处理</h2><h3 id="on-绑定事件"><a href="#on-绑定事件" class="headerlink" title="on()绑定事件"></a>on()绑定事件</h3><ol>
-<li>可以绑定多个事件，多个事件处理程序</li>
-</ol>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+<li><p>可以绑定多个事件，多个事件处理程序</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token function-variable function">mouseover</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token function-variable function">mouseout</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token function-variable function">click</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​    如果时间处理程序相同</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"mouseover mouseout"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"mouseover mouseout"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toggleClass</span><span class="token punctuation">(</span><span class="token string">"current"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ol start="2">
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><p>可以事件委派操作。把原来加给子元素身上的事件绑定在父元素身上</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//  click 是绑定在ul身上的，但是触发的对象是ul里面的li</span>
 <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"ol"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token string">"li"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -3658,6 +3667,7 @@ while queue 不空：
 <p>案例：发布微博</p>
 </li>
 </ol>
+<p>案例效果：GO</p>
 <h3 id="off解绑事件"><a href="#off解绑事件" class="headerlink" title="off解绑事件"></a>off解绑事件</h3><p>off()方法可以移除通过on()方法添加的事件处理程序 </p>
 <h3 id="自动触发事件"><a href="#自动触发事件" class="headerlink" title="自动触发事件"></a>自动触发事件</h3><p>有些事件希望被==自动触发==</p>
 <ul>
@@ -3691,7 +3701,8 @@ while queue 不空：
 <h3 id="jQuery插件-全屏滚动"><a href="#jQuery插件-全屏滚动" class="headerlink" title="jQuery插件-全屏滚动"></a>jQuery插件-全屏滚动</h3><p>fullpage.js</p>
 <h3 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h3><p>​    Bootstrap是 Twitter 公司设计的基于HTML、CSS、JavaScript开发的简洁、直观、强悍的前端开发框架，他依靠jQuery实现，且支持响应式布局，使得 Web 开发更加方便快捷。</p>
 <p>​    Bootstrap组件使用非常方便:  1.引入bootstrap相关css和js        2.去官网复制html</p>
-<h3 id="综合案例：toDolist"><a href="#综合案例：toDolist" class="headerlink" title="综合案例：toDolist"></a>综合案例：toDolist</h3><!--读取数据 ->  存储数据  ->  渲染数据-->
+<h3 id="综合案例：toDolist"><a href="#综合案例：toDolist" class="headerlink" title="综合案例：toDolist"></a>综合案例：toDolist</h3><p>案例效果：GO</p>
+<!--读取数据 ->  存储数据  ->  渲染数据-->
 
 <!--先清空ol的内容，再进行追加-->
 
@@ -3703,19 +3714,110 @@ while queue 不空：
 </ul>
 <h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><p>位置主要有三个：offset()、position()、scrollTop()/scrollLeft()</p>
 <ul>
-<li><p>offset()设置或获取元素偏移，该方法有两个属性left、top</p>
-</li>
-<li><p>position()用于获取带有定位的父级偏移，如果没有带定位的父级，则以文档为主</p>
-</li>
+<li>offset()设置或获取元素偏移，该方法有两个属性left、top</li>
+<li>position()用于获取带有定位的父级偏移，如果没有带定位的父级，则以文档为主</li>
 </ul>
 <p>案例：品优购电梯导航</p>
-<p>点击导航栏，页面滚动；页面滚动，导航栏切换（这部分不明白）</p>
+<p>案例效果：GO</p>
+<!--点击导航栏，页面滚动；页面滚动，导航栏切换（这部分不明白）-->
+
 ]]></content>
       <categories>
         <category>编程</category>
       </categories>
       <tags>
         <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript构造函数和原型</title>
+    <url>/post/5096785c.html</url>
+    <content><![CDATA[<ul>
+<li><input disabled="" type="checkbox"> 能够使用构造函数创建对象</li>
+<li><input disabled="" type="checkbox"> 能够说出原型的作用</li>
+<li><input disabled="" type="checkbox"> 能够说出访问对象成员的规则</li>
+<li><input disabled="" type="checkbox"> 能够说出ES5新增的一些方法</li>
+</ul>
+<h2 id="构造函数和原型"><a href="#构造函数和原型" class="headerlink" title="构造函数和原型"></a>构造函数和原型</h2><p>在ES6之前，对象不是基于类创建的，而是用一种称为构建函数的特殊函数来定义对象和他们的特征</p>
+<ul>
+<li><p>对象字面量    var obj1 =  { };</p>
+</li>
+<li><p>new Object()   var obj2 = new Object();</p>
+</li>
+<li><p>自定义构造函数   </p>
+</li>
+<li><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Star</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    xxx<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span>pre <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"line-numbers language-none"</span><span class="token operator">></span><span class="token operator">&lt;</span>code <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"language-none"</span><span class="token operator">></span>
+### 构造函数
+
+<span class="token operator">-</span> 静态成员：在构造函数本身上添加的成员称为静态成员，只能由构造函数本身访问
+<span class="token operator">-</span> 实例成员：在构造函数内部创建的对象成员称为实例成员，只能由实例化对象访问
+
+### 构造函数原型 prototype
+
+构造函数存在内存分配的问题；通过原型分配的函数是所有对象共享的。每一个构造函数都有一个prototype属性，我们可以把那些<span class="token operator">==</span>不变的方法，直接定义在prototype对象上<span class="token operator">==</span>。
+<span class="token operator">&lt;</span>span aria<span class="token operator">-</span>hidden<span class="token operator">=</span><span class="token string">"true"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"line-numbers-rows"</span><span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span></code></pre>
+Star.prototype.func();
+<pre class="line-numbers language-none"><code class="language-none">
+### 对象原型 `__protp__`
+
+对象身上系统会自动添加一个`__protp__`，指向构造函数的prototype对象。但在实际开发中，不可以使用这个属性，它只是内部指向原型对象prototype
+
+### constructor 构造函数
+
+对象原型和构造函数原型对象里面都有一个constructor属性，我们称之为构造函数。
+
+利用字面量来创建原型对象时，需要手动的利用constructor这个属性指回原来的构造函数
+
+### JavaScript成员查找机制
+
+1. 当访问一个对象的属性或方法时，首先查找这个对象自身有没有该属性
+2. 如果没有就查找它的原型(也就是`__protp__`指向的prototype原型对象)
+3. 如果还没有就查找原型对象的原型(Object的原型对象)
+4. 依此类推一直找到object为止(null)
+5. `__protp__`对象原型的意义在于为对象成员查找机制提供一个方向，或者说一条路线
+
+原型对象和构造函数中的this都指的是实例化对象
+
+### 拓展内置对象
+
+可以通过原型对象，对原来的内置对象进行拓展自定义的方法。
+
+```javascript
+// 增加求和函数
+Array.prototype.sum = function(){
+    xxx;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+数组和字符串内置对象不能给原型对象覆盖操作
+</code></pre>
+</li>
+</ul>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>在ES6之前并没有给我们提供extends继承，我们可以通过构造函数+原型对象模拟实现继承，被称为组合继承。</p>
+<h3 id="call"><a href="#call" class="headerlink" title="call()"></a>call()</h3><p><code>fun.call(thisArg,arg1,arg2,...)</code>  调用这个函数可以修改函数运行时的this指向</p>
+<h2 id="ES5中新增的方法"><a href="#ES5中新增的方法" class="headerlink" title="ES5中新增的方法"></a>ES5中新增的方法</h2>]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件开发工程师面经</title>
+    <url>/post/e540de51.html</url>
+    <content><![CDATA[<ul>
+<li>一个线程崩溃了，影响其他线程的正常运行吗</li>
+<li>视频通话所用到的协议</li>
+<li>虚拟内存</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面经</category>
+      </categories>
+      <tags>
+        <tag>面经</tag>
       </tags>
   </entry>
 </search>
