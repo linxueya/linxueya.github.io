@@ -28,12 +28,19 @@ $(function(){
     function load(){
         var data = getdata();
         $("ol,ul").empty();
+        var todoCount = 0; // 正在进行的个数
+        var doneCount = 0; // 已经完成的个数
         $.each(data,function(i,n){
-            if(n.done)
+            if(n.done){
                 $("ul").prepend("<li><input type='checkbox' checked='checked' > <p>" + n.title + "</p> <a href='javascript:;' id=" + i + " ></a></li>");
-            else
+                doneCount++;
+            }else{
                 $("ol").prepend("<li><input type='checkbox'> <p>"+ n.title +"</p> <a href='javascript:;' id=" + i + " ></a></li>");
+                todoCount++;
+            }
         })
+        $("#todocount").text(todoCount);
+        $("#donecount").text(doneCount);
     }
 
     // 切换 已完成 未完成 状态
@@ -65,7 +72,7 @@ $(function(){
         var input = this.children[0];
         input.value = str;
         input.select();
-        // 当我们离开文本框就把文本框里面的值给span 
+        // 当我们离开文本框就把文本框里面的值给p
         input.onblur = function () {
             data[idx].title = this.value; //此时文本会替换input文本框
             savedata(data);
