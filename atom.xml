@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-03-28T12:11:36.806Z</updated>
+  <updated>2021-04-01T13:13:49.606Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript函数进阶</title>
+    <link href="http://linxueya.github.io/post/98c2129a.html"/>
+    <id>http://linxueya.github.io/post/98c2129a.html</id>
+    <published>2021-04-01T12:20:52.000Z</published>
+    <updated>2021-04-01T13:13:49.606Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 能够说出函数的多重定义和调用方式&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="ES6" scheme="http://linxueya.github.io/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>软件开发工程师面经</title>
@@ -51,7 +78,7 @@
     <link href="http://linxueya.github.io/post/5096785c.html"/>
     <id>http://linxueya.github.io/post/5096785c.html</id>
     <published>2021-03-28T03:02:39.000Z</published>
-    <updated>2021-03-29T11:04:20.139Z</updated>
+    <updated>2021-04-01T12:59:26.444Z</updated>
     
     
       
@@ -538,31 +565,6 @@
     
     
     <category term="star" scheme="http://linxueya.github.io/tags/star/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS基本语法之对象</title>
-    <link href="http://linxueya.github.io/post/686ee723.html"/>
-    <id>http://linxueya.github.io/post/686ee723.html</id>
-    <published>2021-02-06T07:36:06.000Z</published>
-    <updated>2021-02-15T07:19:33.322Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;对象&quot;&gt;&lt;a href=&quot;#对象&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
     
   </entry>
   

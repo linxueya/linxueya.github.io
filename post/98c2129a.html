@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="软件开发工程师面经, c++ js">
+    <meta name="keywords" content="JavaScript函数进阶, c++ js">
     <meta name="description" content="分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>软件开发工程师面经 | Linxueya&#39;s Blog</title>
+    <title>JavaScript函数进阶 | Linxueya&#39;s Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.linxueya.cn/medias/favicon.png">
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.linxueya.cn/lib/artitalk/artitalk.min.css">
@@ -761,12 +761,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">软件开发工程师面经</h1>
+                    <h1 class="description center-align post-title">JavaScript函数进阶</h1>
                 </div>
             </div>
         </div>
@@ -882,8 +882,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9D%A2%E7%BB%8F/">
-                                <span class="chip bg-color">面经</span>
+                            <a href="/tags/ES6/">
+                                <span class="chip bg-color">ES6</span>
                             </a>
                         
                     </div>
@@ -894,8 +894,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="post-category">
-                                面经
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
                             </a>
                         
                     </div>
@@ -907,21 +907,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-28
+                    2021-04-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-28
+                    2021-04-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    33
+                    250
                 </div>
                 
 
@@ -947,11 +947,60 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ul>
-<li>一个线程崩溃了，影响其他线程的正常运行吗</li>
-<li>视频通话所用到的协议</li>
-<li>虚拟内存</li>
+<li><input disabled="" type="checkbox"> 能够说出函数的多重定义和调用方式</li>
+<li><input disabled="" type="checkbox"> 能够说出和改变函数内部this的指向</li>
+<li><input disabled="" type="checkbox"> 能够说出严格模式的特点</li>
+<li><input disabled="" type="checkbox"> 能够把函数作为参数和返回值传递</li>
+<li><input disabled="" type="checkbox"> 能够说出闭包的作用</li>
+<li><input disabled="" type="checkbox"> 能够说出递归的两个条件</li>
+<li><input disabled="" type="checkbox"> 能够说出深拷贝和浅拷贝的区别</li>
 </ul>
+<h2 id="函数的定义和调用"><a href="#函数的定义和调用" class="headerlink" title="函数的定义和调用"></a>函数的定义和调用</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ol>
+<li><p>函数声明方式function 关键字（命名函数）</p>
+</li>
+<li><p>函数表达式（匿名函数）</p>
+</li>
+<li><p>new Function() </p>
+<p><code>var fn = new Function('参数1','参数2'...,'函数体')</code></p>
+</li>
+</ol>
+<p>所有函数都是Function的实例（对象）</p>
+<p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/JSfunction-def.png"></p>
+<h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><ol>
+<li><p>普通函数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
+</li>
+<li><p>对象的方法</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> o <span class="token operator">=</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">f</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+o<span class="token punctuation">.</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>构造函数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Star</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">new</span> <span class="token class-name">Star</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>绑定事件函数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">btn<span class="token punctuation">.</span><span class="token function">onclick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+点击按钮调用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>定时器函数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+定时器调用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>立即执行函数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+自动调用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2></li>
+</ol>
+<p>调用方式的不同，决定了this指向不同</p>
+<p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/JSfunction-this.png"></p>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2>
                 
             </div>
             <hr/>
@@ -977,7 +1026,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://linxueya.github.io/post/e540de51.html">http://linxueya.github.io/post/e540de51.html</a>
+                    <a href="http://linxueya.github.io/post/98c2129a.html">http://linxueya.github.io/post/98c2129a.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1015,8 +1064,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9D%A2%E7%BB%8F/">
-                                    <span class="chip bg-color">面经</span>
+                                <a href="/tags/ES6/">
+                                    <span class="chip bg-color">ES6</span>
                                 </a>
                             
                         </div>
@@ -1454,9 +1503,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/post/98c2129a.html">
                     <div class="card-image">
@@ -1474,9 +1524,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1489,6 +1539,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1507,19 +1558,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/5096785c.html">
+                <a href="/post/e540de51.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript构造函数和原型">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/1.jpg" class="responsive-img" alt="软件开发工程师面经">
                         
-                        <span class="card-title">JavaScript构造函数和原型</span>
+                        <span class="card-title">软件开发工程师面经</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaScript构造函数和原型
+                            C++,JS面经汇总
                         
                     </div>
                     <div class="publish-info">
@@ -1530,8 +1581,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
+                            <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="post-category">
+                                    面经
                                 </a>
                             
                             
@@ -1541,8 +1592,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ES6/">
-                        <span class="chip bg-color">ES6</span>
+                    <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                        <span class="chip bg-color">面经</span>
                     </a>
                     
                 </div>

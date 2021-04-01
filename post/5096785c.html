@@ -914,14 +914,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-29
+                    2021-04-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    743
+                    1k
                 </div>
                 
 
@@ -971,8 +971,10 @@
 
 ### 构造函数原型 prototype
 
+<span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">(</span>https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>linxueya<span class="token punctuation">.</span>cn<span class="token operator">/</span>img<span class="token operator">/</span>JSconstructor<span class="token operator">-</span>relation<span class="token punctuation">.</span>png<span class="token punctuation">)</span>
+
 构造函数存在内存分配的问题；通过原型分配的函数是所有对象共享的。每一个构造函数都有一个prototype属性，我们可以把那些<span class="token operator">==</span>不变的方法，直接定义在prototype对象上<span class="token operator">==</span>。
-<span class="token operator">&lt;</span>span aria<span class="token operator">-</span>hidden<span class="token operator">=</span><span class="token string">"true"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"line-numbers-rows"</span><span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span>span aria<span class="token operator">-</span>hidden<span class="token operator">=</span><span class="token string">"true"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"line-numbers-rows"</span><span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span></code></pre>
 Star.prototype.func();
 <pre class="line-numbers language-none"><code class="language-none">
 ### 对象原型 `__protp__`
@@ -986,6 +988,8 @@ Star.prototype.func();
 利用字面量来创建原型对象时，需要手动的利用constructor这个属性指回原来的构造函数
 
 ### JavaScript成员查找机制
+
+![](https://cdn.linxueya.cn/img/JSconstructor-relation2.png)
 
 1. 当访问一个对象的属性或方法时，首先查找这个对象自身有没有该属性
 2. 如果没有就查找它的原型(也就是`__protp__`指向的prototype原型对象)
@@ -1003,14 +1007,60 @@ Star.prototype.func();
 // 增加求和函数
 Array.prototype.sum = function(){
     xxx;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 数组和字符串内置对象不能给原型对象覆盖操作
 </code></pre>
 </li>
 </ul>
 <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>在ES6之前并没有给我们提供extends继承，我们可以通过构造函数+原型对象模拟实现继承，被称为组合继承。</p>
-<h3 id="call"><a href="#call" class="headerlink" title="call()"></a>call()</h3><p><code>fun.call(thisArg,arg1,arg2,...)</code>  调用这个函数，并且可以修改函数运行时的this指向</p>
-<h2 id="ES5中新增的方法"><a href="#ES5中新增的方法" class="headerlink" title="ES5中新增的方法"></a>ES5中新增的方法</h2>
+<h3 id="call"><a href="#call" class="headerlink" title="call()"></a>call()</h3><p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/JSconstructor-call.png"></p>
+<p><code>fun.call(thisArg,arg1,arg2,...)</code>  调用这个函数，并且可以修改函数运行时的this指向</p>
+<p>借用构造函数继承父类属性</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Father</span><span class="token punctuation">(</span><span class="token parameter">uname<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> uname<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">Son</span><span class="token punctuation">(</span><span class="token parameter">uname<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">Father</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span>uname<span class="token punctuation">,</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>借用构造函数继承父类方法，需要利用对象的形式修改原型对象，同时constructor指回原来的原型对象</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Son</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Father<span class="token punctuation">.</span>prototype</span><span class="token punctuation">;</span>
+<span class="token class-name">Son</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Son<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<h2 id="ES5中新增的方法"><a href="#ES5中新增的方法" class="headerlink" title="ES5中新增的方法"></a>ES5中新增的方法</h2><h3 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h3><ul>
+<li><p>遍历方法： foreach(),  map(), filter(),  some(),  every();</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 遍历方法</span>
+array<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arr</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              
+<span class="token comment">// 筛选方法，返回数组</span>
+array<span class="token punctuation">.</span><span class="token function">filer</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arr</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    retrun value <span class="token operator">&gt;=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// 查找元素，返回布尔值</span>
+array<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arr</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    retrun value <span class="token operator">&gt;=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>案例：查找商品</p>
+</li>
+</ul>
+<p>案例效果：GO</p>
+<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><p>trim()方法会从字符串的两端删除空白字符，返回新字符串。 <code>str.trim()</code></p>
+<h3 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h3><ol>
+<li><p>Object.keys()用于获取对象自身所有的属性<code>object.keys(obj)</code></p>
+</li>
+<li><p>Object.defineProperty()定义对象中新属性或修改原有的属性<code>Object.defineProperty(object, prop,descriptor)</code></p>
+<p>value:设置属性的值</p>
+<p>writeable：值是否可以重写</p>
+<p>enumerable：目标是否可以被枚举</p>
+<p>configurable：目标属性是否可以被删除或是否可以再次修改特性</p>
+</li>
+</ol>
+
                 
             </div>
             <hr/>
