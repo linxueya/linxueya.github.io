@@ -914,14 +914,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-01
+                    2021-04-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    250
+                    873
                 </div>
                 
 
@@ -1000,7 +1000,73 @@ o<span class="token punctuation">.</span><span class="token function">f</span><s
 </ol>
 <p>调用方式的不同，决定了this指向不同</p>
 <p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/JSfunction-this.png"></p>
-<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2>
+<p>JavaScript为我们提供了一些方法来处理内部this指向问题，常用的方法有bind(),call(),apply().</p>
+<ol>
+<li>call 方法可以调用函数，也可以改变函数内部的this指向主要。应用场景：继承</li>
+<li>apply 方法可以调用函数，也可以改变函数内部的this指向,但是他的参数必须是数组形式。应用场景：借助数学内置对象求最大值</li>
+<li>bind 方法不会调用函数，但可以改变函数内部的this指向。返回由指定的this值和初始化参数改造的原函数拷贝。应用场景：有的函数不需要立即调用</li>
+</ol>
+<p>案例：点击禁用</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+btn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// this默认指向window</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">3000</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p>严格模式（兼容IE10）对正常的JavaScript语义做了一些更改：</p>
+<ol>
+<li>消除了JavaScript语法的一些不合理，不严谨之处</li>
+<li>消除了代码运行的一些不安全之处</li>
+<li>提高编译器效率；</li>
+<li>禁用ECMAScript的未来版本中可能会定义的一些语法。比如一些保留字：class，enum，export，extends，import，super</li>
+</ol>
+<p>脚本严格模式 or 函数严格模式：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token string">'use strict'</span><span class="token punctuation">;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p> 严格模式下this指向问题</p>
+<ol>
+<li>非严格模式下全局作用域函数中的this指向window对象，严格模式下全局作用域中的this是undefined。</li>
+<li>非严格模式下构造函数不加new 也可以调用，this指向全局对象。严格模式下，构造函数需要加new使用，否则this会报错</li>
+<li>定时器中的this指向还是window</li>
+<li>事件对象还是指向调用者</li>
+</ol>
+<p>严格模式下函数的变化</p>
+<ol>
+<li>函数不能由重名的参数</li>
+<li>不允许在非函数的代码块内声明函数</li>
+</ol>
+<h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><p>高阶函数是对其他函数进行操作的函数，它接收函数作为参数 或 将函数作为返回值输出。</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包的主要作用：延伸了变量的作用范围</p>
+<p>案例：循环注册点击</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> lis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">quarySelector</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 动态添加属性</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> <span class="token operator">=</span> lis<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    lis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    lis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+<span class="token comment">// 利用闭包的方式</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> <span class="token operator">=</span> lis<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">i</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            lis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>如果一个函数在内部调用其本身，那么这个函数就是递归函数。</p>
+<p>案例：递归求数学题</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fb</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> n <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">fb</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">fb</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
                 
             </div>
             <hr/>
@@ -1503,30 +1569,29 @@ o<span class="token punctuation">.</span><span class="token function">f</span><s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/post/98c2129a.html">
+                <a href="/post/c9adf6e3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript函数进阶">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/2.jpg" class="responsive-img" alt="JavaScript正则表达式">
                         
-                        <span class="card-title">JavaScript函数进阶</span>
+                        <span class="card-title">JavaScript正则表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaScript函数进阶
+                            JavaScript正则表达式
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1539,7 +1604,6 @@ o<span class="token punctuation">.</span><span class="token function">f</span><s
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

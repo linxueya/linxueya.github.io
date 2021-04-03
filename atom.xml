@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-04-01T13:13:49.606Z</updated>
+  <updated>2021-04-03T13:35:51.219Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JavaScript正则表达式</title>
+    <link href="http://linxueya.github.io/post/c9adf6e3.html"/>
+    <id>http://linxueya.github.io/post/c9adf6e3.html</id>
+    <published>2021-04-03T03:12:57.000Z</published>
+    <updated>2021-04-03T13:35:51.219Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 能够说出正则表达式的作用&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 能够写出简单的正则表达式&lt;/li&gt;
+&lt;li&gt;&lt;input</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="ES6" scheme="http://linxueya.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript函数进阶</title>
     <link href="http://linxueya.github.io/post/98c2129a.html"/>
     <id>http://linxueya.github.io/post/98c2129a.html</id>
     <published>2021-04-01T12:20:52.000Z</published>
-    <updated>2021-04-01T13:13:49.606Z</updated>
+    <updated>2021-04-03T03:12:54.990Z</updated>
     
     
       
@@ -539,32 +567,6 @@
     
     
     <category term="hexo" scheme="http://linxueya.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>鲸鱼</title>
-    <link href="http://linxueya.github.io/post/ab725d99.html"/>
-    <id>http://linxueya.github.io/post/ab725d99.html</id>
-    <published>2021-02-11T13:42:36.000Z</published>
-    <updated>2021-02-11T13:49:19.856Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;2021辽宁春晚&quot;&gt;&lt;a href=&quot;#2021辽宁春晚&quot; class=&quot;headerlink&quot; title=&quot;2021辽宁春晚&quot;&gt;&lt;/a&gt;2021辽宁春晚&lt;/h2&gt;&lt;main class=&quot;content&quot;&gt;
-    &lt;div</summary>
-        
-      
-    
-    
-    
-    <category term="日常" scheme="http://linxueya.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-    <category term="star" scheme="http://linxueya.github.io/tags/star/"/>
     
   </entry>
   
