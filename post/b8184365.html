@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="jQuery事件, c++ js">
+    <meta name="keywords" content="ES6新增语法, c++ js">
     <meta name="description" content="分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>jQuery事件 | Linxueya&#39;s Blog</title>
+    <title>ES6新增语法 | Linxueya&#39;s Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.linxueya.cn/medias/favicon.png">
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.linxueya.cn/lib/artitalk/artitalk.min.css">
@@ -761,12 +761,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">jQuery事件</h1>
+                    <h1 class="description center-align post-title">ES6新增语法</h1>
                 </div>
             </div>
         </div>
@@ -882,8 +882,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/jQuery/">
-                                <span class="chip bg-color">jQuery</span>
+                            <a href="/tags/ES6/">
+                                <span class="chip bg-color">ES6</span>
                             </a>
                         
                     </div>
@@ -907,21 +907,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-21
+                    2021-04-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-27
+                    2021-04-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    779
+                    360
                 </div>
                 
 
@@ -946,97 +946,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li><input disabled="" type="checkbox"> 能够说出四种常见的注册事件</li>
-<li><input disabled="" type="checkbox"> 能够说出on绑定事件的优势</li>
-<li><input disabled="" type="checkbox"> 能够说出jQuery事件委派的优点及方式</li>
-<li><input disabled="" type="checkbox"> 能够说出绑定事件与解绑事件</li>
-<li><input disabled="" type="checkbox"> 能够说出jQuery对象的拷贝</li>
-<li><input disabled="" type="checkbox"> 能够说出jQuery多库共存的两种方法</li>
-<li><input disabled="" type="checkbox"> 能够使用jQuery插件</li>
-</ul>
-<h2 id="jQuery事件注册"><a href="#jQuery事件注册" class="headerlink" title="jQuery事件注册"></a>jQuery事件注册</h2><h3 id="单个事件注册"><a href="#单个事件注册" class="headerlink" title="单个事件注册"></a>单个事件注册</h3><p>element.事件(function(){ })</p>
-<p>事件类型和DOM 类似</p>
-<h2 id="jQuery事件处理"><a href="#jQuery事件处理" class="headerlink" title="jQuery事件处理"></a>jQuery事件处理</h2><h3 id="on-绑定事件"><a href="#on-绑定事件" class="headerlink" title="on()绑定事件"></a>on()绑定事件</h3><ol>
-<li><p>可以绑定多个事件，多个事件处理程序</p>
- <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    <span class="token function-variable function">mouseover</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">mouseout</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">click</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>​    如果时间处理程序相同</p>
- <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"mouseover mouseout"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toggleClass</span><span class="token punctuation">(</span><span class="token string">"current"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>可以事件委派操作。把原来加给子元素身上的事件绑定在父元素身上</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//  click 是绑定在ul身上的，但是触发的对象是ul里面的li</span>
-<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"ol"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token string">"li"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    xxx<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
+                <h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>ES6中新增的用于声明变量的关键字。</p>
+<ul>
+<li><p>let声明的变量只在所处的块级有效，var变量不具备这个特点。</p>
 </li>
-<li><p>可以给未来动态创建的元素绑定事件</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"ol"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token string">"li"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    xxx<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token keyword">var</span> li <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"&lt;li&gt;我是后来创建的&lt;/li&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"ol"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>案例：发布微博</p>
+<li><p>不存在变量提升</p>
 </li>
-</ol>
-<p>案例效果：GO</p>
-<h3 id="off解绑事件"><a href="#off解绑事件" class="headerlink" title="off解绑事件"></a>off解绑事件</h3><p>off()方法可以移除通过on()方法添加的事件处理程序 </p>
-<h3 id="自动触发事件"><a href="#自动触发事件" class="headerlink" title="自动触发事件"></a>自动触发事件</h3><p>有些事件希望被==自动触发==</p>
-<ul>
-<li>element.click( )</li>
+<li><p>使用let声明的变量具有暂时性死区特性</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> num<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>经典面试题</p>
+</li>
 </ul>
-<h2 id="jQuery事件对象"><a href="#jQuery事件对象" class="headerlink" title="jQuery事件对象"></a>jQuery事件对象</h2><p>事件被触发，就会有事件对象的产生。</p>
-<p>element.on(events,[selector],function(event){ })</p>
-<p>阻止默认行为：event.preventDefault()</p>
-<p>阻止冒泡： event.stopPropagation()</p>
-<h2 id="jQuery拷贝对象"><a href="#jQuery拷贝对象" class="headerlink" title="jQuery拷贝对象"></a>jQuery拷贝对象</h2><p>语法：<code>$extend([deep],target,object1,[objectN])</code></p>
-<ol>
-<li>deep：如果为true则为==深拷贝==，默认为false，浅拷贝</li>
-<li>target：要拷贝的随想</li>
-<li>object：待拷贝的对象</li>
-</ol>
-<h2 id="jQuery多库共存"><a href="#jQuery多库共存" class="headerlink" title="jQuery多库共存"></a>jQuery多库共存</h2><p>jQuery使用$作为标识符，随着jQuery的流行，其他js库也会使用$作为标识符，这样一起使用会引起冲突</p>
-<p>解决方案：</p>
-<ol>
-<li>把里面的$符号统一改为jQuery。// jQuery(“div”)</li>
-<li>将jQuery变量定义成新的名称， //  $.noConflict()  var xxx = $.noConflict();</li>
-</ol>
-<h2 id="jQuery插件"><a href="#jQuery插件" class="headerlink" title="jQuery插件"></a>jQuery插件</h2><p>插件常用网站</p>
-<p><a target="_blank" rel="noopener" href="https://www.jq22.com/">https://www.jq22.com/</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.htmleaf.com/">http://www.htmleaf.com/</a></p>
-<p>jQuery插件使用步骤</p>
-<ol>
-<li>引入jQuery文件和插件文件</li>
-<li>复制相关html、css和js文件</li>
-</ol>
-<h3 id="jQuery插件-瀑布流"><a href="#jQuery插件-瀑布流" class="headerlink" title="jQuery插件-瀑布流"></a>jQuery插件-瀑布流</h3><h3 id="jQuery插件-懒加载"><a href="#jQuery插件-懒加载" class="headerlink" title="jQuery插件-懒加载"></a>jQuery插件-懒加载</h3><p>图片使用延迟加载可以提高网页下载速度，帮助减轻服务器负载。当使用jQuery插件库easylazyload时，js引入文件和调用必须写到DOM后面</p>
-<h3 id="jQuery插件-全屏滚动"><a href="#jQuery插件-全屏滚动" class="headerlink" title="jQuery插件-全屏滚动"></a>jQuery插件-全屏滚动</h3><p>fullpage.js</p>
-<h3 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h3><p>​    Bootstrap是 Twitter 公司设计的基于HTML、CSS、JavaScript开发的简洁、直观、强悍的前端开发框架，他依靠jQuery实现，且支持响应式布局，使得 Web 开发更加方便快捷。</p>
-<p>​    Bootstrap组件使用非常方便:  1.引入bootstrap相关css和js        2.去官网复制html</p>
-<h3 id="综合案例：toDolist"><a href="#综合案例：toDolist" class="headerlink" title="综合案例：toDolist"></a>综合案例：toDolist</h3><p>案例效果：GO</p>
-<!--读取数据 ->  存储数据  ->  渲染数据-->
-
-<!--先清空ol的内容，再进行追加-->
-
-<!--删除操作：获取存储->修改数据->保存数据->渲染-->
-
-<h2 id="jQuery尺寸位置操作"><a href="#jQuery尺寸位置操作" class="headerlink" title="jQuery尺寸位置操作"></a>jQuery尺寸位置操作</h2><h3 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h3><p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/jQuery-shape.png"></p>
+<p>每次循环都会产生一个块级作用域，每个块级作用域中的变量都是不同的，函数执行时输出的是上一次作用域下的值</p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>作用：声明变量，常量就是指（内存地址）不能变化的量</p>
 <ul>
-<li>以上参数为空，则是获取相应值；如果参数为数字，则是修改相应值</li>
+<li>具有块级作用域</li>
+<li>声明是必须赋值</li>
+<li>常量幅值后，值不能更改</li>
 </ul>
-<h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><p>位置主要有三个：offset()、position()、scrollTop()/scrollLeft()</p>
-<ul>
-<li>offset()设置或获取元素偏移，该方法有两个属性left、top</li>
-<li>position()用于获取带有定位的父级偏移，如果没有带定位的父级，则以文档为主</li>
-</ul>
-<p>案例：品优购电梯导航</p>
-<p>案例效果：GO</p>
-<!--点击导航栏，页面滚动；页面滚动，导航栏切换（这部分不明白）-->
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>数组解构：数组解构允许我们按照一一对应的关系从数组中提取值，然后将值赋值给变量</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>对象解构：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token string">"18"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token punctuation">{</span>name<span class="token punctuation">,</span>age<span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token punctuation">{</span>name<span class="token operator">:</span>myname<span class="token punctuation">,</span>age<span class="token operator">:</span>myage<span class="token punctuation">}</span> <span class="token operator">=</span> person<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token comment">// 若函数体中只有一句代码，且代码执行的结果就是值，可以省略大括号</span>
+<span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> n1 <span class="token operator">+</span> n2<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>箭头函数不绑定this关键字，箭头函数中的this，指向函数定义位置的上下文this</p>
+<h2 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h2><p>剩余参数允许我们将一个不定量的参数表示为一个数组。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> <span class="token operator">...</span> args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 
 
                 
@@ -1064,7 +1016,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://linxueya.github.io/post/f7b3a86d.html">http://linxueya.github.io/post/f7b3a86d.html</a>
+                    <a href="http://linxueya.github.io/post/b8184365.html">http://linxueya.github.io/post/b8184365.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1102,8 +1054,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/jQuery/">
-                                    <span class="chip bg-color">jQuery</span>
+                                <a href="/tags/ES6/">
+                                    <span class="chip bg-color">ES6</span>
                                 </a>
                             
                         </div>
@@ -1541,29 +1493,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/post/f818a4a.html">
+                <a href="/post/b8184365.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript面向对象">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/22.jpg" class="responsive-img" alt="ES6新增语法">
                         
-                        <span class="card-title">JavaScript面向对象</span>
+                        <span class="card-title">ES6新增语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaScript面向对象
+                            ES6新增语法
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1576,6 +1529,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1594,31 +1548,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/post/ef821204.html">
+                <a href="/post/c9adf6e3.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/11.jpg" class="responsive-img" alt="BFS算法模板">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/2.jpg" class="responsive-img" alt="JavaScript正则表达式">
                         
-                        <span class="card-title">BFS算法模板</span>
+                        <span class="card-title">JavaScript正则表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            BFS算法模板
+                            JavaScript正则表达式
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
                                 </a>
                             
                             
@@ -1628,12 +1582,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/BFS/">
-                        <span class="chip bg-color">BFS</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BF%AD%E4%BB%A3/">
-                        <span class="chip bg-color">迭代</span>
+                    <a href="/tags/ES6/">
+                        <span class="chip bg-color">ES6</span>
                     </a>
                     
                 </div>

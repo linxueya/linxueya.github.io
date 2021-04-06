@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-04-03T13:35:51.219Z</updated>
+  <updated>2021-04-06T03:09:42.402Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ES6新增语法</title>
+    <link href="http://linxueya.github.io/post/b8184365.html"/>
+    <id>http://linxueya.github.io/post/b8184365.html</id>
+    <published>2021-04-06T01:11:52.000Z</published>
+    <updated>2021-04-06T03:09:42.402Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;let&quot;&gt;&lt;a href=&quot;#let&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="ES6" scheme="http://linxueya.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript正则表达式</title>
     <link href="http://linxueya.github.io/post/c9adf6e3.html"/>
     <id>http://linxueya.github.io/post/c9adf6e3.html</id>
     <published>2021-04-03T03:12:57.000Z</published>
-    <updated>2021-04-03T13:35:51.219Z</updated>
+    <updated>2021-04-03T13:39:03.518Z</updated>
     
     
       
@@ -463,7 +488,7 @@
     <link href="http://linxueya.github.io/post/d23a6e4b.html"/>
     <id>http://linxueya.github.io/post/d23a6e4b.html</id>
     <published>2021-03-01T14:07:51.000Z</published>
-    <updated>2021-03-04T15:27:41.458Z</updated>
+    <updated>2021-04-03T13:37:54.332Z</updated>
     
     
       
@@ -540,33 +565,6 @@
     
     
     <category term="JS" scheme="http://linxueya.github.io/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>valine添加邮箱提醒</title>
-    <link href="http://linxueya.github.io/post/eadbc16a.html"/>
-    <id>http://linxueya.github.io/post/eadbc16a.html</id>
-    <published>2021-02-15T13:12:30.000Z</published>
-    <updated>2021-03-04T15:27:33.372Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Valine 诞生于2017年8月7日，是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。&lt;/p&gt;
-&lt;p&gt;理论上支持但不限于静态博客，目前已有Hexo、Jekyll、Typecho、Hugo、Ghost 等博客程序在使用Valine。&lt;/p&gt;
-&lt;div</summary>
-        
-      
-    
-    
-    
-    <category term="软件工具" scheme="http://linxueya.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="hexo" scheme="http://linxueya.github.io/tags/hexo/"/>
     
   </entry>
   
