@@ -32,9 +32,9 @@
     <script src="https://cdn.linxueya.cn/lib/jquery/jquery.min.js"></script>
 	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 
-<meta name="generator" content="Hexo 5.3.0">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Linxueya's Blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -475,15 +475,6 @@
       </li>
       
       <li>
-        <a href="/box/love">
-          
-          <i class="fas fa-heart" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>绯月</span>
-        </a>
-      </li>
-      
-      <li>
         <a href="/time">
           
           <i class="fas fa-clock" style="margin-top: -20px; zoom: 0.6;"></i>
@@ -723,16 +714,6 @@
               
                 <li>
 
-                  <a href="/box/love " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-heart" style="position: absolute;left:50px" ></i>
-			      
-		          <span>绯月</span>
-                  </a>
-                </li>
-              
-                <li>
-
                   <a href="/time " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-clock" style="position: absolute;left:50px" ></i>
@@ -914,14 +895,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-06
+                    2021-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    360
+                    759
                 </div>
                 
 
@@ -958,9 +939,11 @@
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">let</span> num<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>经典面试题</p>
+
 </li>
 </ul>
+<p>经典面试题</p>
+<p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/ES6-let.png"></p>
 <p>每次循环都会产生一个块级作用域，每个块级作用域中的变量都是不同的，函数执行时输出的是上一次作用域下的值</p>
 <h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>作用：声明变量，常量就是指（内存地址）不能变化的量</p>
 <ul>
@@ -981,15 +964,45 @@
 <span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> n1 <span class="token operator">+</span> n2<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>箭头函数不绑定this关键字，箭头函数中的this，指向函数定义位置的上下文this</p>
 <h2 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h2><p>剩余参数允许我们将一个不定量的参数表示为一个数组。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> <span class="token operator">...</span> args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
+<h2 id="拓展运算"><a href="#拓展运算" class="headerlink" title="拓展运算"></a>拓展运算</h2><p>拓展运算可以将数组或者对象用逗号分割成参数序列。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> ary <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// ...ary "a" "b" "c"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>拓展运算应用于数组合并</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> ary1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ary2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ary3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>ary1<span class="token punctuation">,</span><span class="token operator">...</span>ary2<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// ary1.push(...ary2) 第二种方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>将类数组或可遍历对象转换为真正的数组</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> lis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelctor</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>lis<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="构造函数方法"><a href="#构造函数方法" class="headerlink" title="构造函数方法"></a>构造函数方法</h2><h3 id="array的拓展方法"><a href="#array的拓展方法" class="headerlink" title="array的拓展方法"></a>array的拓展方法</h3><ol>
+<li><p>array.from() ： 将类数组或可遍历对象转换为真正的数组,方法还可以接收==第二个参数==，作用类似于数组的map方法，用来处理每个元素并返回。</p>
+<p><code>var ary = array.from(aryLike)</code></p>
+</li>
+<li><p>array.find() ：用于找出第一个符合条件的数组成员，如果没有返回undefined</p>
+<p><code>let target  = ary.find()(item,index) =&gt; item.id == 2)</code></p>
+</li>
+<li><p>array.findIndex() ：用于找出第一个符合条件的数组成员的位置，如果没有找到返回-1</p>
+<p><code>let index = ary.findIndex()(item,index) =&gt; value &gt; 2)</code></p>
+</li>
+<li><p>array.includes() ：用于确定某个数组是否包含给定的值，但会布尔值</p>
+<p><code>let falg = ary.includes(2)</code></p>
+</li>
+</ol>
+<h3 id="string的拓展方法"><a href="#string的拓展方法" class="headerlink" title="string的拓展方法"></a>string的拓展方法</h3><p>模板字符串可以解析变量  $(name)；</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">zhangsan</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">hello,my name is $(name)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>模板字符串可以换行；</p>
+<p>startsWith() 和 endsWith()  表示原字符串是否以目标字符串结尾，返回布尔值；</p>
+<p>repeat()   repeat方法表示将原字符串重复n次，返回一个新的字符串；</p>
+<h2 id="set数据结构"><a href="#set数据结构" class="headerlink" title="set数据结构"></a>set数据结构</h2><p>set数据结构类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<p><code> const s = new Set([1,2,3,5])</code> </p>
+<p>实例方法： add(); delete(); has(); clear().</p>
 
                 
             </div>
@@ -1493,30 +1506,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/post/b8184365.html">
+                <a href="/post/87d13011.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/22.jpg" class="responsive-img" alt="ES6新增语法">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/13.jpg" class="responsive-img" alt="Node开发">
                         
-                        <span class="card-title">ES6新增语法</span>
+                        <span class="card-title">Node开发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ES6新增语法
+                            Node开发,前后端交互
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1529,12 +1541,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ES6/">
-                        <span class="chip bg-color">ES6</span>
+                    <a href="/tags/Node/">
+                        <span class="chip bg-color">Node</span>
                     </a>
                     
                 </div>

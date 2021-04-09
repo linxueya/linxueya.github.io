@@ -4078,9 +4078,11 @@ str<span class="token punctuation">.</span><span class="token function">replace<
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">let</span> num<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>经典面试题</p>
+
 </li>
 </ul>
+<p>经典面试题</p>
+<p><img src="https://cdn.linxueya.cn/img/ES6-let.png"></p>
 <p>每次循环都会产生一个块级作用域，每个块级作用域中的变量都是不同的，函数执行时输出的是上一次作用域下的值</p>
 <h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>作用：声明变量，常量就是指（内存地址）不能变化的量</p>
 <ul>
@@ -4101,21 +4103,170 @@ str<span class="token punctuation">.</span><span class="token function">replace<
 <span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> n1 <span class="token operator">+</span> n2<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>箭头函数不绑定this关键字，箭头函数中的this，指向函数定义位置的上下文this</p>
 <h2 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h2><p>剩余参数允许我们将一个不定量的参数表示为一个数组。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> <span class="token operator">...</span> args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
+<h2 id="拓展运算"><a href="#拓展运算" class="headerlink" title="拓展运算"></a>拓展运算</h2><p>拓展运算可以将数组或者对象用逗号分割成参数序列。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> ary <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// ...ary "a" "b" "c"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>拓展运算应用于数组合并</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> ary1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ary2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ary3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>ary1<span class="token punctuation">,</span><span class="token operator">...</span>ary2<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// ary1.push(...ary2) 第二种方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>将类数组或可遍历对象转换为真正的数组</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> lis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelctor</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>lis<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="构造函数方法"><a href="#构造函数方法" class="headerlink" title="构造函数方法"></a>构造函数方法</h2><h3 id="array的拓展方法"><a href="#array的拓展方法" class="headerlink" title="array的拓展方法"></a>array的拓展方法</h3><ol>
+<li><p>array.from() ： 将类数组或可遍历对象转换为真正的数组,方法还可以接收==第二个参数==，作用类似于数组的map方法，用来处理每个元素并返回。</p>
+<p><code>var ary = array.from(aryLike)</code></p>
+</li>
+<li><p>array.find() ：用于找出第一个符合条件的数组成员，如果没有返回undefined</p>
+<p><code>let target  = ary.find()(item,index) =&gt; item.id == 2)</code></p>
+</li>
+<li><p>array.findIndex() ：用于找出第一个符合条件的数组成员的位置，如果没有找到返回-1</p>
+<p><code>let index = ary.findIndex()(item,index) =&gt; value &gt; 2)</code></p>
+</li>
+<li><p>array.includes() ：用于确定某个数组是否包含给定的值，但会布尔值</p>
+<p><code>let falg = ary.includes(2)</code></p>
+</li>
+</ol>
+<h3 id="string的拓展方法"><a href="#string的拓展方法" class="headerlink" title="string的拓展方法"></a>string的拓展方法</h3><p>模板字符串可以解析变量  $(name)；</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">zhangsan</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">hello,my name is $(name)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>模板字符串可以换行；</p>
+<p>startsWith() 和 endsWith()  表示原字符串是否以目标字符串结尾，返回布尔值；</p>
+<p>repeat()   repeat方法表示将原字符串重复n次，返回一个新的字符串；</p>
+<h2 id="set数据结构"><a href="#set数据结构" class="headerlink" title="set数据结构"></a>set数据结构</h2><p>set数据结构类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<p><code> const s = new Set([1,2,3,5])</code> </p>
+<p>实例方法： add(); delete(); has(); clear().</p>
 ]]></content>
       <categories>
         <category>编程</category>
       </categories>
       <tags>
         <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node开发</title>
+    <url>/post/87d13011.html</url>
+    <content><![CDATA[<h2 id="Node开发概述"><a href="#Node开发概述" class="headerlink" title="Node开发概述"></a>Node开发概述</h2><ul>
+<li>学习服务端开发能够和后端程序员更加紧密的配合；</li>
+<li>网站业务逻辑前置，学习前端技术需要后端技术支持；</li>
+<li>拓展知识视野，能够站在更高的角度审视项目。</li>
+</ul>
+<p>Node是基于Chrome V8引擎的JavaScript代码运行环境</p>
+<p>所有的EMCAScript语法在Node中均可使用</p>
+<h2 id="Node-js模块化开发"><a href="#Node-js模块化开发" class="headerlink" title="Node.js模块化开发"></a>Node.js模块化开发</h2><p>JavaScript在使用中存在两大问题，文件依赖和命名冲突；</p>
+<p><img src="https://cdn.linxueya.cn/img/Node-js.png"></p>
+<p>Node.js规定一个JavaScript文件就是一个模块，模块内部定义的变量和函数默认情况下外部无法获取；模块内部可以使用==exports==对象进行成员导出，使用==require==方法导入其他模块。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// a.js</span>
+<span class="token keyword">let</span> ver <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sayhi</span> <span class="token operator">=</span> <span class="token parameter">name</span> <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">hello,$(name)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+exports<span class="token punctuation">.</span>ver <span class="token operator">=</span> ver<span class="token punctuation">;</span>
+exports<span class="token punctuation">.</span>sayhi <span class="token operator">=</span> sayhi<span class="token punctuation">;</span>
+
+<span class="token comment">// b.js</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./b.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>expors是module.exports的别名（地址引用关系），当expors对象和module.exports对象指向的不是同一个对象时，以module.exports为准</p>
+<h2 id="系统模块"><a href="#系统模块" class="headerlink" title="系统模块"></a>系统模块</h2><p>系统模块是指Node运行环境提供的API。</p>
+<p>系统模块fs文件操作：</p>
+<ul>
+<li><p>读取文件内容 <code>fs.readFile('文件路径'，['文件编码'],callback);</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'base.css'</span><span class="token punctuation">,</span><span class="token string">'utf-8'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span>doc</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果文件读取发生错误，参数err的值为错误对象，否则err的值为null. doc参数为文件内容</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>err <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>doc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>写入文件内容 <code>fs.writeFile('文件路径'，'数据',callback);</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> content <span class="token operator">=</span> <span class="token string">'&lt;h2&gt;hello&lt;/h2&gt;'</span><span class="token punctuation">;</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">,</span>content<span class="token punctuation">,</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>err ！<span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'文件写入成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>系统模块path路径操作：</p>
+</li>
+</ul>
+<p>path.join(‘path1’,’path2’,…)</p>
+<h2 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h2><p>别人写好的，具有特定功能的，我们能直接使用的模块即第三方模块。通常有JS文件和命令行工具两种形式。</p>
+<ul>
+<li>modemon 程序修改后自动重新执行程序</li>
+</ul>
+<h3 id="Gulp-基于node平台开发前端构建工具"><a href="#Gulp-基于node平台开发前端构建工具" class="headerlink" title="Gulp 基于node平台开发前端构建工具"></a>Gulp 基于node平台开发前端构建工具</h3><ul>
+<li>HTML，CSS,JS文件压缩合并</li>
+<li>语法转换</li>
+<li>公共文件抽离</li>
+<li>修改文件浏览器自动刷新</li>
+</ul>
+<h3 id="Gulp-的使用"><a href="#Gulp-的使用" class="headerlink" title="Gulp 的使用"></a>Gulp 的使用</h3><ol>
+<li>使用npm install gulp下载库文件</li>
+<li>在项目根目录下建立gulpfile.js文件</li>
+<li>重构项目的文件夹结构 src目录放置源代码文件 dist目录放置构建后文件</li>
+<li>在gulpfile.js文件中编写任务</li>
+<li>在命令行工具中执行gulp任务</li>
+</ol>
+<p>Gulp 提供的方法</p>
+<ul>
+<li>gulp.src(): 获取任务中要处理的文件</li>
+<li>gulp.dest(): 输出文件</li>
+<li>gulp.task(): 建立gulp任务</li>
+<li>gulp.watch(): 监控文件的变化</li>
+</ul>
+<h3 id="Gulp插件"><a href="#Gulp插件" class="headerlink" title="Gulp插件"></a>Gulp插件</h3><ul>
+<li>gulp-htmlmin：html文件压缩</li>
+<li>gulp-csso：压缩css</li>
+<li>gulp-babel：JavaScript语法转化</li>
+<li>gulp-less：less语法转化</li>
+<li>gulp-uglify：压缩混淆JavaScript</li>
+<li>gulp-file-include：公共文件包含</li>
+<li>browsersync：浏览器实时同步</li>
+</ul>
+<p>添加程序</p>
+<h2 id="package-json文件的作用"><a href="#package-json文件的作用" class="headerlink" title="package.json文件的作用"></a>package.json文件的作用</h2><p>项目描述文件，记录了当前项目信息，例如项目名称、版本、当前项目依赖了哪些第三方模块</p>
+<h2 id="Node-js中模块加载的机制"><a href="#Node-js中模块加载的机制" class="headerlink" title="Node.js中模块加载的机制"></a>Node.js中模块加载的机制</h2><h3 id="模块查找规则——有路径"><a href="#模块查找规则——有路径" class="headerlink" title="模块查找规则——有路径"></a>模块查找规则——有路径</h3><ol>
+<li>require方法根据模块路径查找模块，如果是完整路径，直接引入模块</li>
+<li>如果模块后缀省略，先找同名JS文件再找同名文件夹</li>
+<li>如果找到了同名文件夹，找文件夹中的index.js</li>
+<li>如果文件夹中没有index.js就会去当前文件夹中的package.js查找main选项中的入口文件</li>
+<li>如果指定的入口文件不存在就会报错</li>
+</ol>
+<p>模块查找规则——没有路径</p>
+<ol>
+<li>Node.js会假设它是系统模块</li>
+<li>Node.js会去node_modules文件夹中</li>
+<li>首先看是否有该名字的JS文件</li>
+<li>再看是否有该名字的文件夹</li>
+<li>如果是文件夹看里面是否有index.js</li>
+<li>如果没有index.js就会去当前文件夹中的package.js查找main选项中的入口文件</li>
+<li>如果指定的入口文件不存在就会报错</li>
+</ol>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><p>统一资源定位符</p>
+<p>传输协议://服务器IP或域名:端口/资源所在位置标识</p>
+<h3 id="创建web服务器"><a href="#创建web服务器" class="headerlink" title="创建web服务器"></a>创建web服务器</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//引入系统模块</span>
+<span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 创建web服务器</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 当客服端发送请求的时候</span>
+app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+    <span class="token comment">// 响应</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'&lt;h1&gt;hello,world&lt;/h1&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 监听端口</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'服务器已启动'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Node</tag>
       </tags>
   </entry>
 </search>

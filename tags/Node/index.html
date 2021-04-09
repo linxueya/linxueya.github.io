@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="c++ js">
+    <meta name="keywords" content="标签: Node, c++ js">
     <meta name="description" content="分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linxueya&#39;s Blog</title>
+    <title>标签: Node | Linxueya&#39;s Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.linxueya.cn/medias/favicon.png">
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.linxueya.cn/lib/artitalk/artitalk.min.css">
@@ -738,56 +738,9 @@
 
 </header>
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -813,290 +766,162 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/linxueya" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:1462857461@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1462857461" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1462857461" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
 
-                    
-                        <link rel="stylesheet" href="https://cdn.linxueya.cn/lib/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="music-player">
-    
-        <div class="title center-align">
-            <i class="fas fa-music"></i>&nbsp;&nbsp;听听音乐
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/hexo/" title="hexo: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="hexo" style="background-color: #F9EBEA;">hexo
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/JS/" title="JS: 9">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="JS" style="background-color: #F5EEF8;">JS
+                        <span class="tag-length">9</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/star/" title="star: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="star" style="background-color: #D5F5E3;">star
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/HTML/" title="HTML: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="HTML" style="background-color: #E8F8F5;">HTML
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/CCS/" title="CCS: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="CCS" style="background-color: #FEF9E7;">CCS
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%8E%92%E5%BA%8F/" title="排序: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="排序" style="background-color: #F8F9F9;">排序
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/jQuery/" title="jQuery: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="jQuery" style="background-color: #82E0AA;">jQuery
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%95%A3%E6%96%87%E9%9B%86/" title="散文集: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="散文集" style="background-color: #D7BDE2;">散文集
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="动态规划" style="background-color: #A3E4D7;">动态规划
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/BFS/" title="BFS: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="BFS" style="background-color: #85C1E9;">BFS
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%BF%AD%E4%BB%A3/" title="迭代: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="迭代" style="background-color: #F8C471;">迭代
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/ES6/" title="ES6: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="ES6" style="background-color: #F9E79F;">ES6
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%9D%A2%E7%BB%8F/" title="面经: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="面经" style="background-color: #D7BDE2;">面经
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Node/" title="Node: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Node" style="background-color: #85C1E9;">Node
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
         </div>
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="67239683"
-                   fixed='false'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
     </div>
 </div>
 
-<script src="https://cdn.linxueya.cn/lib/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-                        
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-
-
-<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;推荐文章</div>
-
-<div class="row">
-
-    
-    
-    <div class="col s12" >
-        
-            <div class="post-card" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/16.jpg')">
-            
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category">编程</a>
-                        
-                    
-                </div>
-                <a href="/post/686ee723.html">
-                    <h3 class="post-title">JS基本语法之对象</h3>
-                </a>
-                <p class="post-description">JS基本语法</p>
-                <a href="/post/686ee723.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        
-            <div class="post-card" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/23.jpg')">
-            
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category">编程</a>
-                        
-                    
-                </div>
-                <a href="/post/47f7d4a9.html">
-                    <h3 class="post-title">HTML5+CCS3</h3>
-                </a>
-                <p class="post-description">HTML CCS新特性</p>
-                <a href="/post/47f7d4a9.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        
-            <div class="post-card" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/15.jpg')">
-            
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category">编程</a>
-                        
-                    
-                </div>
-                <a href="/post/574f280b.html">
-                    <h3 class="post-title">前端代码规范</h3>
-                </a>
-                <p class="post-description">前端代码规范</p>
-                <a href="/post/574f280b.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
     
 
-</div>
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    
-
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Node" data-aos="fade-up">
                 <div class="card">
                     <a href="/post/87d13011.html">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/13.jpg" class="responsive-img" alt="Node开发">
@@ -1104,13 +929,7 @@
                             <span class="card-title">Node开发</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Node开发,前后端交互
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2021-04-07
@@ -1120,579 +939,19 @@
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
                                 <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
+                                编程
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Node/">
-                            <span class="chip bg-color">Node</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/b8184365.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/22.jpg" class="responsive-img" alt="ES6新增语法">
-                            
-                            <span class="card-title">ES6新增语法</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                ES6新增语法
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/c9adf6e3.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/2.jpg" class="responsive-img" alt="JavaScript正则表达式">
-                            
-                            <span class="card-title">JavaScript正则表达式</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                JavaScript正则表达式
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/98c2129a.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript函数进阶">
-                            
-                            <span class="card-title">JavaScript函数进阶</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                JavaScript函数进阶
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/e540de51.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/1.jpg" class="responsive-img" alt="软件开发工程师面经">
-                            
-                            <span class="card-title">软件开发工程师面经</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                C++,JS面经汇总
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="post-category">
-                                    面经
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%9D%A2%E7%BB%8F/">
-                            <span class="chip bg-color">面经</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/5096785c.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript构造函数和原型">
-                            
-                            <span class="card-title">JavaScript构造函数和原型</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                JavaScript构造函数和原型
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/f818a4a.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript面向对象">
-                            
-                            <span class="card-title">JavaScript面向对象</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                JavaScript面向对象
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/f7b3a86d.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/23.jpg" class="responsive-img" alt="jQuery事件">
-                            
-                            <span class="card-title">jQuery事件</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                jQuery事件
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/jQuery/">
-                            <span class="chip bg-color">jQuery</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/ef821204.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/11.jpg" class="responsive-img" alt="BFS算法模板">
-                            
-                            <span class="card-title">BFS算法模板</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                BFS算法模板
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/BFS/">
-                            <span class="chip bg-color">BFS</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%BF%AD%E4%BB%A3/">
-                            <span class="chip bg-color">迭代</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/acd318ce.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/21.jpg" class="responsive-img" alt="心之语">
-                            
-                            <span class="card-title">心之语</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                心之语
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%97%A5%E5%B8%B8/" class="post-category">
-                                    日常
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%95%A3%E6%96%87%E9%9B%86/">
-                            <span class="chip bg-color">散文集</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/e45f505b.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/14.jpg" class="responsive-img" alt="背包九讲">
-                            
-                            <span class="card-title">背包九讲</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                y总 背包九讲
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                            <span class="chip bg-color">动态规划</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/574f280b.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/15.jpg" class="responsive-img" alt="前端代码规范">
-                            
-                            <span class="card-title">前端代码规范</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                前端代码规范
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/HTML/">
-                            <span class="chip bg-color">HTML</span>
-                        </a>
-                        
-                        <a href="/tags/CCS/">
-                            <span class="chip bg-color">CCS</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
         </div>
     </article>
-
 </main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 3</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
 
 
 

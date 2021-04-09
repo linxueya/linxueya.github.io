@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="c++ js">
+    <meta name="keywords" content="love, c++ js">
     <meta name="description" content="分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linxueya&#39;s Blog</title>
+    <title>love | Linxueya&#39;s Blog</title>
     <link rel="icon" type="image/png" href="https://cdn.linxueya.cn/medias/favicon.png">
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.linxueya.cn/lib/artitalk/artitalk.min.css">
@@ -738,963 +738,414 @@
 
 </header>
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
+    <style>
+    .bg-cover {
+        display: none;
     }
+    .navbar-fixed {
+        background-image: linear-gradient(to right, #623AA2 0%,#2196f3 100%);
+        opacity: 0.8;
+    }
+	.hidden {
+		display: none;
+	}
 
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
+	#display {
+		margin: auto;
+	}
 </style>
 
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                但行好事，莫问前程
-                
-            </div>
-
-            <div class="description center-align">
-                
-                    <span id="jinrishici-sentence">正在加载今日诗词....</span> 
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "https://cdn.jsdelivr.net/gh/linxueya/cdn@1.1/source/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-
-
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/linxueya" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:1462857461@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1462857461" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1462857461" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-</div>
-        </div>
-    </div>
-
-    
-</div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
+<style>
+    .nr_nr a {
+        color: black!important;
+    }
+	.journal {
+        padding: 12px;
+        border: 1px dashed #e6e6e6;
+        color: #969696;
+        position: relative;
+        display: inline-block;
+        width: 95%;
+        border-radius: 10px;
+        font-size: 16px;
+        margin: 12px auto;
+	}
+    * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
         }
 
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
+        body {
+            background: #F6F7F8;
+        }
 
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
+        .box {
+            width: 100%;
+            max-width: 1200px;
+            min-width: 300px;
+            margin: 0 auto;
+        }
 
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
 
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
+        .tit {
+            text-align: center;
+            padding: 8px 0;
+            letter-spacing: 2px;
+            font-size: 32px;
+            color: #333;
+        }
+
+        .min {
+            position: relative;
+        }
+
+        .line {
+            height: 100%;
+            width: 4px;
+            background: #666666;
+            position: absolute;
+            left: 50%;
+            margin-left: -2px;
+            display: none;
+        }
+
+        .vas {
+            padding-top: 20px;
+        }
+
+        .list {
+            width: 100%;
+            height: 200px;
+            margin-top: 40px;
+            position: relative;
+            display: none;
+        }
+
+        .dian {
+            width: 20px;
+            height: 20px;
+            background: #666666;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            border: 3px solid #ffffff;
+            box-sizing: border-box;
+            margin-left: -10px;
+            margin-top: 5px;
+            z-index: 2;
+        }
 
 
+        .list_box {
+            width: 50%;
+            height: 100%;
+            float: left;
+            position: relative;
+            /* background: red; */
+        }
+
+
+        .hx {
+            width: 150px;
+            height: 4px;
+            background: #666666;
+            margin-top: 12px;
+            float: right;
+            z-index: 1;
+        }
+
+        .list_nr {
+            width: 65%;
+            height: auto;
+            padding: 15px;
+            background: #118DF0;
+            border-radius: 6px;
+            color: #f6f7f8;
+            float: left;
+            margin-top: -15px;
+            margin-left: 19%;
+        }
+
+        .nr_tit {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 10px 0;
+            margin-top: 0px;
+            text-align: left;
+        }
+
+        .nr_nr {
+            line-height: 25px;
+            position: relative;
+            text-align: left;
+        }
+        .list_nr .date {
+            margin-left: 20px!important;
+        }
+        .date {
+            position: absolute;
+            right: 12%;
+            padding: 5px;
+            top: -32px;
+            color: #333;
+            border-radius: 10px;
+			font-size: 12px;
+        }
+</style>
 
 <main class="content">
+	<div class="container">
+		<div class="card">
 
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
 
-                    
-                        <link rel="stylesheet" href="https://cdn.linxueya.cn/lib/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
+			<div class="card-content">
+				<div class="tag-title center-align">
+                    <div class="journal">
+                        <div class="title center-align">“ 绯月 ”</div>
+                        “ 每一程山水都能与你相伴 ”                      
+                    </div>
+                    <div class="box">
+						<div class="tit"></div>
+						    <div class="min">
+							    <div class="line"></div>
+							        <div class="vas">
+                                    
         
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
+                                    
+                                    <!-- 以下每一个class为list的div代表一个日志模块（左边） -->
+								    <div class="list">
+									    <div class="dian"></div>
+									        <div class="list_box">
+										        <div class="hx"></div>
+										        <div class="list_nr">
+											    <p class="date" style="margin-right: 20px;">2019-02-22</p>
+											    <div class="nr_tit">
+												    <a href="javascript:;"># 互生情愫</a>
+											    </div>
+											    <div class="nr_nr">
+													恋爱没办法一劳永逸。因为你要搬走才引出了后面的事，还以为这样你就不搬。但是寒假里又要说搬走，情人节说送你礼物被你一个 “别“ 字拒绝。那时的我们脆弱且敏感。假如你没搬走的话，我们会更好吗？
+                                                </div>
+										    </div>
+									    </div>
+                                    </div>
 
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
+                                   <!-- 以下每一个class为list的div代表一个日志模块（右边） -->
+								    <div class="list">
+									    <div class="dian"></div>
+									        <div class="list_box">
+										    <div class="hx"></div>
+										    <div class="list_nr">
+											<p class="date" style="margin-right: 20px;">2019-02-14</p>
+											<div class="nr_tit">
+												<a href="javascript:;"># 互生情愫</a>
+											</div>
+											<div class="nr_nr">
+												万山千山你愿意陪我去看吗？确定恋爱关系后会有什么不同呢，对于未知的事物人们好奇却又恐惧。我说吃饭回寝依旧，但是彼此心里会有个依靠。但是后来我们就脱离大部队，单独去吃饭了，想和对方待在一起的时间怎么也不嫌多啊。
+                                            </div>
+										</div>
+									</div>
+                                    </div>
 
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
+                                    <!-- 以下每一个class为list的div代表一个日志模块（左边） -->
+								    <div class="list">
+									    <div class="dian"></div>
+									        <div class="list_box">
+										        <div class="hx"></div>
+										        <div class="list_nr">
+											    <p class="date" style="margin-right: 20px;">2019-02-02</p>
+											    <div class="nr_tit">
+												    <a href="javascript:;"># 互生情愫</a>
+											    </div>
+											    <div class="nr_nr">
+                                                喜欢究竟是什么呢？那时的我用《化物语》中的场景描述了我认为的喜欢，即使现在看来依然是这样。
+												 <p>呐，阿良良木同学,喜欢、我吗？</p>
+												<p>喜欢</p>
+												<p>我也喜欢阿良良木同学哟</p>
+												<p>谢谢</p>
+												<p>喜欢我什么地方？</p>
+												<p>全部都喜欢。没有不喜欢的地方</p>
+												<p>这样。真开心</p>
+												<p>你喜欢我什么地方呢？</p>
+												<p>温柔的地方。可爱的地方。在我遇到困难的时候无论何时都会奔来帮助我的王子大人一样的地方</p>
+                                                </div>
+										    </div>
+									    </div>
+                                    </div>
 
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
+                                   <!-- 以下每一个class为list的div代表一个日志模块（右边） -->
+								    <div class="list">
+									    <div class="dian"></div>
+									        <div class="list_box">
+										    <div class="hx"></div>
+										    <div class="list_nr">
+											<p class="date" style="margin-right: 20px;">2019-02-01</p>
+											<div class="nr_tit">
+												<a href="javascript:;"># 互生情愫</a>
+											</div>
+											<div class="nr_nr">
+                                            恋爱并不是简单的一句我喜欢你。他真的喜欢我吗，他喜欢我什么？毫无安全感的你，害怕失去你的我又讨论了起来。（我的便签中写着）讨论着我喜欢你的心路历程，我们的性格问题，一起去面对未知，如果没能在一起怎么办。
+                                        </div>
+										</div>
+									</div>
+                                    </div>
 
-    
-</style>
-<div class="music-player">
-    
-        <div class="title center-align">
-            <i class="fas fa-music"></i>&nbsp;&nbsp;听听音乐
+                                    <!-- 以下每一个class为list的div代表一个日志模块（左边） -->
+								    <div class="list">
+									    <div class="dian"></div>
+									        <div class="list_box">
+										        <div class="hx"></div>
+										        <div class="list_nr">
+											    <p class="date" style="margin-right: 20px;">2019-01-29 </p>
+											    <div class="nr_tit">
+												    <a href="javascript:;"># 互生情愫</a>
+											    </div>
+											    <div class="nr_nr">
+                                                梦到了美好的事物，醒来时仍旧想抓住那份美好。为了把握住和你在一起的机会，我给你写下了对你的喜欢。从相遇，十一假期，研究方向，轰趴，滑雪，夜谈，跨年，你的不动声色，我的不敢向前。
+                                                </div>
+										    </div>
+									    </div>
+                                    </div>
+
+                                    <!-- 以下每一个class为list的div代表一个日志模块（右边） -->
+								    <div class="list">
+									    <div class="dian"></div>
+									        <div class="list_box">
+										    <div class="hx"></div>
+										    <div class="list_nr">
+											<p class="date" style="margin-right: 20px;">2019-01-28 凌晨</p>
+											<div class="nr_tit">
+												<a href="javascript:;"># 互生情愫</a>
+											</div>
+											<div class="nr_nr">
+                                                因为你要搬去340，我劝你了好几回。这一天又借着酒劲向你说起这事。慢慢聊着你说你喜欢我————这是我始料未及的。相互喜欢这种事第一次发生在我身上，有点不敢相信这是真的。就这样，保持着暧昧关系的两人此刻互相表达了爱慕。
+                                            </div>
+										</div>
+									</div>
+                                    </div>
+
+                                <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+                                <script src="../src/tiao_c.js"></script>
+                                <script>
+                                    $(document).ready(_ => {
+                                        let list_box = $(".list_box");
+                                        let hx = $(".hx");
+                                        let list_nr = $(".list_nr");
+                                        let date = $(".date");
+                                        let arr_color = ['#118DF0', '#8bc24c', '#FF5F5F', '#515bd4', '#F7B32D'];
+                                        let flag = 0;
+                                        let wy = $("body").width();
+                                        function pc() {
+                                            if (wy <= 700) {
+                                                window.history.go(0);
+                                            }
+                                            if ($("body").width() < 1240) {
+                                                $(".top img").css("right", "5px");
+                                            } else {
+                                                $(".top img").css("right", "-22px");
+                                            }
+                                            $(".top").css("display", "block");
+                                            for (let index = 0; index < list_box.length; index++) {
+                                                $(list_nr[index]).css("background", arr_color[flag]);
+                                                if (flag == 4) {
+                                                    flag = 0;
+                                                } else {
+                                                    flag += 1;
+                                                }
+                                                if (index % 2 != 0) {
+                                                    let a = $(list_box[index]);
+                                                    let b = $(hx[index]);
+                                                    let c = $(list_nr[index]);
+                                                    let d = $(date[index]);
+                                                    a.css({
+                                                        "float": "right"
+                                                    });
+                                                    b.css({
+                                                        "float": "left"
+                                                    })
+                                                    c.css({
+                                                        "float": "right",
+                                                        "margin-right": "19%"
+                                                    })
+                                                    d.css({
+                                                        "right": 'unset',
+                                                        "left": "12%"
+                                                    })
+                                                }
+                                            }
+                                            $(".list").slideDown(800);
+                                        }
+                                        function move() {
+                                            if (wy > 700) {
+                                                window.history.go(0);
+                                            }
+                                            for (let index = 0; index < list_box.length; index++) {
+                                                $(list_nr[index]).css("background", arr_color[flag]);
+                                                if (flag == 4) {
+                                                    flag = 0;
+                                                } else {
+                                                    flag += 1;
+                                                }
+                                            }
+                                            $(".list").css("margin-top", "60px");
+                                            $(".line").css("left", "10%");
+                                            $(".dian").css("left", "10%");
+                                            $(".list_box").css("width", "100%");
+                                            $(".hx").css("float", "left");
+                                            $(".list_nr").css({
+                                                "max-height": "auto",
+                                                "line-height": "17px",
+                                                "font-size": "12px"
+                                            });
+                                            $($(".list")['0']).css("margin-top", "20px");
+                                            $(".list").slideDown(800);
+                            
+                                        }
+                                        function win() {
+                                            let width = $("body").width();
+                                            $(".line").slideDown(800, _ => {
+                                                if (width <= 700) {
+                                                    move();
+                                                } else {
+                                                    pc();
+                                                }
+                                            });
+                                        }
+                                        $(window).resize(win);
+                                        win();
+                                    });
+                                    // $(".nr_nr").click((e) => {
+                            
+                                    //     if ($("body").width() <= 700) {
+                                    //         alert(e.delegateTarget.innerText);
+                                    //     }
+                            
+                                    // })
+                                    $(".top img").click(_ => {
+                                        $(document).scrollTop(0);
+                                    })
+                                    var time = new Date();
+                                    var time_new = time.getTime();
+                                    var str = '2019-03-01 12:14:46'; 
+                                    str = str.replace(/-/g, '/'); 
+                                    var date = new Date(str); 
+                                    var time_old = date.getTime();
+                                    var cha = (time_new - time_old)/86400000; 
+                                    console.log('本站已运行'+Math.floor(cha)+'天');
+                                    // js部分的代码，主要就是拿来兼容移动端和PC端
+                                </script>					
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="67239683"
-                   fixed='false'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
     </div>
-</div>
-
-<script src="https://cdn.linxueya.cn/lib/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-                        
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-
-
-<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;推荐文章</div>
-
-<div class="row">
-
-    
-    
-    <div class="col s12" >
-        
-            <div class="post-card" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/16.jpg')">
-            
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category">编程</a>
-                        
-                    
-                </div>
-                <a href="/post/686ee723.html">
-                    <h3 class="post-title">JS基本语法之对象</h3>
-                </a>
-                <p class="post-description">JS基本语法</p>
-                <a href="/post/686ee723.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        
-            <div class="post-card" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/23.jpg')">
-            
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category">编程</a>
-                        
-                    
-                </div>
-                <a href="/post/47f7d4a9.html">
-                    <h3 class="post-title">HTML5+CCS3</h3>
-                </a>
-                <p class="post-description">HTML CCS新特性</p>
-                <a href="/post/47f7d4a9.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        
-            <div class="post-card" style="background-image: url('https://cdn.linxueya.cn/medias/featureimages/15.jpg')">
-            
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category">编程</a>
-                        
-                    
-                </div>
-                <a href="/post/574f280b.html">
-                    <h3 class="post-title">前端代码规范</h3>
-                </a>
-                <p class="post-description">前端代码规范</p>
-                <a href="/post/574f280b.html" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-
-</div>
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/87d13011.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/13.jpg" class="responsive-img" alt="Node开发">
-                            
-                            <span class="card-title">Node开发</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Node开发,前后端交互
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Node/">
-                            <span class="chip bg-color">Node</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/b8184365.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/22.jpg" class="responsive-img" alt="ES6新增语法">
-                            
-                            <span class="card-title">ES6新增语法</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                ES6新增语法
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/c9adf6e3.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/2.jpg" class="responsive-img" alt="JavaScript正则表达式">
-                            
-                            <span class="card-title">JavaScript正则表达式</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                JavaScript正则表达式
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/98c2129a.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript函数进阶">
-                            
-                            <span class="card-title">JavaScript函数进阶</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                JavaScript函数进阶
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/e540de51.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/1.jpg" class="responsive-img" alt="软件开发工程师面经">
-                            
-                            <span class="card-title">软件开发工程师面经</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                C++,JS面经汇总
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="post-category">
-                                    面经
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%9D%A2%E7%BB%8F/">
-                            <span class="chip bg-color">面经</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/5096785c.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript构造函数和原型">
-                            
-                            <span class="card-title">JavaScript构造函数和原型</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                JavaScript构造函数和原型
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/f818a4a.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/4.jpg" class="responsive-img" alt="JavaScript面向对象">
-                            
-                            <span class="card-title">JavaScript面向对象</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                JavaScript面向对象
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ES6/">
-                            <span class="chip bg-color">ES6</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/f7b3a86d.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/23.jpg" class="responsive-img" alt="jQuery事件">
-                            
-                            <span class="card-title">jQuery事件</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                jQuery事件
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/jQuery/">
-                            <span class="chip bg-color">jQuery</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/ef821204.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/11.jpg" class="responsive-img" alt="BFS算法模板">
-                            
-                            <span class="card-title">BFS算法模板</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                BFS算法模板
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/BFS/">
-                            <span class="chip bg-color">BFS</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%BF%AD%E4%BB%A3/">
-                            <span class="chip bg-color">迭代</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/acd318ce.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/21.jpg" class="responsive-img" alt="心之语">
-                            
-                            <span class="card-title">心之语</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                心之语
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%97%A5%E5%B8%B8/" class="post-category">
-                                    日常
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%95%A3%E6%96%87%E9%9B%86/">
-                            <span class="chip bg-color">散文集</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/e45f505b.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/14.jpg" class="responsive-img" alt="背包九讲">
-                            
-                            <span class="card-title">背包九讲</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                y总 背包九讲
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-15
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                            <span class="chip bg-color">动态规划</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/post/574f280b.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/15.jpg" class="responsive-img" alt="前端代码规范">
-                            
-                            <span class="card-title">前端代码规范</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                前端代码规范
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/HTML/">
-                            <span class="chip bg-color">HTML</span>
-                        </a>
-                        
-                        <a href="/tags/CCS/">
-                            <span class="chip bg-color">CCS</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </article>
-
 </main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 3</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
-
-
 
 
     <style>
