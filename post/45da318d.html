@@ -861,12 +861,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -875,21 +888,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-18
+                    2021-04-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-18
+                    2021-04-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    660
                 </div>
                 
 
@@ -914,7 +927,92 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="组件化开发思想"><a href="#组件化开发思想" class="headerlink" title="组件化开发思想"></a>组件化开发思想</h2><p>标准 分治  重用  组合</p>
+<p>组件化规范 web components</p>
+<h2 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h2><h3 id="全局注册组件"><a href="#全局注册组件" class="headerlink" title="全局注册组件"></a>全局注册组件</h3><p><code>Vue.component('my-component-name', { /* ... */ })</code> </p>
+<ul>
+<li>组件中的data必须是一个函数 </li>
+<li> 组件模板内容必须是单个跟元素，不能为并列关系</li>
+<li>组件模板内容可以是模板字符串，这样代码可读性更好 </li>
+</ul>
+<p>组件注册命名方式有短横线和驼峰命名两种方式。如果使用驼峰命名组件，那么在使用组件时，只能在字符串模板中使用驼峰命名组件，在普通的标签模板中，必须使用短横线命名组件。</p>
+<h3 id="局部组件注册"><a href="#局部组件注册" class="headerlink" title="局部组件注册"></a>局部组件注册</h3><p>在vue实例的参数重引入components属性。</p>
+<p>局部组件只能在注册他的父组件中使用。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> Child <span class="token operator">=</span> <span class="token punctuation">{</span>
+  template<span class="token operator">:</span> <span class="token string">'&lt;div&gt;A custom component!&lt;/div&gt;'</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  components<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'my-component'</span><span class="token operator">:</span> Child
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="组件间数据交互"><a href="#组件间数据交互" class="headerlink" title="组件间数据交互"></a>组件间数据交互</h2><h3 id="父组件向子组件传值"><a href="#父组件向子组件传值" class="headerlink" title="父组件向子组件传值"></a>父组件向子组件传值</h3><ul>
+<li><p>组件内部通过props接受传递过来的值</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'my-component-name'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> 
+	props<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  templete<span class="token operator">:</span><span class="token string">'&lt;div&gt;{{title}}&lt;/div&gt;'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>父组件通过属性将值传递给子组件</p>
+  <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>munu<span class="token operator">-</span>item title<span class="token operator">=</span><span class="token string">"来自父组件的数据"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>menu<span class="token operator">-</span>item<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>munu<span class="token operator">-</span>item <span class="token operator">:</span>title<span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>menu<span class="token operator">-</span>item<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>props属性名规则</p>
+<ul>
+<li>在props中使用驼峰形式，模板中需要使用短横线形式</li>
+<li>字符串形式模板没有这个限制 </li>
+</ul>
+</li>
+</ul>
+<h3 id="子组件向父组件传值"><a href="#子组件向父组件传值" class="headerlink" title="子组件向父组件传值"></a>子组件向父组件传值</h3><ul>
+<li>子组件通过自定义事件向父组件传递信息</li>
+</ul>
+<p><code>&lt;button @click=$emit("enlarge-text")&gt;扩大字体 &lt;/button&gt;</code></p>
+<ul>
+<li><p>父组件监听子组件的事件</p>
+<p><code>&lt;munu-item @enlarge-text='fintSize += 0.1'&gt;&lt;/menu-item&gt;</code></p>
+<ul>
+<li>子组件通过自定义事件向父组件传递信息</li>
+</ul>
+</li>
+</ul>
+<p><code>&lt;button @click=$emit("enlarge-text",0.1)&gt;扩大字体 &lt;/button&gt;</code></p>
+<ul>
+<li><p>父组件监听子组件的事件</p>
+<p><code>&lt;munu-item @enlarge-text='fintSize += $event'&gt;&lt;/menu-item&gt;</code></p>
+</li>
+</ul>
+<h3 id="非父子组件传值"><a href="#非父子组件传值" class="headerlink" title="非父子组件传值"></a>非父子组件传值</h3><ul>
+<li><p>单独的事件中心管理组件间的通信</p>
+<p><code> var enentHub= new Vue()</code></p>
+</li>
+<li><p>监听事件与销毁事件</p>
+<p><code>enentHub.$on('add-todo',addTodo).  enentHub.$off('add-todo') </code></p>
+</li>
+<li><p>触发事件.  <code>enentHub.$emit('add-todo',id )</code></p>
+</li>
+</ul>
+<p>兄弟组件传值 ==案例== ：</p>
+<h2 id="组件插槽"><a href="#组件插槽" class="headerlink" title="组件插槽"></a>组件插槽</h2><h3 id="匿名插槽"><a href="#匿名插槽" class="headerlink" title="匿名插槽"></a>匿名插槽</h3><p>父组件向子组件传递内容</p>
+<p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/vue-com.png"></p>
+<p>插槽位置</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span>'my<span class="token operator">-</span>component<span class="token operator">-</span>
+  templete<span class="token operator">:</span>'
+      <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"demo-alert-box"</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>strong<span class="token operator">&gt;</span>error<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>strong<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>solt<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+'
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>插槽内容</p>
+<p><code>&lt;alert-box&gt;Something&lt;/alert-box &gt;</code></p>
+<h3 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h3><p>使用 <slot> 中的 “name” 属性绑定元素</slot></p>
+<p><img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/img/vue-slot.png"></p>
+<h3 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h3><ul>
+<li>父组件对子组件的内容进行加工处理</li>
+<li>既可以复用子组件的slot，又可以使slot内容不一致</li>
+</ul>
+<h2 id="基于组件的案例"><a href="#基于组件的案例" class="headerlink" title="基于组件的案例"></a>基于组件的案例</h2>
                 
             </div>
             <hr/>
@@ -977,7 +1075,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1421,15 +1523,15 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/22.jpg" class="responsive-img" alt="vue前端交互">
+                        <img src="/medias/loading.gif" data-original="https://cdn.linxueya.cn/medias/featureimages/14.jpg" class="responsive-img" alt="vue前后端交互">
                         
-                        <span class="card-title">vue前端交互</span>
+                        <span class="card-title">vue前后端交互</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            vue前后端交互
                         
                     </div>
                     <div class="publish-info">
@@ -1438,11 +1540,23 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            linxueya
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
                 </div>
                 
             </div>

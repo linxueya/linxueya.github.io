@@ -6,7 +6,7 @@
   <link href="http://linxueya.github.io/atom.xml" rel="self"/>
   
   <link href="http://linxueya.github.io/"/>
-  <updated>2021-04-18T08:53:21.132Z</updated>
+  <updated>2021-04-21T13:37:17.940Z</updated>
   <id>http://linxueya.github.io/</id>
   
   <author>
@@ -20,25 +20,52 @@
     <title>vue前端路由</title>
     <link href="http://linxueya.github.io/post/1189be69.html"/>
     <id>http://linxueya.github.io/post/1189be69.html</id>
-    <published>2021-04-18T08:53:21.000Z</published>
-    <updated>2021-04-18T08:53:21.132Z</updated>
+    <published>2021-04-21T08:53:21.000Z</published>
+    <updated>2021-04-21T13:37:17.940Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 能够说出路由的概念&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 能够说出vue-router的基本使用步骤&lt;/li&gt;
+&lt;li&gt;&lt;input</summary>
+        
+      
     
     
     
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
+    
+    <category term="vue" scheme="http://linxueya.github.io/tags/vue/"/>
     
   </entry>
   
   <entry>
-    <title>vue前端交互</title>
+    <title>vue前后端交互</title>
     <link href="http://linxueya.github.io/post/e2fcfba5.html"/>
     <id>http://linxueya.github.io/post/e2fcfba5.html</id>
     <published>2021-04-18T08:53:11.000Z</published>
-    <updated>2021-04-18T14:14:14.333Z</updated>
+    <updated>2021-04-21T13:37:24.357Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前后端交互模式&quot;&gt;&lt;a href=&quot;#前后端交互模式&quot; class=&quot;headerlink&quot; title=&quot;前后端交互模式&quot;&gt;&lt;/a&gt;前后端交互模式&lt;/h2&gt;&lt;h3 id=&quot;传统形式URL&quot;&gt;&lt;a href=&quot;#传统形式URL&quot;</summary>
+        
+      
     
     
     
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
+    
+    <category term="vue" scheme="http://linxueya.github.io/tags/vue/"/>
     
   </entry>
   
@@ -46,12 +73,26 @@
     <title>vue组件化开发</title>
     <link href="http://linxueya.github.io/post/45da318d.html"/>
     <id>http://linxueya.github.io/post/45da318d.html</id>
-    <published>2021-04-18T08:52:57.000Z</published>
-    <updated>2021-04-18T08:52:57.208Z</updated>
+    <published>2021-04-17T08:52:57.000Z</published>
+    <updated>2021-04-21T13:37:49.607Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;组件化开发思想&quot;&gt;&lt;a href=&quot;#组件化开发思想&quot; class=&quot;headerlink&quot; title=&quot;组件化开发思想&quot;&gt;&lt;/a&gt;组件化开发思想&lt;/h2&gt;&lt;p&gt;标准 分治  重用  组合&lt;/p&gt;
+&lt;p&gt;组件化规范 web components&lt;/p&gt;
+&lt;h2</summary>
+        
+      
     
     
     
+    <category term="编程" scheme="http://linxueya.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
     
+    
+    <category term="vue" scheme="http://linxueya.github.io/tags/vue/"/>
     
   </entry>
   
@@ -60,7 +101,7 @@
     <link href="http://linxueya.github.io/post/c9970ee4.html"/>
     <id>http://linxueya.github.io/post/c9970ee4.html</id>
     <published>2021-04-15T08:52:29.000Z</published>
-    <updated>2021-04-18T15:37:11.990Z</updated>
+    <updated>2021-04-21T13:39:11.254Z</updated>
     
     
       
