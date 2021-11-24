@@ -895,7 +895,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-08
+                    2021-04-24
                 </div>
                 
 
@@ -981,14 +981,14 @@
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> lis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelctor</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>lis<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="构造函数方法"><a href="#构造函数方法" class="headerlink" title="构造函数方法"></a>构造函数方法</h2><h3 id="array的拓展方法"><a href="#array的拓展方法" class="headerlink" title="array的拓展方法"></a>array的拓展方法</h3><ol>
-<li><p>array.from() ： 将类数组或可遍历对象转换为真正的数组,方法还可以接收==第二个参数==，作用类似于数组的map方法，用来处理每个元素并返回。</p>
+<li><p>array.from() ： 将类数组或可遍历对象转换为真正的数组,方法还可以接收<strong>第二个参数</strong>，作用类似于数组的map方法，用来处理每个元素并返回。</p>
 <p><code>var ary = array.from(aryLike)</code></p>
 </li>
 <li><p>array.find() ：用于找出第一个符合条件的数组成员，如果没有返回undefined</p>
-<p><code>let target  = ary.find()(item,index) =&gt; item.id == 2)</code></p>
+<p><code>let target  = ary.find((item,index) =&gt; item.id == 2))</code></p>
 </li>
 <li><p>array.findIndex() ：用于找出第一个符合条件的数组成员的位置，如果没有找到返回-1</p>
-<p><code>let index = ary.findIndex()(item,index) =&gt; value &gt; 2)</code></p>
+<p><code>let index = ary.findIndex((item,index) =&gt; value &gt; 2))</code></p>
 </li>
 <li><p>array.includes() ：用于确定某个数组是否包含给定的值，但会布尔值</p>
 <p><code>let falg = ary.includes(2)</code></p>
