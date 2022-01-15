@@ -40,239 +40,6 @@ while queue 不空：
       </tags>
   </entry>
   <entry>
-    <title>ES6新增语法</title>
-    <url>/post/b8184365.html</url>
-    <content><![CDATA[<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>ES6中新增的用于声明变量的关键字。</p>
-<ul>
-<li><p>let声明的变量只在所处的块级有效，var变量不具备这个特点。</p>
-</li>
-<li><p>不存在变量提升</p>
-</li>
-<li><p>使用let声明的变量具有暂时性死区特性</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> num<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-</li>
-</ul>
-<p>经典面试题</p>
-<p><img src="https://cdn.linxueya.cn/img/ES6-let.png"></p>
-<p>每次循环都会产生一个块级作用域，每个块级作用域中的变量都是不同的，函数执行时输出的是上一次作用域下的值</p>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>作用：声明变量，常量就是指（内存地址）不能变化的量</p>
-<ul>
-<li>具有块级作用域</li>
-<li>声明是必须赋值</li>
-<li>常量幅值后，值不能更改</li>
-</ul>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>数组解构：数组解构允许我们按照一一对应的关系从数组中提取值，然后将值赋值给变量</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>对象解构：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token string">"18"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> <span class="token punctuation">{</span>name<span class="token punctuation">,</span>age<span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
-<span class="token keyword">let</span> <span class="token punctuation">{</span>name<span class="token operator">:</span>myname<span class="token punctuation">,</span>age<span class="token operator">:</span>myage<span class="token punctuation">}</span> <span class="token operator">=</span> person<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
-<span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
-<span class="token comment">// 若函数体中只有一句代码，且代码执行的结果就是值，可以省略大括号</span>
-<span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> n1 <span class="token operator">+</span> n2<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>箭头函数不绑定this关键字，箭头函数中的this，指向函数定义位置的上下文this</p>
-<h2 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h2><p>剩余参数允许我们将一个不定量的参数表示为一个数组。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="拓展运算"><a href="#拓展运算" class="headerlink" title="拓展运算"></a>拓展运算</h2><p>拓展运算可以将数组或者对象用逗号分割成参数序列。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> ary <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token comment">// ...ary "a" "b" "c"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>拓展运算应用于数组合并</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> ary1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> ary2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> ary3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>ary1<span class="token punctuation">,</span><span class="token operator">...</span>ary2<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token comment">// ary1.push(...ary2) 第二种方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>将类数组或可遍历对象转换为真正的数组</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> lis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelctor</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>lis<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="构造函数方法"><a href="#构造函数方法" class="headerlink" title="构造函数方法"></a>构造函数方法</h2><h3 id="array的拓展方法"><a href="#array的拓展方法" class="headerlink" title="array的拓展方法"></a>array的拓展方法</h3><ol>
-<li><p>array.from() ： 将类数组或可遍历对象转换为真正的数组,方法还可以接收<strong>第二个参数</strong>，作用类似于数组的map方法，用来处理每个元素并返回。</p>
-<p><code>var ary = array.from(aryLike)</code></p>
-</li>
-<li><p>array.find() ：用于找出第一个符合条件的数组成员，如果没有返回undefined</p>
-<p><code>let target  = ary.find((item,index) =&gt; item.id == 2))</code></p>
-</li>
-<li><p>array.findIndex() ：用于找出第一个符合条件的数组成员的位置，如果没有找到返回-1</p>
-<p><code>let index = ary.findIndex((item,index) =&gt; value &gt; 2))</code></p>
-</li>
-<li><p>array.includes() ：用于确定某个数组是否包含给定的值，但会布尔值</p>
-<p><code>let falg = ary.includes(2)</code></p>
-</li>
-</ol>
-<h3 id="string的拓展方法"><a href="#string的拓展方法" class="headerlink" title="string的拓展方法"></a>string的拓展方法</h3><p>模板字符串可以解析变量  $(name)；</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">zhangsan</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">hello,my name is $(name)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>模板字符串可以换行；</p>
-<p>startsWith() 和 endsWith()  表示原字符串是否以目标字符串结尾，返回布尔值；</p>
-<p>repeat()   repeat方法表示将原字符串重复n次，返回一个新的字符串；</p>
-<h2 id="set数据结构"><a href="#set数据结构" class="headerlink" title="set数据结构"></a>set数据结构</h2><p>set数据结构类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
-<p><code> const s = new Set([1,2,3,5])</code> </p>
-<p>实例方法： add(); delete(); has(); clear().</p>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>ES6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS基本语法之作用域</title>
-    <url>/post/76206bf9.html</url>
-    <content><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
-<li>JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的</li>
-<li>全局作用域 ：整个script标签</li>
-<li>局部作用域：在函数内部</li>
-</ul>
-<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><blockquote>
-<p>类似C/C++ 中的全局变量和局部变量</p>
-</blockquote>
-<ul>
-<li>全局变量： 在全局作用域中的变量<ul>
-<li>在函数内未声明的变量也为全局变量      </li>
-</ul>
-</li>
-<li> 局部变量： 在局部作用域下的变量</li>
-<li>执行效率：<ul>
-<li>全局变量浏览器关闭才会销毁，比较占内存</li>
-<li>局部变量在函数结束时才会销毁</li>
-</ul>
-</li>
-<li>JS中没有块级作用域 { }  // if {}   for {]}</li>
-</ul>
-<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><blockquote>
-<p>内部函数访问外部函数的变量，采取的是链式查找的方式</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo命令指南</title>
-    <url>/post/400a6e47.html</url>
-    <content><![CDATA[<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class="line-numbers language-none"><code class="language-none">npm install hexo -g #安装Hexo
-npm update hexo -g #升级
-hexo init #初始化博客<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>matery github仓库<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">介绍</a><br>Yafine大佬 Hexo+github搭建<a href="https://yafine-blog.cn/posts/4ab2.html">博客</a>(超级详细版，精细入微)</p>
-<h2 id="命令简写"><a href="#命令简写" class="headerlink" title="命令简写"></a>命令简写</h2><pre class="line-numbers language-none"><code class="language-none">hexo n "我的博客" == hexo new "我的博客" #新建文章
-hexo g == hexo generate #生成
-hexo s == hexo server #启动服务预览
-hexo d == hexo deploy #部署
-
-hexo server #Hexo会监视文件变动并自动更新，无须重启服务器
-hexo server -s #静态模式
-hexo server -p 5000 #更改端口
-hexo server -i 192.168.1.1 #自定义 IP
-hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<h2 id="博客-Font-Master"><a href="#博客-Font-Master" class="headerlink" title="博客 Font Master"></a>博客 Font Master</h2><pre class="line-numbers language-none"><code class="language-none">title: typora-vue-theme主题介绍
-date: 2018-09-07 09:25:00
-author: 赵奇
-img: /source/images/xxx.jpg
-top: true
-cover: true
-coverImg: /images/1.jpg
-password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
-toc: false
-mathjax: false
-summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
-categories: Markdown
-tags:
-  - Typora
-  - Markdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Hexo优化"><a href="#Hexo优化" class="headerlink" title="Hexo优化"></a>Hexo优化</h2><p>添加valine评论邮箱提醒 <a href="https://deserts.io/valine-admin-document/">链接</a></p>
-<p>添加说说  <a href="https://notes.zhangxiaocai.cn/posts/7404e01a.html">链接</a></p>
-<p>更多 <a href="https://blog.sky03.cn/posts/42790.html#toc-heading-18">链接</a></p>
-]]></content>
-      <categories>
-        <category>软件工具</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS基本语法之函数</title>
-    <url>/post/877bf8ef.html</url>
-    <content><![CDATA[<h2 id="函数的概念"><a href="#函数的概念" class="headerlink" title="函数的概念"></a>函数的概念</h2><p>函数就是封装了一段可以重复被调用的代码块</p>
-<h2 id="函数的使用"><a href="#函数的使用" class="headerlink" title="函数的使用"></a>函数的使用</h2><ul>
-<li>函数声明：</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">function () {  //function 为声明函数的关键字  //全部小写
-   action;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>函数调用： 函数名()  fun( )</li>
-</ul>
-<h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><ul>
-<li><p>形参：在声明函数小括号里面的参数是形参</p>
-</li>
-<li><p>实参：在函数调用小括号里面的参数是实参</p>
-</li>
-<li><p>实参和形参匹配</p>
-<ul>
-<li>如果实参个数等于形参个数，输出正常结果</li>
-<li>如果实参个数大于形参个数，会取到形参的个数</li>
-<li>如果实参个数小于形参个数，多余的参数为NaN</li>
-</ul>
-</li>
-</ul>
-<h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><ul>
-<li>如果有return，则返回return后面的值</li>
-<li>如果没有return，则返回undefined</li>
-</ul>
-<h2 id="arguments的使用"><a href="#arguments的使用" class="headerlink" title="arguments的使用"></a>arguments的使用</h2><ul>
-<li>arguments存放了传递的所有实参</li>
-<li>arguments是一种 == 伪数组 ==<ul>
-<li>具有数组的length属性</li>
-<li>按照索引的方式进行存储</li>
-<li>它没有真实数组的一些方法   //pop</li>
-</ul>
-</li>
-</ul>
-<h2 id="函数的两种声明方式"><a href="#函数的两种声明方式" class="headerlink" title="函数的两种声明方式"></a>函数的两种声明方式</h2><ul>
-<li><p>利用函数关键字自定义函数</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    
-<span class="token punctuation">}</span>
-<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>函数表达式</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">func</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-<span class="token punctuation">}</span>
-<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// func 是变量名，不是函数名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML5+CCS3</title>
     <url>/post/47f7d4a9.html</url>
     <content><![CDATA[<h2 id="新增语义化标签"><a href="#新增语义化标签" class="headerlink" title="新增语义化标签"></a>新增语义化标签</h2><ul>
@@ -529,166 +296,230 @@ tags:
       </tags>
   </entry>
   <entry>
-    <title>JS基本语法之对象</title>
-    <url>/post/686ee723.html</url>
-    <content><![CDATA[<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>在JavaScript中，对象是一组无序的相关属性和方法的集合，如字符串，数值，数组，函数等.</p>
-<p>对象是由属性和方法组成的</p>
+    <title>ES6新增语法</title>
+    <url>/post/b8184365.html</url>
+    <content><![CDATA[<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>ES6中新增的用于声明变量的关键字。</p>
 <ul>
-<li>属性：对象的特征</li>
-<li>方法：事物的行为</li>
+<li><p>let声明的变量只在所处的块级有效，var变量不具备这个特点。</p>
+</li>
+<li><p>不存在变量提升</p>
+</li>
+<li><p>使用let声明的变量具有暂时性死区特性</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> num<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</li>
 </ul>
-<h2 id="创建对象的三种方式"><a href="#创建对象的三种方式" class="headerlink" title="创建对象的三种方式"></a>创建对象的三种方式</h2><ol>
-<li><p>利用字面量创建对象 { }</p>
-<ol>
-<li>其中属性或方法采用键值对的形式</li>
-<li>多个属性或方法之间用逗号隔开</li>
-<li>方法后面跟的是一个匿名函数 </li>
-<li>调用对象的属性 对象名.属性名  或  对象名[‘属性名’]</li>
-</ol>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>； <span class="token comment">//  创建一个空对象</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> 
-	name<span class="token operator">:</span> linxueya<span class="token punctuation">,</span>
-	age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">sayhi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"hi~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>利用new object() 方法创建属性 </p>
- <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//创建了一个空的对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>利用构造函数创建对象</p>
-<p> 构造函数：把对象里面一些相同的属性和方法抽象出来封装导函数里面</p>
- <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>属性 <span class="token operator">=</span> 值；
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">方法</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<p>经典面试题</p>
+<p><img src="https://cdn.linxueya.cn/img/ES6-let.png"></p>
+<p>每次循环都会产生一个块级作用域，每个块级作用域中的变量都是不同的，函数执行时输出的是上一次作用域下的值</p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>作用：声明变量，常量就是指（内存地址）不能变化的量</p>
+<ul>
+<li>具有块级作用域</li>
+<li>声明是必须赋值</li>
+<li>常量幅值后，值不能更改</li>
+</ul>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>数组解构：数组解构允许我们按照一一对应的关系从数组中提取值，然后将值赋值给变量</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>对象解构：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token operator">:</span><span class="token string">"zhangsan"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token string">"18"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token punctuation">{</span>name<span class="token punctuation">,</span>age<span class="token punctuation">}</span> <span class="token operator">=</span> person<span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token punctuation">{</span>name<span class="token operator">:</span>myname<span class="token punctuation">,</span>age<span class="token operator">:</span>myage<span class="token punctuation">}</span> <span class="token operator">=</span> person<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token comment">// 若函数体中只有一句代码，且代码执行的结果就是值，可以省略大括号</span>
+<span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> n1 <span class="token operator">+</span> n2<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>箭头函数不绑定this关键字，箭头函数中的this，指向函数定义位置的上下文this</p>
+<h2 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h2><p>剩余参数允许我们将一个不定量的参数表示为一个数组。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">new</span> <span class="token class-name">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="拓展运算"><a href="#拓展运算" class="headerlink" title="拓展运算"></a>拓展运算</h2><p>拓展运算可以将数组或者对象用逗号分割成参数序列。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> ary <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// ...ary "a" "b" "c"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>拓展运算应用于数组合并</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> ary1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ary2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ary3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>ary1<span class="token punctuation">,</span><span class="token operator">...</span>ary2<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">// ary1.push(...ary2) 第二种方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>将类数组或可遍历对象转换为真正的数组</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> lis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelctor</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+lis <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>lis<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="构造函数方法"><a href="#构造函数方法" class="headerlink" title="构造函数方法"></a>构造函数方法</h2><h3 id="array的拓展方法"><a href="#array的拓展方法" class="headerlink" title="array的拓展方法"></a>array的拓展方法</h3><ol>
+<li><p>array.from() ： 将类数组或可遍历对象转换为真正的数组,方法还可以接收<strong>第二个参数</strong>，作用类似于数组的map方法，用来处理每个元素并返回。</p>
+<p><code>var ary = array.from(aryLike)</code></p>
+</li>
+<li><p>array.find() ：用于找出第一个符合条件的数组成员，如果没有返回undefined</p>
+<p><code>let target  = ary.find((item,index) =&gt; item.id == 2))</code></p>
+</li>
+<li><p>array.findIndex() ：用于找出第一个符合条件的数组成员的位置，如果没有找到返回-1</p>
+<p><code>let index = ary.findIndex((item,index) =&gt; value &gt; 2))</code></p>
+</li>
+<li><p>array.includes() ：用于确定某个数组是否包含给定的值，但会布尔值</p>
+<p><code>let falg = ary.includes(2)</code></p>
 </li>
 </ol>
-<h2 id="变量、属性、函数和方法的区别"><a href="#变量、属性、函数和方法的区别" class="headerlink" title="变量、属性、函数和方法的区别"></a>变量、属性、函数和方法的区别</h2><ul>
-<li>变量：单独声明赋值，单独存在</li>
-<li>属性：对象里面的变量称为属性，不需要声明，用来描述该对象的特征</li>
-<li>函数：单独存在的，通过函数名调用</li>
-<li>方法：对象里的函数称为方法，方法不需要声明，通过对象名.函数名的方法调用</li>
+<h3 id="string的拓展方法"><a href="#string的拓展方法" class="headerlink" title="string的拓展方法"></a>string的拓展方法</h3><p>模板字符串可以解析变量  $(name)；</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">zhangsan</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">hello,my name is $(name)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>模板字符串可以换行；</p>
+<p>startsWith() 和 endsWith()  表示原字符串是否以目标字符串结尾，返回布尔值；</p>
+<p>repeat()   repeat方法表示将原字符串重复n次，返回一个新的字符串；</p>
+<h2 id="set数据结构"><a href="#set数据结构" class="headerlink" title="set数据结构"></a>set数据结构</h2><p>set数据结构类似于数组，但是成员的值都是唯一的，没有重复的值。</p>
+<p><code> const s = new Set([1,2,3,5])</code> </p>
+<p>实例方法： add(); delete(); has(); clear().</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo命令指南</title>
+    <url>/post/400a6e47.html</url>
+    <content><![CDATA[<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class="line-numbers language-none"><code class="language-none">npm install hexo -g #安装Hexo
+npm update hexo -g #升级
+hexo init #初始化博客<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>matery github仓库<a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">介绍</a><br>Yafine大佬 Hexo+github搭建<a href="https://yafine-blog.cn/posts/4ab2.html">博客</a>(超级详细版，精细入微)</p>
+<h2 id="命令简写"><a href="#命令简写" class="headerlink" title="命令简写"></a>命令简写</h2><pre class="line-numbers language-none"><code class="language-none">hexo n "我的博客" == hexo new "我的博客" #新建文章
+hexo g == hexo generate #生成
+hexo s == hexo server #启动服务预览
+hexo d == hexo deploy #部署
+
+hexo server #Hexo会监视文件变动并自动更新，无须重启服务器
+hexo server -s #静态模式
+hexo server -p 5000 #更改端口
+hexo server -i 192.168.1.1 #自定义 IP
+hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="博客-Font-Master"><a href="#博客-Font-Master" class="headerlink" title="博客 Font Master"></a>博客 Font Master</h2><pre class="line-numbers language-none"><code class="language-none">title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+author: 赵奇
+img: /source/images/xxx.jpg
+top: true
+cover: true
+coverImg: /images/1.jpg
+password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+toc: false
+mathjax: false
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+categories: Markdown
+tags:
+  - Typora
+  - Markdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Hexo优化"><a href="#Hexo优化" class="headerlink" title="Hexo优化"></a>Hexo优化</h2><p>添加valine评论邮箱提醒 <a href="https://deserts.io/valine-admin-document/">链接</a></p>
+<p>添加说说  <a href="https://notes.zhangxiaocai.cn/posts/7404e01a.html">链接</a></p>
+<p>更多 <a href="https://blog.sky03.cn/posts/42790.html#toc-heading-18">链接</a></p>
+]]></content>
+      <categories>
+        <category>软件工具</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS基本语法之函数</title>
+    <url>/post/877bf8ef.html</url>
+    <content><![CDATA[<h2 id="函数的概念"><a href="#函数的概念" class="headerlink" title="函数的概念"></a>函数的概念</h2><p>函数就是封装了一段可以重复被调用的代码块</p>
+<h2 id="函数的使用"><a href="#函数的使用" class="headerlink" title="函数的使用"></a>函数的使用</h2><ul>
+<li>函数声明：</li>
 </ul>
-<h2 id="New关键字"><a href="#New关键字" class="headerlink" title="New关键字"></a>New关键字</h2><p>New关键字执行过程</p>
-<ol>
-<li>New 构造函数可以在内存中创建一个空的对象</li>
-<li>this 就会指向刚才创建的空对象</li>
-<li>执行构造函数里面的代码，给这个空对象添加属性和方法</li>
-<li>返回这个对象</li>
-</ol>
-<h2 id="遍历对象属性"><a href="#遍历对象属性" class="headerlink" title="遍历对象属性"></a>遍历对象属性</h2><ul>
-<li><p>for in 遍历对象</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
-	name<span class="token operator">:</span> linxueya<span class="token punctuation">,</span>
-	age<span class="token operator">:</span> <span class="token number">18</span>
-	sex<span class="token operator">:</span> 男
+<pre class="line-numbers language-none"><code class="language-none">function () {  //function 为声明函数的关键字  //全部小写
+   action;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>函数调用： 函数名()  fun( )</li>
+</ul>
+<h2 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h2><ul>
+<li><p>形参：在声明函数小括号里面的参数是形参</p>
+</li>
+<li><p>实参：在函数调用小括号里面的参数是实参</p>
+</li>
+<li><p>实参和形参匹配</p>
+<ul>
+<li>如果实参个数等于形参个数，输出正常结果</li>
+<li>如果实参个数大于形参个数，会取到形参的个数</li>
+<li>如果实参个数小于形参个数，多余的参数为NaN</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><ul>
+<li>如果有return，则返回return后面的值</li>
+<li>如果没有return，则返回undefined</li>
+</ul>
+<h2 id="arguments的使用"><a href="#arguments的使用" class="headerlink" title="arguments的使用"></a>arguments的使用</h2><ul>
+<li>arguments存放了传递的所有实参</li>
+<li>arguments是一种 == 伪数组 ==<ul>
+<li>具有数组的length属性</li>
+<li>按照索引的方式进行存储</li>
+<li>它没有真实数组的一些方法   //pop</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数的两种声明方式"><a href="#函数的两种声明方式" class="headerlink" title="函数的两种声明方式"></a>函数的两种声明方式</h2><ul>
+<li><p>利用函数关键字自定义函数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
 <span class="token punctuation">}</span>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>函数表达式</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">func</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出属性名</span>
-	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obk<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// obj[k] 输出属性值</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-</li>
-</ul>
-<h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><ul>
-<li><p>内置对象就是JS语言自带的一些对象，这些对象供开发者使用，并提供了一些基础而必要的方法和属性</p>
-</li>
-<li><p>如何学习对象中的方法   <a href="https://developer.mozilla.org/zh-CN/">MDN</a></p>
-<ol>
-<li>查阅该方法的功能</li>
-<li>查看里面参数的意义和类型</li>
-<li>查看返回值的意义和类型</li>
-<li>通过demo进行测试</li>
-</ol>
-</li>
-</ul>
-<h2 id="MATH对象"><a href="#MATH对象" class="headerlink" title="MATH对象"></a>MATH对象</h2><p>​    Math 是一个对象不是构造函数</p>
-<ul>
-<li><p>Math 对象随机数方法 random( )</p>
-</li>
-<li><p>得到两个数之间的随机整数，并且包含这两个整数</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span>min <span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>随机取数</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">arr<span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>arr<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-</li>
-</ul>
-<h2 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h2><p> Date() 是一个构造函数，必须使用new来调用</p>
-<ul>
-<li>使用 如果没有参数，则返回系统的当前时间</li>
-<li>参数常用的写法 数字型 2019,10,1 ；或者是字符串型 ‘2019-10-1 8:8:8’</li>
-<li>返回的月份，日期，星期比正常小1  </li>
-</ul>
-<p>通过Date() 获取总的毫秒数</p>
-<ul>
-<li>valueOf()  getTime()  +new Date()    Date.now() </li>
-</ul>
-<h2 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h2><ul>
-<li>数组可以通过字面量和new Array() 来创建 </li>
-</ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//创建一个空的数组</span>
-<span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">//创建一个长度为2的数组</span>
-<span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment">//等价于 [2,3]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>instanceof / isArray() 运算符 检测是否为数组</li>
-</ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li><p>添加 删除数组元素的方法</p>
-<p>push()  /   pop()</p>
-</li>
-<li><p>数组翻转 reverse() ;    排序  sort( );  数组索引 indexOf();  数组转换为字符串 toString()  join()   // 分隔符;   数组拼接 concat();    数组截取 slice(begin,end ) 数组删除 splice(第几个开始，删除的个数);</p>
-</li>
-</ul>
-<h2 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h2><p>基本包装类型，就是把简单数据类型包装为复杂数据类型 </p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'andy'</span><span class="token punctuation">;</span>
-
-<span class="token comment">//等价于</span>
-<span class="token keyword">var</span> temp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'andy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-str <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-temp <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>字符串的不可变：指的是里面的值不可变，虽然看上去可以改变内容，但其实是地址变量，内存中开辟了一个新的内存空间</p>
-<p>字符串相关方法： </p>
-<ul>
-<li><p>返回字符串索引，indexOf(‘要查找的字符’，[其实的位置]) ; </p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//查找字符串中所有o出现的次数</span>
-<span class="token keyword">var</span> index <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'o'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span>index <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	index <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">,</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li><p>根据位置返回字符 ，str.charAt(index)   str[index]  // H5 新增;返回指定位置字符的ASCII码   str.charCodeAt(index) ;  </p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 找出字符串中出现最多的字符,统计其出现的次数</span>
-<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'abcoefoxyozzopp'</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> o<span class="token punctuation">;</span>i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token keyword">var</span> chars <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span> o<span class="token punctuation">[</span>chars<span class="token punctuation">]</span><span class="token punctuation">)</span> o<span class="token punctuation">[</span>chars<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
-	<span class="token keyword">else</span> o<span class="token punctuation">[</span>chars<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-
-<span class="token keyword">var</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span>  o<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>o<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">&gt;</span> max<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        max <span class="token operator">=</span> o<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// func 是变量名，不是函数名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-</li>
-<li><p>字符串操作：拼接字符串concat(str1,str2,str3…) 截取字符串  substr(start,length)  ; slice(start,end)     substring(start,end) ；  替换字符串replace(char1 char2);   字符串转换为数组 split(‘分隔符’)   // join   把数组转换为字符串；</p>
 </li>
 </ul>
-</li>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS基本语法之作用域</title>
+    <url>/post/76206bf9.html</url>
+    <content><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
+<li>JavaScript作用域：就是变量在某个范围内起作用，目的是为了提高程序的</li>
+<li>全局作用域 ：整个script标签</li>
+<li>局部作用域：在函数内部</li>
 </ul>
+<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><blockquote>
+<p>类似C/C++ 中的全局变量和局部变量</p>
+</blockquote>
+<ul>
+<li>全局变量： 在全局作用域中的变量<ul>
+<li>在函数内未声明的变量也为全局变量      </li>
+</ul>
+</li>
+<li> 局部变量： 在局部作用域下的变量</li>
+<li>执行效率：<ul>
+<li>全局变量浏览器关闭才会销毁，比较占内存</li>
+<li>局部变量在函数结束时才会销毁</li>
+</ul>
+</li>
+<li>JS中没有块级作用域 { }  // if {}   for {]}</li>
+</ul>
+<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><blockquote>
+<p>内部函数访问外部函数的变量，采取的是链式查找的方式</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -901,6 +732,237 @@ btn<span class="token punctuation">.</span><span class="token function-variable 
       </tags>
   </entry>
   <entry>
+    <title>JS基本语法之对象</title>
+    <url>/post/686ee723.html</url>
+    <content><![CDATA[<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>在JavaScript中，对象是一组无序的相关属性和方法的集合，如字符串，数值，数组，函数等.</p>
+<p>对象是由属性和方法组成的</p>
+<ul>
+<li>属性：对象的特征</li>
+<li>方法：事物的行为</li>
+</ul>
+<h2 id="创建对象的三种方式"><a href="#创建对象的三种方式" class="headerlink" title="创建对象的三种方式"></a>创建对象的三种方式</h2><ol>
+<li><p>利用字面量创建对象 { }</p>
+<ol>
+<li>其中属性或方法采用键值对的形式</li>
+<li>多个属性或方法之间用逗号隔开</li>
+<li>方法后面跟的是一个匿名函数 </li>
+<li>调用对象的属性 对象名.属性名  或  对象名[‘属性名’]</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>； <span class="token comment">//  创建一个空对象</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> 
+	name<span class="token operator">:</span> linxueya<span class="token punctuation">,</span>
+	age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">sayhi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"hi~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>利用new object() 方法创建属性 </p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//创建了一个空的对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>利用构造函数创建对象</p>
+<p> 构造函数：把对象里面一些相同的属性和方法抽象出来封装导函数里面</p>
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>属性 <span class="token operator">=</span> 值；
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">方法</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">new</span> <span class="token class-name">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+</ol>
+<h2 id="变量、属性、函数和方法的区别"><a href="#变量、属性、函数和方法的区别" class="headerlink" title="变量、属性、函数和方法的区别"></a>变量、属性、函数和方法的区别</h2><ul>
+<li>变量：单独声明赋值，单独存在</li>
+<li>属性：对象里面的变量称为属性，不需要声明，用来描述该对象的特征</li>
+<li>函数：单独存在的，通过函数名调用</li>
+<li>方法：对象里的函数称为方法，方法不需要声明，通过对象名.函数名的方法调用</li>
+</ul>
+<h2 id="New关键字"><a href="#New关键字" class="headerlink" title="New关键字"></a>New关键字</h2><p>New关键字执行过程</p>
+<ol>
+<li>New 构造函数可以在内存中创建一个空的对象</li>
+<li>this 就会指向刚才创建的空对象</li>
+<li>执行构造函数里面的代码，给这个空对象添加属性和方法</li>
+<li>返回这个对象</li>
+</ol>
+<h2 id="遍历对象属性"><a href="#遍历对象属性" class="headerlink" title="遍历对象属性"></a>遍历对象属性</h2><ul>
+<li><p>for in 遍历对象</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+	name<span class="token operator">:</span> linxueya<span class="token punctuation">,</span>
+	age<span class="token operator">:</span> <span class="token number">18</span>
+	sex<span class="token operator">:</span> 男
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出属性名</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obk<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// obj[k] 输出属性值</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+</ul>
+<h2 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h2><ul>
+<li><p>内置对象就是JS语言自带的一些对象，这些对象供开发者使用，并提供了一些基础而必要的方法和属性</p>
+</li>
+<li><p>如何学习对象中的方法   <a href="https://developer.mozilla.org/zh-CN/">MDN</a></p>
+<ol>
+<li>查阅该方法的功能</li>
+<li>查看里面参数的意义和类型</li>
+<li>查看返回值的意义和类型</li>
+<li>通过demo进行测试</li>
+</ol>
+</li>
+</ul>
+<h2 id="MATH对象"><a href="#MATH对象" class="headerlink" title="MATH对象"></a>MATH对象</h2><p>​    Math 是一个对象不是构造函数</p>
+<ul>
+<li><p>Math 对象随机数方法 random( )</p>
+</li>
+<li><p>得到两个数之间的随机整数，并且包含这两个整数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span>min <span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>随机取数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">arr<span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>arr<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+</li>
+</ul>
+<h2 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h2><p> Date() 是一个构造函数，必须使用new来调用</p>
+<ul>
+<li>使用 如果没有参数，则返回系统的当前时间</li>
+<li>参数常用的写法 数字型 2019,10,1 ；或者是字符串型 ‘2019-10-1 8:8:8’</li>
+<li>返回的月份，日期，星期比正常小1  </li>
+</ul>
+<p>通过Date() 获取总的毫秒数</p>
+<ul>
+<li>valueOf()  getTime()  +new Date()    Date.now() </li>
+</ul>
+<h2 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h2><ul>
+<li>数组可以通过字面量和new Array() 来创建 </li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//创建一个空的数组</span>
+<span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">//创建一个长度为2的数组</span>
+<span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment">//等价于 [2,3]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>instanceof / isArray() 运算符 检测是否为数组</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><p>添加 删除数组元素的方法</p>
+<p>push()  /   pop()</p>
+</li>
+<li><p>数组翻转 reverse() ;    排序  sort( );  数组索引 indexOf();  数组转换为字符串 toString()  join()   // 分隔符;   数组拼接 concat();    数组截取 slice(begin,end ) 数组删除 splice(第几个开始，删除的个数);</p>
+</li>
+</ul>
+<h2 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h2><p>基本包装类型，就是把简单数据类型包装为复杂数据类型 </p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'andy'</span><span class="token punctuation">;</span>
+
+<span class="token comment">//等价于</span>
+<span class="token keyword">var</span> temp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'andy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+str <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+temp <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>字符串的不可变：指的是里面的值不可变，虽然看上去可以改变内容，但其实是地址变量，内存中开辟了一个新的内存空间</p>
+<p>字符串相关方法： </p>
+<ul>
+<li><p>返回字符串索引，indexOf(‘要查找的字符’，[其实的位置]) ; </p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//查找字符串中所有o出现的次数</span>
+<span class="token keyword">var</span> index <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'o'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>index <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	index <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">,</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>根据位置返回字符 ，str.charAt(index)   str[index]  // H5 新增;返回指定位置字符的ASCII码   str.charCodeAt(index) ;  </p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 找出字符串中出现最多的字符,统计其出现的次数</span>
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'abcoefoxyozzopp'</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> o <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> o<span class="token punctuation">;</span>i <span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">var</span> chars <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span> o<span class="token punctuation">[</span>chars<span class="token punctuation">]</span><span class="token punctuation">)</span> o<span class="token punctuation">[</span>chars<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
+	<span class="token keyword">else</span> o<span class="token punctuation">[</span>chars<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span>  o<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>o<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">&gt;</span> max<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        max <span class="token operator">=</span> o<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+<li><p>字符串操作：拼接字符串concat(str1,str2,str3…) 截取字符串  substr(start,length)  ; slice(start,end)     substring(start,end) ；  替换字符串replace(char1 char2);   字符串转换为数组 split(‘分隔符’)   // join   把数组转换为字符串；</p>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript正则表达式</title>
+    <url>/post/c9adf6e3.html</url>
+    <content><![CDATA[<ul>
+<li><input disabled="" type="checkbox"> 能够说出正则表达式的作用</li>
+<li><input disabled="" type="checkbox"> 能够写出简单的正则表达式</li>
+<li><input disabled="" type="checkbox"> 能够使用正则表达式对表单进行验证</li>
+<li><input disabled="" type="checkbox"> 能够使用正则表达式替换内容</li>
+</ul>
+<h2 id="正则表达式概述"><a href="#正则表达式概述" class="headerlink" title="正则表达式概述"></a>正则表达式概述</h2><p>正则表达式适用于匹配字符串中字符组合的模式。</p>
+<h2 id="正则表达式在JS中的使用"><a href="#正则表达式在JS中的使用" class="headerlink" title="正则表达式在JS中的使用"></a>正则表达式在JS中的使用</h2><h3 id="创建正则表达式"><a href="#创建正则表达式" class="headerlink" title="创建正则表达式"></a>创建正则表达式</h3><ol>
+<li><p>通过RegExp对象的构造函数来创建。</p>
+<p><code>var xxx = new RegExp(/表达式/)</code></p>
+</li>
+<li><p>利用字面量表达式</p>
+<p><code>var xxx = /123/</code></p>
+</li>
+</ol>
+<h3 id="测试正则表达式test"><a href="#测试正则表达式test" class="headerlink" title="测试正则表达式test"></a>测试正则表达式test</h3><p>test()正则表达式测试方法</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> xxx <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">123</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xxx<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="正则表达式中的特殊字符"><a href="#正则表达式中的特殊字符" class="headerlink" title="正则表达式中的特殊字符"></a>正则表达式中的特殊字符</h2><p> <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions">MDN</a></p>
+<p><a href="https://www.jq22.com/chm/jquery/index.html">jQuery手册</a></p>
+<p><a href="https://tool.oschina.net/regex">正则表达式测试</a></p>
+<p>正则表达式中不需要加引号</p>
+<p>边界符： ^  表示匹配行首的文本   $  表示匹配行位的文本</p>
+<p>字符类：[ ]  表示有一系列字符可供选择，只要匹配其中一个就可以了；a-z  表示从a到z的范围；中括号里面有 ^  表示取反。</p>
+<p>量词符：* 相当于 &gt;= 0可以出现0次或者多次；+ 相当于 &gt;= 1 可以出现1次或者多次；？相当于 1 || 0;  { 3 }就是重复三次；{3， }大于等于3；{3, 16} 大于等于 3，并且小于等于16</p>
+<p>案例：用户名验证</p>
+<p>案例效果：<span class="github-emoji"><span>➡</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/27a1.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <a href="https://cdn.linxueya.cn/code/web/ES6/regular/1.html">link</a></p>
+<p>括号总结：</p>
+<ol>
+<li>大括号  量词符 里面表示重复次数</li>
+<li>中括号  字符集合。 匹配括号内的任意字符</li>
+<li>小括号  表示优先级</li>
+</ol>
+<p>预定义类：</p>
+<p><img src="https://cdn.linxueya.cn/img/regular-pre-def.png"></p>
+<p>案例：表单验证  </p>
+<p>案例效果：<span class="github-emoji"><span>➡</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/27a1.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <a href="https://cdn.linxueya.cn/code/web/ES6/regular/2/register.html">link</a></p>
+<h2 id="正则表达式中的替换"><a href="#正则表达式中的替换" class="headerlink" title="正则表达式中的替换"></a>正则表达式中的替换</h2><p>/表达式/[switch]</p>
+<ul>
+<li>g ：全局匹配</li>
+<li>i：忽略大小写</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'andy和red'</span><span class="token punctuation">;</span>
+<span class="token comment">// 字符串 替换</span>
+str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'andy'</span><span class="token punctuation">,</span><span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 正则表达式 替换</span>
+str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">andy</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span><span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript构造函数和原型</title>
     <url>/post/5096785c.html</url>
     <content><![CDATA[<ul>
@@ -1026,60 +1088,46 @@ array<span class="token punctuation">.</span><span class="token function">some</
       </tags>
   </entry>
   <entry>
-    <title>JavaScript正则表达式</title>
-    <url>/post/c9adf6e3.html</url>
+    <title>JavaScript面向对象</title>
+    <url>/post/f818a4a.html</url>
     <content><![CDATA[<ul>
-<li><input disabled="" type="checkbox"> 能够说出正则表达式的作用</li>
-<li><input disabled="" type="checkbox"> 能够写出简单的正则表达式</li>
-<li><input disabled="" type="checkbox"> 能够使用正则表达式对表单进行验证</li>
-<li><input disabled="" type="checkbox"> 能够使用正则表达式替换内容</li>
+<li><input disabled="" type="checkbox"> 能够说出什么是面向对象</li>
+<li><input disabled="" type="checkbox"> 能够说出类和对象的关系</li>
+<li><input disabled="" type="checkbox"> 能够使用class创建自定义类</li>
+<li><input disabled="" type="checkbox"> 能够说出什么是继承</li>
 </ul>
-<h2 id="正则表达式概述"><a href="#正则表达式概述" class="headerlink" title="正则表达式概述"></a>正则表达式概述</h2><p>正则表达式适用于匹配字符串中字符组合的模式。</p>
-<h2 id="正则表达式在JS中的使用"><a href="#正则表达式在JS中的使用" class="headerlink" title="正则表达式在JS中的使用"></a>正则表达式在JS中的使用</h2><h3 id="创建正则表达式"><a href="#创建正则表达式" class="headerlink" title="创建正则表达式"></a>创建正则表达式</h3><ol>
-<li><p>通过RegExp对象的构造函数来创建。</p>
-<p><code>var xxx = new RegExp(/表达式/)</code></p>
-</li>
-<li><p>利用字面量表达式</p>
-<p><code>var xxx = /123/</code></p>
-</li>
-</ol>
-<h3 id="测试正则表达式test"><a href="#测试正则表达式test" class="headerlink" title="测试正则表达式test"></a>测试正则表达式test</h3><p>test()正则表达式测试方法</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> xxx <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">123</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xxx<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="正则表达式中的特殊字符"><a href="#正则表达式中的特殊字符" class="headerlink" title="正则表达式中的特殊字符"></a>正则表达式中的特殊字符</h2><p> <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions">MDN</a></p>
-<p><a href="https://www.jq22.com/chm/jquery/index.html">jQuery手册</a></p>
-<p><a href="https://tool.oschina.net/regex">正则表达式测试</a></p>
-<p>正则表达式中不需要加引号</p>
-<p>边界符： ^  表示匹配行首的文本   $  表示匹配行位的文本</p>
-<p>字符类：[ ]  表示有一系列字符可供选择，只要匹配其中一个就可以了；a-z  表示从a到z的范围；中括号里面有 ^  表示取反。</p>
-<p>量词符：* 相当于 &gt;= 0可以出现0次或者多次；+ 相当于 &gt;= 1 可以出现1次或者多次；？相当于 1 || 0;  { 3 }就是重复三次；{3， }大于等于3；{3, 16} 大于等于 3，并且小于等于16</p>
-<p>案例：用户名验证</p>
-<p>案例效果：<span class="github-emoji"><span>➡</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/27a1.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <a href="https://cdn.linxueya.cn/code/web/ES6/regular/1.html">link</a></p>
-<p>括号总结：</p>
-<ol>
-<li>大括号  量词符 里面表示重复次数</li>
-<li>中括号  字符集合。 匹配括号内的任意字符</li>
-<li>小括号  表示优先级</li>
-</ol>
-<p>预定义类：</p>
-<p><img src="https://cdn.linxueya.cn/img/regular-pre-def.png"></p>
-<p>案例：表单验证  </p>
-<p>案例效果：<span class="github-emoji"><span>➡</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/27a1.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> <a href="https://cdn.linxueya.cn/code/web/ES6/regular/2/register.html">link</a></p>
-<h2 id="正则表达式中的替换"><a href="#正则表达式中的替换" class="headerlink" title="正则表达式中的替换"></a>正则表达式中的替换</h2><p>/表达式/[switch]</p>
+<h2 id="面向对象编程介绍"><a href="#面向对象编程介绍" class="headerlink" title="面向对象编程介绍"></a>面向对象编程介绍</h2><p>面向过程编程：分析出解决问题所需要的步骤，然后用函数把这些步骤一步步实现，使用时再依次调用。</p>
+<p>面向对象编程：把事务分解成一个个对象，然后由对象之间分工与合作</p>
+<p><img src="https://cdn.linxueya.cn/img/jsobject-dif.png"></p>
+<h2 id="ES6中的类和对象"><a href="#ES6中的类和对象" class="headerlink" title="ES6中的类和对象"></a>ES6中的类和对象</h2><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>在JavaScript中，对象是一组无序的相关属性和方法的集合，所有的食物都是对象。对象是由属性和方法组成的。</p>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>类抽象了对象的公共部分，它泛指某一大类。对象特指某一个，通过类实例化一个具体的对象。</p>
+<p>创建实例： <code>var xxx = new name();</code></p>
+<p>constructor()方法是类的构造函数，用于传递参数，返回实例对象。只要new生成实例，就会自动调用这个函数。</p>
+<div class="note info">注意类必须使用new实例化对象；创建类不需要小括号，new生成类需要小括号；类里面方法不需要加function</div>
+
+<h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><p>子类会继承父类的一些属性和方法。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Father</span><span class="token punctuation">{</span>
+    
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span><span class="token punctuation">{</span>  <span class="token comment">//子类继承父类</span>
+    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>==super关键字==用于调用父类中的构造函数和普通函数</p>
+<div class="note info">注意super必须在this之前被调用</div>
+
+<p>ES6中的类和对象：</p>
 <ul>
-<li>g ：全局匹配</li>
-<li>i：忽略大小写</li>
+<li><p>在ES6中没有变量提升，所以必须先定义类，然后才能通过实例化类的对象</p>
+</li>
+<li><p>类中共有属性和方法一定要加this使用</p>
+</li>
+<li><p>方法中this指向 ==调用者==，constructor中的this指向实例对象</p>
+<p>案例：面向对象版tab栏切换</p>
+</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">'andy和red'</span><span class="token punctuation">;</span>
-<span class="token comment">// 字符串 替换</span>
-str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'andy'</span><span class="token punctuation">,</span><span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 正则表达式 替换</span>
-str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">andy</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span><span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-]]></content>
+<p>案例效果: <a href="file:///D:/Master/Code/WebProjects/itcast/ES6/JSobject/tab/index.html">GO</a></p>
+<p><img src="https://cdn.linxueya.cn/img/jsobject-tab.png"></p>
+<!--注意this指向;insertAdjacentHTML ,支持字符串追加;删除选中转态li,前一个li自动处于选定状态;非选中状态li,原来section不变;双击生成文本框,失去焦点关闭-->]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -1204,54 +1252,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
       </categories>
       <tags>
         <tag>Node</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript面向对象</title>
-    <url>/post/f818a4a.html</url>
-    <content><![CDATA[<ul>
-<li><input disabled="" type="checkbox"> 能够说出什么是面向对象</li>
-<li><input disabled="" type="checkbox"> 能够说出类和对象的关系</li>
-<li><input disabled="" type="checkbox"> 能够使用class创建自定义类</li>
-<li><input disabled="" type="checkbox"> 能够说出什么是继承</li>
-</ul>
-<h2 id="面向对象编程介绍"><a href="#面向对象编程介绍" class="headerlink" title="面向对象编程介绍"></a>面向对象编程介绍</h2><p>面向过程编程：分析出解决问题所需要的步骤，然后用函数把这些步骤一步步实现，使用时再依次调用。</p>
-<p>面向对象编程：把事务分解成一个个对象，然后由对象之间分工与合作</p>
-<p><img src="https://cdn.linxueya.cn/img/jsobject-dif.png"></p>
-<h2 id="ES6中的类和对象"><a href="#ES6中的类和对象" class="headerlink" title="ES6中的类和对象"></a>ES6中的类和对象</h2><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>在JavaScript中，对象是一组无序的相关属性和方法的集合，所有的食物都是对象。对象是由属性和方法组成的。</p>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>类抽象了对象的公共部分，它泛指某一大类。对象特指某一个，通过类实例化一个具体的对象。</p>
-<p>创建实例： <code>var xxx = new name();</code></p>
-<p>constructor()方法是类的构造函数，用于传递参数，返回实例对象。只要new生成实例，就会自动调用这个函数。</p>
-<div class="note info">注意类必须使用new实例化对象；创建类不需要小括号，new生成类需要小括号；类里面方法不需要加function</div>
-
-<h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><p>子类会继承父类的一些属性和方法。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Father</span><span class="token punctuation">{</span>
-    
-<span class="token punctuation">}</span>
-<span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span><span class="token punctuation">{</span>  <span class="token comment">//子类继承父类</span>
-    
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>==super关键字==用于调用父类中的构造函数和普通函数</p>
-<div class="note info">注意super必须在this之前被调用</div>
-
-<p>ES6中的类和对象：</p>
-<ul>
-<li><p>在ES6中没有变量提升，所以必须先定义类，然后才能通过实例化类的对象</p>
-</li>
-<li><p>类中共有属性和方法一定要加this使用</p>
-</li>
-<li><p>方法中this指向 ==调用者==，constructor中的this指向实例对象</p>
-<p>案例：面向对象版tab栏切换</p>
-</li>
-</ul>
-<p>案例效果: <a href="file:///D:/Master/Code/WebProjects/itcast/ES6/JSobject/tab/index.html">GO</a></p>
-<p><img src="https://cdn.linxueya.cn/img/jsobject-tab.png"></p>
-<!--注意this指向;insertAdjacentHTML ,支持字符串追加;删除选中转态li,前一个li自动处于选定状态;非选中状态li,原来section不变;双击生成文本框,失去焦点关闭-->]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>ES6</tag>
       </tags>
   </entry>
   <entry>
@@ -1526,140 +1526,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
       </tags>
   </entry>
   <entry>
-    <title>Web-APIs2</title>
-    <url>/post/d23a6e4b.html</url>
-    <content><![CDATA[<ul>
-<li><p><input disabled="" type="checkbox">  能够写出元素注册事件的两种方式</p>
-</li>
-<li><p><input disabled="" type="checkbox">  能够说出删除事件的两种方式</p>
-</li>
-<li><p><input disabled="" type="checkbox">  能够说出DOM事件流的三个阶段</p>
-</li>
-<li><p><input disabled="" type="checkbox">  能够利用事件对象完成跟随鼠标案例</p>
-</li>
-<li><p><input disabled="" type="checkbox">  能够封装阻止冒泡的兼容性函数</p>
-</li>
-<li><p><input disabled="" type="checkbox">  能够说出事件委托的原理</p>
-</li>
-<li><p><input disabled="" type="checkbox">  能够说出常用的鼠标和键盘事件</p>
-</li>
-</ul>
-<h2 id="注册事件（绑定事件）"><a href="#注册事件（绑定事件）" class="headerlink" title="注册事件（绑定事件）"></a>注册事件（绑定事件）</h2><p>传统注册方式：同一个元素同一个时间只能设置一个处理函数，最后的注册的处理函数会覆盖前面注册的处理函数。</p>
-<p>方法监听注册事件：W3C推荐方式，addEventListener (‘事件’，函数名)。同一个事件 同一个元素可以添加多个事件处理程序。//attachEvent   (IE9 之前)</p>
-<h2 id="删除事件"><a href="#删除事件" class="headerlink" title="删除事件"></a>删除事件</h2><p>应用：事件处理函数只触发一次</p>
-<p>传统方式：node.事件 = null</p>
-<p>移除监听事件： removeEventListener (‘事件’，函数名)   //detachEvent   (IE9 之前)</p>
-<h2 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h2><p>事件流描述的时从页面接收事件的顺序。事件发生时会在元素节点之间按照特定的顺序传播，这个传播的过程即DOM事件流。</p>
-<p><img src="https://cdn.linxueya.cn/img/shijian-flow.png"></p>
-<p>DOM事件流分为三个阶段：1.捕获阶段   2.当前目标阶段   3.冒泡阶段</p>
-<ul>
-<li>捕获阶段：father -&gt; son</li>
-<li>冒泡阶段:  son -&gt; father   (实际开发中使用多)</li>
-</ul>
-<p><code>JS代码中只能执行捕获或者冒泡阶段</code></p>
-<p><code>onclick 和 attachEvent 只能得到冒泡事件</code></p>
-<p><code>addEventListener 第三个参数为true 时使用捕获，为 false时使用冒泡</code></p>
-<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>div.onclick = function(event){}   </p>
-<p>div.addEventListener(‘click’,fn(event))</p>
-<p>event  就是一个事件对象，可以当做形参来看。它是系统创建的，不需要我们传递参数。事件对象是一系列相关数据的集合。</p>
-<p>兼容性问题： IE678  通过window.event   e = e || window.event</p>
-<p>事件对象常用属性</p>
-<p><img src="https://cdn.linxueya.cn/img/shijian-obj.png"></p>
-<ul>
-<li><p>e.target  返回触发事件的对象   //兼容性    var target = e.target   || e.srcElement</p>
-</li>
-<li><p>this 返回绑定元素的对象</p>
-</li>
-</ul>
-<h2 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h2><p>事件冒泡的特性，会带来好处，也会带来坏处，需要我们灵活掌握。</p>
-<p>标准写法：利用事件对象里面的stopPropagation()</p>
-<p>兼容性：cancelBubble  //IE 6-8</p>
-<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><p>不将每个子节点单独设置事件监听器，而是事件监听器设置在其父节点上，然后利用冒泡原理影响每一个子节点。</p>
-<p>案例：将点击事件委托为父节点</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
-    <span class="token keyword">var</span> ul <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"ul"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ul<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">'pink'</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<h2 id="常用鼠标事件"><a href="#常用鼠标事件" class="headerlink" title="常用鼠标事件"></a>常用鼠标事件</h2><p>禁用右键：contextmenu</p>
-<p>禁止选中 ：selectstart</p>
-<p><img src="https://cdn.linxueya.cn/img/shijian-mouse1.png"></p>
-<p>案例：图片跟随鼠标移动   </p>
-<p>案例效果：<a href="https://cdn.linxueya.cn/code/web/event/1.html">GO</a></p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./images/angel.gif<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
-    <span class="token keyword">var</span> img <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">var</span> x <span class="token operator">=</span> e<span class="token punctuation">.</span>pageX<span class="token punctuation">;</span>
-        <span class="token keyword">var</span> y <span class="token operator">=</span>  e<span class="token punctuation">.</span>pageY<span class="token punctuation">;</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token string">','</span> <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        img<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token number">40</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
-        img<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> y <span class="token operator">-</span> <span class="token number">40</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<h2 id="常用键盘事件"><a href="#常用键盘事件" class="headerlink" title="常用键盘事件"></a>常用键盘事件</h2><p>onkeyup   键盘弹起</p>
-<p>onkeydown   键盘按下</p>
-<p>onkeypress    键盘按压  // 不识别功能键  但是KeyCode属性能区分大小写</p>
-<p>执行顺序：down -&gt; press -&gt; up</p>
-<p>案例：文字放大镜</p>
-<p>案例效果：<a href="https://cdn.linxueya.cn/code/web/event/2.html">GO</a></p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hide<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
-    <span class="token keyword">var</span> t <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">var</span> h <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.hide'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    t<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'keyup'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>t<span class="token punctuation">.</span>value<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            h<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            h<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span><span class="token punctuation">;</span>
-            h<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> t<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">// 当我们失去焦点，就隐藏这个con盒子</span>
-    t<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'blur'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        h<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token comment">// 当我们获得焦点，就显示这个con盒子</span>
-    t<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'focus'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">!==</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            h<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<div class="note info">keydown 和 keypress 两个事件触发的时候，文字还没有落入文本框中。而且使用功能键时，keypress不响应</div>
-
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Web-APIs3</title>
     <url>/post/a53d5edd.html</url>
     <content><![CDATA[<ul>
@@ -1845,6 +1711,110 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>forward()   历史记录前进</li>
 <li>go(n)   历史记录前进或后退 n 步</li>
 </ul>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Web-APIs5</title>
+    <url>/post/4c5efbe8.html</url>
+    <content><![CDATA[<ul>
+<li><p><input disabled="" type="checkbox">  能够写出移动端触屏事件</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够写出常见的移动端特效</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够使用移动端开发插件开发移动端特效</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够使用移动端开发框架开发移动端特效</p>
+</li>
+</ul>
+<h2 id="触屏事件"><a href="#触屏事件" class="headerlink" title="触屏事件"></a>触屏事件</h2><p>触屏事件概述：移动端浏览器兼容性较好，我们可以放心使用JS。</p>
+<p>触摸事件对象：touchstart touchmove  touchend  三个事件都会有各自的事件</p>
+<table>
+<thead>
+<tr>
+<th>触摸列表</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>touches</td>
+<td>正在触摸屏幕的所有手指的列表</td>
+</tr>
+<tr>
+<td>targetTouches</td>
+<td>正在触摸当前DOM元素上手指的一个列表</td>
+</tr>
+<tr>
+<td>changedTouches</td>
+<td>手指状态发生了改变的列表</td>
+</tr>
+</tbody></table>
+<p>案例：盒子拖动</p>
+<!--阻止盒子默认拖动-->
+
+<h2 id="移动端常见特效"><a href="#移动端常见特效" class="headerlink" title="移动端常见特效"></a>移动端常见特效</h2><p>案例：移动端轮播图</p>
+<!--拖动翻页  过度完成之后再判断是否轮播完-->
+
+<p>classList 属性</p>
+<p>classList.add(类名)   添加类名</p>
+<p>案例：手指滑动轮播图</p>
+<p>拖动结束后切换轮播图</p>
+<p>案例：返回顶部</p>
+<p>click 延时：移动端click事件会有300ms的延时，原因是移动端双击会缩放页面 </p>
+<p>解决方案</p>
+<ul>
+<li>禁止缩放</li>
+<li>自定义函数</li>
+<li>fastclick</li>
+</ul>
+<h2 id="移动端常用开发插件"><a href="#移动端常用开发插件" class="headerlink" title="移动端常用开发插件"></a>移动端常用开发插件</h2><p>JS文件就是JS插件，它遵循一定的编写规范，方便程序展示效果，拥有特定功能且方便调用。 // 比如轮播图和瀑布流插件</p>
+<ul>
+<li><p>fastclick插件：解决click延时</p>
+</li>
+<li><p>swiper插件：轮播图</p>
+</li>
+<li><p>superslide：焦点图 tab标签切换  图片滚动</p>
+</li>
+</ul>
+<h3 id="插件的使用"><a href="#插件的使用" class="headerlink" title="插件的使用"></a>插件的使用</h3><ol>
+<li>确认插件实现的功能</li>
+<li>去官网查看使用说明</li>
+<li>下载插件</li>
+<li>打开demo实例文件，查看需要引入的相关文件</li>
+<li>复制demo实例文件中的结构HTML，CSS 以及JS</li>
+</ol>
+<p>案例：练习轮播图插件 swiper</p>
+<p>案例：移动端视频插件  zy.media.js</p>
+<h2 id="移动端常用开发框架"><a href="#移动端常用开发框架" class="headerlink" title="移动端常用开发框架"></a>移动端常用开发框架</h2><p>框架就是一套架构，他会基于自身的特点向用户提供一套较为完整的解决方案。</p>
+<p>插件一般是为了解决某个问题而专门存在，其功能单一，并且比较小</p>
+<h2 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h2><p>随着互联网的快速发展，基于网页的应用越来越普遍，同时也变得越来越复杂，为了满足各种这样的需求，会经常在本地存储大量的数据。</p>
+<p>本地存储特性</p>
+<ol>
+<li>数据存储在用户浏览器中</li>
+<li>设置、读取甚至页面刷新也不丢失数据</li>
+<li>容量较大， sessionStorage 约 5M   localStorage 约 20M</li>
+<li>只能存储字符串</li>
+</ol>
+<p>window.sessionStorage </p>
+<ol>
+<li>生命周期为关闭浏览器窗口</li>
+<li>在同一个窗口（页面）下数据可以共享</li>
+<li>以键值对的形式存储使用   sessionStorage.setItem (key,value)</li>
+<li>sessionStorage.setItem  增加  sessionStorage.getItem 获取  sessionStorage.removeItem  删除  sessionStorage.clear  全部清除</li>
+</ol>
+<p>window. localStorage </p>
+<ol>
+<li>生命周期永久生效，除非手动删除，否则关闭页面也会存在</li>
+<li>可以多窗口（页面）共享</li>
+<li>以键值对的形式存储使用   localStorage.setItem (key,value)</li>
+<li>localStorage.setItem  增加  localStorage.getItem 获取  localStorage.removeItem  删除  localStorage.clear  全部清除</li>
+</ol>
+<p>案例：记住用户名</p>
 ]]></content>
       <categories>
         <category>编程</category>
@@ -2438,101 +2408,131 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
       </tags>
   </entry>
   <entry>
-    <title>Web-APIs5</title>
-    <url>/post/4c5efbe8.html</url>
+    <title>Web-APIs2</title>
+    <url>/post/d23a6e4b.html</url>
     <content><![CDATA[<ul>
-<li><p><input disabled="" type="checkbox">  能够写出移动端触屏事件</p>
+<li><p><input disabled="" type="checkbox">  能够写出元素注册事件的两种方式</p>
 </li>
-<li><p><input disabled="" type="checkbox">  能够写出常见的移动端特效</p>
+<li><p><input disabled="" type="checkbox">  能够说出删除事件的两种方式</p>
 </li>
-<li><p><input disabled="" type="checkbox">  能够使用移动端开发插件开发移动端特效</p>
+<li><p><input disabled="" type="checkbox">  能够说出DOM事件流的三个阶段</p>
 </li>
-<li><p><input disabled="" type="checkbox">  能够使用移动端开发框架开发移动端特效</p>
+<li><p><input disabled="" type="checkbox">  能够利用事件对象完成跟随鼠标案例</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够封装阻止冒泡的兼容性函数</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够说出事件委托的原理</p>
+</li>
+<li><p><input disabled="" type="checkbox">  能够说出常用的鼠标和键盘事件</p>
 </li>
 </ul>
-<h2 id="触屏事件"><a href="#触屏事件" class="headerlink" title="触屏事件"></a>触屏事件</h2><p>触屏事件概述：移动端浏览器兼容性较好，我们可以放心使用JS。</p>
-<p>触摸事件对象：touchstart touchmove  touchend  三个事件都会有各自的事件</p>
-<table>
-<thead>
-<tr>
-<th>触摸列表</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>touches</td>
-<td>正在触摸屏幕的所有手指的列表</td>
-</tr>
-<tr>
-<td>targetTouches</td>
-<td>正在触摸当前DOM元素上手指的一个列表</td>
-</tr>
-<tr>
-<td>changedTouches</td>
-<td>手指状态发生了改变的列表</td>
-</tr>
-</tbody></table>
-<p>案例：盒子拖动</p>
-<!--阻止盒子默认拖动-->
-
-<h2 id="移动端常见特效"><a href="#移动端常见特效" class="headerlink" title="移动端常见特效"></a>移动端常见特效</h2><p>案例：移动端轮播图</p>
-<!--拖动翻页  过度完成之后再判断是否轮播完-->
-
-<p>classList 属性</p>
-<p>classList.add(类名)   添加类名</p>
-<p>案例：手指滑动轮播图</p>
-<p>拖动结束后切换轮播图</p>
-<p>案例：返回顶部</p>
-<p>click 延时：移动端click事件会有300ms的延时，原因是移动端双击会缩放页面 </p>
-<p>解决方案</p>
+<h2 id="注册事件（绑定事件）"><a href="#注册事件（绑定事件）" class="headerlink" title="注册事件（绑定事件）"></a>注册事件（绑定事件）</h2><p>传统注册方式：同一个元素同一个时间只能设置一个处理函数，最后的注册的处理函数会覆盖前面注册的处理函数。</p>
+<p>方法监听注册事件：W3C推荐方式，addEventListener (‘事件’，函数名)。同一个事件 同一个元素可以添加多个事件处理程序。//attachEvent   (IE9 之前)</p>
+<h2 id="删除事件"><a href="#删除事件" class="headerlink" title="删除事件"></a>删除事件</h2><p>应用：事件处理函数只触发一次</p>
+<p>传统方式：node.事件 = null</p>
+<p>移除监听事件： removeEventListener (‘事件’，函数名)   //detachEvent   (IE9 之前)</p>
+<h2 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h2><p>事件流描述的时从页面接收事件的顺序。事件发生时会在元素节点之间按照特定的顺序传播，这个传播的过程即DOM事件流。</p>
+<p><img src="https://cdn.linxueya.cn/img/shijian-flow.png"></p>
+<p>DOM事件流分为三个阶段：1.捕获阶段   2.当前目标阶段   3.冒泡阶段</p>
 <ul>
-<li>禁止缩放</li>
-<li>自定义函数</li>
-<li>fastclick</li>
+<li>捕获阶段：father -&gt; son</li>
+<li>冒泡阶段:  son -&gt; father   (实际开发中使用多)</li>
 </ul>
-<h2 id="移动端常用开发插件"><a href="#移动端常用开发插件" class="headerlink" title="移动端常用开发插件"></a>移动端常用开发插件</h2><p>JS文件就是JS插件，它遵循一定的编写规范，方便程序展示效果，拥有特定功能且方便调用。 // 比如轮播图和瀑布流插件</p>
+<p><code>JS代码中只能执行捕获或者冒泡阶段</code></p>
+<p><code>onclick 和 attachEvent 只能得到冒泡事件</code></p>
+<p><code>addEventListener 第三个参数为true 时使用捕获，为 false时使用冒泡</code></p>
+<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><p>div.onclick = function(event){}   </p>
+<p>div.addEventListener(‘click’,fn(event))</p>
+<p>event  就是一个事件对象，可以当做形参来看。它是系统创建的，不需要我们传递参数。事件对象是一系列相关数据的集合。</p>
+<p>兼容性问题： IE678  通过window.event   e = e || window.event</p>
+<p>事件对象常用属性</p>
+<p><img src="https://cdn.linxueya.cn/img/shijian-obj.png"></p>
 <ul>
-<li><p>fastclick插件：解决click延时</p>
+<li><p>e.target  返回触发事件的对象   //兼容性    var target = e.target   || e.srcElement</p>
 </li>
-<li><p>swiper插件：轮播图</p>
-</li>
-<li><p>superslide：焦点图 tab标签切换  图片滚动</p>
+<li><p>this 返回绑定元素的对象</p>
 </li>
 </ul>
-<h3 id="插件的使用"><a href="#插件的使用" class="headerlink" title="插件的使用"></a>插件的使用</h3><ol>
-<li>确认插件实现的功能</li>
-<li>去官网查看使用说明</li>
-<li>下载插件</li>
-<li>打开demo实例文件，查看需要引入的相关文件</li>
-<li>复制demo实例文件中的结构HTML，CSS 以及JS</li>
-</ol>
-<p>案例：练习轮播图插件 swiper</p>
-<p>案例：移动端视频插件  zy.media.js</p>
-<h2 id="移动端常用开发框架"><a href="#移动端常用开发框架" class="headerlink" title="移动端常用开发框架"></a>移动端常用开发框架</h2><p>框架就是一套架构，他会基于自身的特点向用户提供一套较为完整的解决方案。</p>
-<p>插件一般是为了解决某个问题而专门存在，其功能单一，并且比较小</p>
-<h2 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h2><p>随着互联网的快速发展，基于网页的应用越来越普遍，同时也变得越来越复杂，为了满足各种这样的需求，会经常在本地存储大量的数据。</p>
-<p>本地存储特性</p>
-<ol>
-<li>数据存储在用户浏览器中</li>
-<li>设置、读取甚至页面刷新也不丢失数据</li>
-<li>容量较大， sessionStorage 约 5M   localStorage 约 20M</li>
-<li>只能存储字符串</li>
-</ol>
-<p>window.sessionStorage </p>
-<ol>
-<li>生命周期为关闭浏览器窗口</li>
-<li>在同一个窗口（页面）下数据可以共享</li>
-<li>以键值对的形式存储使用   sessionStorage.setItem (key,value)</li>
-<li>sessionStorage.setItem  增加  sessionStorage.getItem 获取  sessionStorage.removeItem  删除  sessionStorage.clear  全部清除</li>
-</ol>
-<p>window. localStorage </p>
-<ol>
-<li>生命周期永久生效，除非手动删除，否则关闭页面也会存在</li>
-<li>可以多窗口（页面）共享</li>
-<li>以键值对的形式存储使用   localStorage.setItem (key,value)</li>
-<li>localStorage.setItem  增加  localStorage.getItem 获取  localStorage.removeItem  删除  localStorage.clear  全部清除</li>
-</ol>
-<p>案例：记住用户名</p>
+<h2 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h2><p>事件冒泡的特性，会带来好处，也会带来坏处，需要我们灵活掌握。</p>
+<p>标准写法：利用事件对象里面的stopPropagation()</p>
+<p>兼容性：cancelBubble  //IE 6-8</p>
+<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><p>不将每个子节点单独设置事件监听器，而是事件监听器设置在其父节点上，然后利用冒泡原理影响每一个子节点。</p>
+<p>案例：将点击事件委托为父节点</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>子节点5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">var</span> ul <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"ul"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ul<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">'pink'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="常用鼠标事件"><a href="#常用鼠标事件" class="headerlink" title="常用鼠标事件"></a>常用鼠标事件</h2><p>禁用右键：contextmenu</p>
+<p>禁止选中 ：selectstart</p>
+<p><img src="https://cdn.linxueya.cn/img/shijian-mouse1.png"></p>
+<p>案例：图片跟随鼠标移动   </p>
+<p>案例效果：<a href="https://cdn.linxueya.cn/code/web/event/1.html">GO</a></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./images/angel.gif<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">var</span> img <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">var</span> x <span class="token operator">=</span> e<span class="token punctuation">.</span>pageX<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> y <span class="token operator">=</span>  e<span class="token punctuation">.</span>pageY<span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token string">','</span> <span class="token operator">+</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        img<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token number">40</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+        img<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> y <span class="token operator">-</span> <span class="token number">40</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="常用键盘事件"><a href="#常用键盘事件" class="headerlink" title="常用键盘事件"></a>常用键盘事件</h2><p>onkeyup   键盘弹起</p>
+<p>onkeydown   键盘按下</p>
+<p>onkeypress    键盘按压  // 不识别功能键  但是KeyCode属性能区分大小写</p>
+<p>执行顺序：down -&gt; press -&gt; up</p>
+<p>案例：文字放大镜</p>
+<p>案例效果：<a href="https://cdn.linxueya.cn/code/web/event/2.html">GO</a></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hide<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">var</span> t <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> h <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.hide'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    t<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'keyup'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>t<span class="token punctuation">.</span>value<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            h<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            h<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span><span class="token punctuation">;</span>
+            h<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> t<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 当我们失去焦点，就隐藏这个con盒子</span>
+    t<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'blur'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        h<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment">// 当我们获得焦点，就显示这个con盒子</span>
+    t<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'focus'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">!==</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            h<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<div class="note info">keydown 和 keypress 两个事件触发的时候，文字还没有落入文本框中。而且使用功能键时，keypress不响应</div>
+
 ]]></content>
       <categories>
         <category>编程</category>
@@ -3137,6 +3137,40 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
 ]]></content>
   </entry>
   <entry>
+    <title>valine添加邮箱提醒</title>
+    <url>/post/eadbc16a.html</url>
+    <content><![CDATA[<p>Valine 诞生于2017年8月7日，是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。</p>
+<p>理论上支持但不限于静态博客，目前已有Hexo、Jekyll、Typecho、Hugo、Ghost 等博客程序在使用Valine。</p>
+<div class="note info">本教程基于Hexo，并且默认已完成valine的搭建，本教程基于LeanCloud国际版。另外本教程基于  https://deserts.io/valine-admin-document/</div>
+
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>在创建的应用中，打开设置-&gt;云引擎-WEB-&gt;设置-&gt;自定义环境变量；在此处添加环境变量，环境变量的说明参考原<a href="https://deserts.io/valine-admin-document/">教程</a>。所使用的邮箱需要开通SMTP_PASS服务，SMTP_PASS使用授权码。（此处最好不好使用QQ邮箱，题主在使用QQ邮箱时老是报错。）</p>
+<p><img src="https://gitee.com/linxueya/pic-bed/raw/master/img/valine.png"></p>
+<h2 id="配置云引擎域名"><a href="#配置云引擎域名" class="headerlink" title="配置云引擎域名"></a>配置云引擎域名</h2><p>云引擎域名主要用于评论的后台管理。请把云引擎域和站点域名区分开来。在设置-&gt;域名绑定中添加云引擎域名。同时添加域名解析。</p>
+<p>以题注的配置为例，我绑定的域名为comment.linxueya.cn，则DNS的解析为：</p>
+<p><img src="https://gitee.com/linxueya/pic-bed/raw/master/img/dns1.png"></p>
+<div class="note info">注意不要将此处的主机记录更改为comment.linxueya.cn https://deserts.io/valine-admin-document/</div>
+
+
+<h2 id="部署云引擎"><a href="#部署云引擎" class="headerlink" title="部署云引擎"></a>部署云引擎</h2><p>切换到 云引擎-&gt;部署，部署模式选择 部署项目-&gt;Git部署，分支「master」，手动部署目标环境为「生产环境」在Leancloud云引擎设置界面，填写代码库并保存：<a href="https://github.com/DesertsP/Valine-Admin.git%EF%BC%8C%E5%8D%B3%E5%8F%AF%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E3%80%82">https://github.com/DesertsP/Valine-Admin.git，即可一键部署。</a></p>
+<p><img src="https://cloud.panjunwen.com/2020/10/deploy4.png"></p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><ul>
+<li>站点评论截图</li>
+</ul>
+<p><img src="https://gitee.com/linxueya/pic-bed/raw/master/img/valine-show1.png"></p>
+<ul>
+<li>邮箱提醒</li>
+</ul>
+<p><img src="https://gitee.com/linxueya/pic-bed/raw/master/img/valine-show2.png"></p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>评论管理、定时任务和邮箱模板 等设置均基于 <a href="https://deserts.io/valine-admin-document/">原教程</a></p>
+]]></content>
+      <categories>
+        <category>软件工具</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>jQuery事件</title>
     <url>/post/f7b3a86d.html</url>
     <content><![CDATA[<ul>
@@ -3237,40 +3271,6 @@ callback <span class="token operator">&amp;&amp;</span> <span class="token funct
       </categories>
       <tags>
         <tag>jQuery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>valine添加邮箱提醒</title>
-    <url>/post/eadbc16a.html</url>
-    <content><![CDATA[<p>Valine 诞生于2017年8月7日，是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。</p>
-<p>理论上支持但不限于静态博客，目前已有Hexo、Jekyll、Typecho、Hugo、Ghost 等博客程序在使用Valine。</p>
-<div class="note info">本教程基于Hexo，并且默认已完成valine的搭建，本教程基于LeanCloud国际版。另外本教程基于  https://deserts.io/valine-admin-document/</div>
-
-<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><p>在创建的应用中，打开设置-&gt;云引擎-WEB-&gt;设置-&gt;自定义环境变量；在此处添加环境变量，环境变量的说明参考原<a href="https://deserts.io/valine-admin-document/">教程</a>。所使用的邮箱需要开通SMTP_PASS服务，SMTP_PASS使用授权码。（此处最好不好使用QQ邮箱，题主在使用QQ邮箱时老是报错。）</p>
-<p><img src="https://gitee.com/linxueya/pic-bed/raw/master/img/valine.png"></p>
-<h2 id="配置云引擎域名"><a href="#配置云引擎域名" class="headerlink" title="配置云引擎域名"></a>配置云引擎域名</h2><p>云引擎域名主要用于评论的后台管理。请把云引擎域和站点域名区分开来。在设置-&gt;域名绑定中添加云引擎域名。同时添加域名解析。</p>
-<p>以题注的配置为例，我绑定的域名为comment.linxueya.cn，则DNS的解析为：</p>
-<p><img src="https://gitee.com/linxueya/pic-bed/raw/master/img/dns1.png"></p>
-<div class="note info">注意不要将此处的主机记录更改为comment.linxueya.cn https://deserts.io/valine-admin-document/</div>
-
-
-<h2 id="部署云引擎"><a href="#部署云引擎" class="headerlink" title="部署云引擎"></a>部署云引擎</h2><p>切换到 云引擎-&gt;部署，部署模式选择 部署项目-&gt;Git部署，分支「master」，手动部署目标环境为「生产环境」在Leancloud云引擎设置界面，填写代码库并保存：<a href="https://github.com/DesertsP/Valine-Admin.git%EF%BC%8C%E5%8D%B3%E5%8F%AF%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2%E3%80%82">https://github.com/DesertsP/Valine-Admin.git，即可一键部署。</a></p>
-<p><img src="https://cloud.panjunwen.com/2020/10/deploy4.png"></p>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><ul>
-<li>站点评论截图</li>
-</ul>
-<p><img src="https://gitee.com/linxueya/pic-bed/raw/master/img/valine-show1.png"></p>
-<ul>
-<li>邮箱提醒</li>
-</ul>
-<p><img src="https://gitee.com/linxueya/pic-bed/raw/master/img/valine-show2.png"></p>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>评论管理、定时任务和邮箱模板 等设置均基于 <a href="https://deserts.io/valine-admin-document/">原教程</a></p>
-]]></content>
-      <categories>
-        <category>软件工具</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -3896,270 +3896,6 @@ router<span class="token punctuation">.</span><span class="token function">push<
 <li>既可以复用子组件的slot，又可以使slot内容不一致</li>
 </ul>
 <h2 id="基于组件的案例"><a href="#基于组件的案例" class="headerlink" title="基于组件的案例"></a>基于组件的案例</h2>]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue基础</title>
-    <url>/post/c9970ee4.html</url>
-    <content><![CDATA[<h2 id="vue概述"><a href="#vue概述" class="headerlink" title="vue概述"></a>vue概述</h2><p>渐进式JavaScript框架</p>
-<p>声明式渲染-&gt;组件系统-&gt;客户端路由-&gt;集中式状态管理-&gt;项目构建</p>
-<h2 id="vue基本使用"><a href="#vue基本使用" class="headerlink" title="vue基本使用"></a>vue基本使用</h2><p><img src="https://cdn.linxueya.cn/img/vue-use.png"></p>
-<h2 id="vue模板语法"><a href="#vue模板语法" class="headerlink" title="vue模板语法"></a>vue模板语法</h2><h3 id="前端渲染方式"><a href="#前端渲染方式" class="headerlink" title="前端渲染方式"></a>前端渲染方式</h3><ul>
-<li>原生JS拼接字符串</li>
-<li>使用前端模板引擎</li>
-<li>使用vue模板语法</li>
-</ul>
-<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p>指令的本质就是自定义属性，以v-开头</p>
-<ul>
-<li>数据绑定指令<ul>
-<li>v-text 填充纯文本，相比于插值表达式更加简洁</li>
-<li>v-html  填充html片段，存在安全问题</li>
-<li>v-pre 填充原始信息</li>
-</ul>
-</li>
-<li>数据响应式<ul>
-<li>如何理解响应式？在H5中为屏幕尺寸变化导致样式的变化，数据的响应式为数据变化导致页面内容的变化</li>
-<li>数据绑定，将数据填充到标签中</li>
-<li>v-once，只编译一次，显示内容后不再具有响应式功能</li>
-</ul>
-</li>
-</ul>
-<h3 id="双向数据绑定-v-model"><a href="#双向数据绑定-v-model" class="headerlink" title="双向数据绑定 v-model"></a>双向数据绑定 v-model</h3><p><code>&lt;input v-model="test"&gt;</code></p>
-<p><code>&lt;input :value="test" @input="test = $event.target.value"&gt;</code></p>
-<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><p>v-on 指令用法 <code>&lt;input v-on:click='xxx' /&gt;</code></p>
-<p>v-on 简写形式 <code>&lt;input @click='xxx' /&gt;</code></p>
-<p>直接绑定函数名称  <code>&lt;button v-on:click='say'&gt;hello&lt;/button&gt;</code>  </p>
-<p>调用函数   <code>&lt;button v-on:click='say()'&gt;hello&lt;/button&gt;</code>  </p>
-<p>普通参数和事件对象  <code>&lt;button v-on:click='say('hi',$event)'&gt;hello&lt;/button&gt;</code>  </p>
-<p>如果事件直接绑定函数名称，那么默认会传递事件对象作为函数的第一个参数；如果事件绑定函数调用，那么事件对象必须作为最后一个参数显式传递。</p>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><ul>
-<li>事件修饰符<ul>
-<li>.stop  阻止冒泡</li>
-<li>.prevent  阻止默认行为 </li>
-<li><code>.capture</code></li>
-<li><code>.self</code></li>
-<li><code>.once</code></li>
-<li><code>.passive</code></li>
-</ul>
-</li>
-<li>按键修饰符<ul>
-<li><code>.enter</code></li>
-<li><code>.tab</code></li>
-<li><code>.delete</code> (捕获“删除”和“退格”键)</li>
-<li><code>.esc</code></li>
-<li><code>.space</code></li>
-<li><code>.up</code></li>
-<li><code>.down</code></li>
-<li><code>.left</code></li>
-<li><code>.right</code></li>
-</ul>
-</li>
-<li>自定义按键修饰符</li>
-</ul>
-<h3 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定"></a>属性绑定</h3><p>vue动态处理属性：v-bind  <code>&lt;a v-bind:href='url'&gt;跳转&lt;/a&gt;</code> ; 缩写形式 <code>&lt;a :href='url'&gt;跳转&lt;/a&gt;</code></p>
-<h3 id="Class样式绑定"><a href="#Class样式绑定" class="headerlink" title="Class样式绑定"></a>Class样式绑定</h3><ul>
-<li>对象语法  <code>&lt;div v-bind:class="{active:is Active}"&gt;&lt;/div&gt;</code></li>
-<li>数组语法  <code>&lt;div v-bind:class="[activeClass,errorClass]"&gt;&lt;/div&gt;</code></li>
-</ul>
-<p>对象绑定和数组绑定可以结合使用；class绑定的值可以简化操作，可以用对象来存储多个类；默认的class会被保留。</p>
-<h3 id="Style样式处理"><a href="#Style样式处理" class="headerlink" title="Style样式处理"></a>Style样式处理</h3><ul>
-<li>对象语法  <code>&lt;div v-bind:style="{color: activeColor}"&gt;&lt;/div&gt;</code></li>
-<li>数组语法  <code>&lt;div v-bind:style"[baseStyle,...]"&gt;&lt;/div&gt;</code></li>
-</ul>
-<h3 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h3><ul>
-<li>v-show本质就是标签display设置为none，控制隐藏<ul>
-<li>v-show只编译一次，后面其实就是控制css，而v-if不停的销毁和创建，故v-show性能更好一点。</li>
-</ul>
-</li>
-<li>v-if是动态的向DOM树内添加或者删除DOM元素<ul>
-<li>v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件</li>
-</ul>
-</li>
-</ul>
-<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><ul>
-<li> v-for <code>&lt;li v-for="item in items"&gt;</code></li>
-<li>key 的作用<ul>
-<li><strong>key来给每个节点做一个唯一标识</strong></li>
-<li><strong>key的作用主要是为了高效的更新虚拟DOM</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="基础案例"><a href="#基础案例" class="headerlink" title="基础案例"></a>基础案例</h2><p>tab 选项卡</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">&gt;</span>
-        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"tab"</span><span class="token operator">&gt;</span>  
-            <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
-                  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>  
-                    <span class="token number">1</span>、绑定key的作用 提高Vue的性能 
-                    <span class="token number">2</span>、 key 需要是唯一的标识 所以需要使用id， 也可以使用index ，
-						index 也是唯一的 
-                    <span class="token number">3</span>、 item 是 数组中对应的每一项  
-                    <span class="token number">4</span>、 index 是 每一项的 索引
-                <span class="token operator">--</span><span class="token operator">&gt;</span>
-                   <span class="token operator">&lt;</span>li <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">'item.id'</span> v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">'(item,index) in list'</span><span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>title<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
-              <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
-              <span class="token operator">&lt;</span>div  <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">'item.id'</span> v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">'(item, index) in list'</span><span class="token operator">&gt;</span>
-                    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">:</span>  是 v<span class="token operator">-</span>bind 的简写   绑定属性使用 v<span class="token operator">-</span>bind <span class="token operator">--</span><span class="token operator">&gt;</span>
-                    <span class="token operator">&lt;</span>img <span class="token operator">:</span>src<span class="token operator">=</span><span class="token string">"item.path"</span><span class="token operator">&gt;</span>
-              <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
-<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
-    <span class="token keyword">new</span>  <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-        <span class="token comment">//  指定 操作元素 是 id 为app 的 </span>
-        el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-            data<span class="token operator">:</span> <span class="token punctuation">{</span>
-                list<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-                    id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-                    title<span class="token operator">:</span> <span class="token string">'apple'</span><span class="token punctuation">,</span>
-                    path<span class="token operator">:</span> <span class="token string">'img/apple.png'</span>
-                <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-                    id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-                    title<span class="token operator">:</span> <span class="token string">'orange'</span><span class="token punctuation">,</span>
-                    path<span class="token operator">:</span> <span class="token string">'img/orange.png'</span>
-                <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
-                    id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-                    title<span class="token operator">:</span> <span class="token string">'lemon'</span><span class="token punctuation">,</span>
-                    path<span class="token operator">:</span> <span class="token string">'img/lemon.png'</span>
-                <span class="token punctuation">}</span><span class="token punctuation">]</span>
-            <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<h2 id="vue常用特性"><a href="#vue常用特性" class="headerlink" title="vue常用特性"></a>vue常用特性</h2><h3 id="表单操作"><a href="#表单操作" class="headerlink" title="表单操作"></a>表单操作</h3><p><img src="https://cdn.linxueya.cn/img/vue-form.png"></p>
-<p>通过v-model 获取单选框中的值</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"> 	<span class="token comment">&lt;!-- 
-		1、 两个单选框需要同时通过v-model 双向绑定 一个值 
-        2、 每一个单选框必须要有value属性  且value 值不能一样 
-		3、 当某一个单选框选中的时候 v-model  会将当前的 value值 改变 data 中的 数据
-		gender 的值就是选中的值，我们只需要实时监控他的值就可以了
-	--&gt;</span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>male<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>gender<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>male<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>男<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>female<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>gender<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>female<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>女<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
-    <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-         data<span class="token operator">:</span> <span class="token punctuation">{</span>
-             <span class="token comment">// 默认会让当前的 value 值为 2 的单选框选中</span>
-                gender<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>  
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><p>自定义指令规则（获取元素焦点）</p>
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">// 注册一个全局自定义指令 v-focus
-Vue.directive('focus', {
-  	// 当绑定元素插入到 DOM 中。 其中 el为dom元素
-  	inserted: function (el) {
-    		// 聚焦元素
-    		el.focus();
- 	}
-});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>自定义指令规则</p>
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">
-// bind - 只调用一次，在指令第一次绑定到元素上时候调用
-Vue.directive('color', {
-      // bind声明周期, 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置
-      // el 为当前自定义指令的DOM元素  
-      // binding 为自定义的函数形参   通过自定义属性传递过来的值 存在 binding.value 里面
-	bind: function(el, binding){
-	el.style.backgroundColor = binding.value.color;
-	}
-});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>局部指令,在vue实例中里面添加：</p>
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">directives: {
-  focus: {
-    // 指令的定义
-    inserted: function (el) {
-      el.focus()
-    }
-  }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p>表达式的计算逻辑可能会比较复杂，使用计算属性可以使模板内容更加简洁。</p>
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">
-computed: {
-//  reverseString   这个是我们自己定义的名字 
-	reverseString: function(){  
-	return xxx;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>计算属性是基于它们的依赖就行缓存的，方法不存在缓存</p>
-<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">vue.filter('过滤器名称',function(value){
-	xxx;
-})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-<ul>
-<li>Vue.js允许自定义过滤器，可被用于一些常见的文本格式化。</li>
-<li>过滤器可以用在两个地方：双花括号插值和v-bind表达式。</li>
-<li>过滤器应该被添加在JavaScript表达式的尾部，由“管道”符号指示</li>
-<li>支持级联操作</li>
-<li>过滤器不改变真正的<code>data</code>，而只是改变渲染的结果，并返回过滤后的版本</li>
-<li>全局注册时是filter，没有s的。而局部过滤器是filters，是有s的</li>
-</ul>
-<h3 id="侦听器-watch"><a href="#侦听器-watch" class="headerlink" title="侦听器 watch"></a>侦听器 watch</h3><ul>
-<li>使用watch来响应数据的变化</li>
-<li>一般用于异步或者开销较大的操作</li>
-<li>watch 中的属性 一定是data 中 已经存在的数据 </li>
-<li><strong>当需要监听一个对象的改变时，普通的watch方法无法监听到对象内部属性的改变，只有data中的数据才能够监听到变化，此时就需要deep属性对对象进行深度监听</strong></li>
-</ul>
-<p>案例：验证用户名</p>
-<h2 id="vue项目目录结构"><a href="#vue项目目录结构" class="headerlink" title="vue项目目录结构"></a>vue项目目录结构</h2><table>
-<thead>
-<tr>
-<th>目录/文件</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>build</td>
-<td>项目构建(webpack)相关代码</td>
-</tr>
-<tr>
-<td>config</td>
-<td>配置目录，包括端口号等。我们初学可以使用默认的。静态资源目录，如图片、字体等。</td>
-</tr>
-<tr>
-<td>node_modules</td>
-<td>npm 加载的项目依赖模块</td>
-</tr>
-<tr>
-<td>src</td>
-<td>这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：assets: 放置一些图片，如logo等。components: 目录里面放了一个组件文件，可以不用。App.vue: 项目入口文件，我们也可以直接将组件写这里，而不使用 components 目录。main.js: 项目的核心文件。</td>
-</tr>
-<tr>
-<td>static</td>
-<td>静态资源目录，如图片、字体等。</td>
-</tr>
-<tr>
-<td>test</td>
-<td>初始测试目录，可删除</td>
-</tr>
-<tr>
-<td>.xxxx文件</td>
-<td>这些是一些配置文件，包括语法配置，git配置等。</td>
-</tr>
-<tr>
-<td>index.html</td>
-<td>首页入口文件，你可以添加一些 meta 信息或统计代码啥的。</td>
-</tr>
-<tr>
-<td>package.json</td>
-<td>项目配置文件。</td>
-</tr>
-<tr>
-<td>README.md</td>
-<td>项目的说明文档，markdown 格式</td>
-</tr>
-</tbody></table>
-<h2 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h2><p>图书管理</p>
-]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -4859,6 +4595,270 @@ zh-TW 中文 (繁体, 台湾)     对应 cmn-Hant-TW 普通话 (繁体, 台湾)<
       </tags>
   </entry>
   <entry>
+    <title>vue基础</title>
+    <url>/post/c9970ee4.html</url>
+    <content><![CDATA[<h2 id="vue概述"><a href="#vue概述" class="headerlink" title="vue概述"></a>vue概述</h2><p>渐进式JavaScript框架</p>
+<p>声明式渲染-&gt;组件系统-&gt;客户端路由-&gt;集中式状态管理-&gt;项目构建</p>
+<h2 id="vue基本使用"><a href="#vue基本使用" class="headerlink" title="vue基本使用"></a>vue基本使用</h2><p><img src="https://cdn.linxueya.cn/img/vue-use.png"></p>
+<h2 id="vue模板语法"><a href="#vue模板语法" class="headerlink" title="vue模板语法"></a>vue模板语法</h2><h3 id="前端渲染方式"><a href="#前端渲染方式" class="headerlink" title="前端渲染方式"></a>前端渲染方式</h3><ul>
+<li>原生JS拼接字符串</li>
+<li>使用前端模板引擎</li>
+<li>使用vue模板语法</li>
+</ul>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p>指令的本质就是自定义属性，以v-开头</p>
+<ul>
+<li>数据绑定指令<ul>
+<li>v-text 填充纯文本，相比于插值表达式更加简洁</li>
+<li>v-html  填充html片段，存在安全问题</li>
+<li>v-pre 填充原始信息</li>
+</ul>
+</li>
+<li>数据响应式<ul>
+<li>如何理解响应式？在H5中为屏幕尺寸变化导致样式的变化，数据的响应式为数据变化导致页面内容的变化</li>
+<li>数据绑定，将数据填充到标签中</li>
+<li>v-once，只编译一次，显示内容后不再具有响应式功能</li>
+</ul>
+</li>
+</ul>
+<h3 id="双向数据绑定-v-model"><a href="#双向数据绑定-v-model" class="headerlink" title="双向数据绑定 v-model"></a>双向数据绑定 v-model</h3><p><code>&lt;input v-model="test"&gt;</code></p>
+<p><code>&lt;input :value="test" @input="test = $event.target.value"&gt;</code></p>
+<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><p>v-on 指令用法 <code>&lt;input v-on:click='xxx' /&gt;</code></p>
+<p>v-on 简写形式 <code>&lt;input @click='xxx' /&gt;</code></p>
+<p>直接绑定函数名称  <code>&lt;button v-on:click='say'&gt;hello&lt;/button&gt;</code>  </p>
+<p>调用函数   <code>&lt;button v-on:click='say()'&gt;hello&lt;/button&gt;</code>  </p>
+<p>普通参数和事件对象  <code>&lt;button v-on:click='say('hi',$event)'&gt;hello&lt;/button&gt;</code>  </p>
+<p>如果事件直接绑定函数名称，那么默认会传递事件对象作为函数的第一个参数；如果事件绑定函数调用，那么事件对象必须作为最后一个参数显式传递。</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><ul>
+<li>事件修饰符<ul>
+<li>.stop  阻止冒泡</li>
+<li>.prevent  阻止默认行为 </li>
+<li><code>.capture</code></li>
+<li><code>.self</code></li>
+<li><code>.once</code></li>
+<li><code>.passive</code></li>
+</ul>
+</li>
+<li>按键修饰符<ul>
+<li><code>.enter</code></li>
+<li><code>.tab</code></li>
+<li><code>.delete</code> (捕获“删除”和“退格”键)</li>
+<li><code>.esc</code></li>
+<li><code>.space</code></li>
+<li><code>.up</code></li>
+<li><code>.down</code></li>
+<li><code>.left</code></li>
+<li><code>.right</code></li>
+</ul>
+</li>
+<li>自定义按键修饰符</li>
+</ul>
+<h3 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定"></a>属性绑定</h3><p>vue动态处理属性：v-bind  <code>&lt;a v-bind:href='url'&gt;跳转&lt;/a&gt;</code> ; 缩写形式 <code>&lt;a :href='url'&gt;跳转&lt;/a&gt;</code></p>
+<h3 id="Class样式绑定"><a href="#Class样式绑定" class="headerlink" title="Class样式绑定"></a>Class样式绑定</h3><ul>
+<li>对象语法  <code>&lt;div v-bind:class="{active:is Active}"&gt;&lt;/div&gt;</code></li>
+<li>数组语法  <code>&lt;div v-bind:class="[activeClass,errorClass]"&gt;&lt;/div&gt;</code></li>
+</ul>
+<p>对象绑定和数组绑定可以结合使用；class绑定的值可以简化操作，可以用对象来存储多个类；默认的class会被保留。</p>
+<h3 id="Style样式处理"><a href="#Style样式处理" class="headerlink" title="Style样式处理"></a>Style样式处理</h3><ul>
+<li>对象语法  <code>&lt;div v-bind:style="{color: activeColor}"&gt;&lt;/div&gt;</code></li>
+<li>数组语法  <code>&lt;div v-bind:style"[baseStyle,...]"&gt;&lt;/div&gt;</code></li>
+</ul>
+<h3 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h3><ul>
+<li>v-show本质就是标签display设置为none，控制隐藏<ul>
+<li>v-show只编译一次，后面其实就是控制css，而v-if不停的销毁和创建，故v-show性能更好一点。</li>
+</ul>
+</li>
+<li>v-if是动态的向DOM树内添加或者删除DOM元素<ul>
+<li>v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件</li>
+</ul>
+</li>
+</ul>
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><ul>
+<li> v-for <code>&lt;li v-for="item in items"&gt;</code></li>
+<li>key 的作用<ul>
+<li><strong>key来给每个节点做一个唯一标识</strong></li>
+<li><strong>key的作用主要是为了高效的更新虚拟DOM</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="基础案例"><a href="#基础案例" class="headerlink" title="基础案例"></a>基础案例</h2><p>tab 选项卡</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"tab"</span><span class="token operator">&gt;</span>  
+            <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+                  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>  
+                    <span class="token number">1</span>、绑定key的作用 提高Vue的性能 
+                    <span class="token number">2</span>、 key 需要是唯一的标识 所以需要使用id， 也可以使用index ，
+						index 也是唯一的 
+                    <span class="token number">3</span>、 item 是 数组中对应的每一项  
+                    <span class="token number">4</span>、 index 是 每一项的 索引
+                <span class="token operator">--</span><span class="token operator">&gt;</span>
+                   <span class="token operator">&lt;</span>li <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">'item.id'</span> v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">'(item,index) in list'</span><span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>title<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span>div  <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">'item.id'</span> v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">'(item, index) in list'</span><span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">:</span>  是 v<span class="token operator">-</span>bind 的简写   绑定属性使用 v<span class="token operator">-</span>bind <span class="token operator">--</span><span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>img <span class="token operator">:</span>src<span class="token operator">=</span><span class="token string">"item.path"</span><span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token keyword">new</span>  <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">//  指定 操作元素 是 id 为app 的 </span>
+        el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+            data<span class="token operator">:</span> <span class="token punctuation">{</span>
+                list<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+                    id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                    title<span class="token operator">:</span> <span class="token string">'apple'</span><span class="token punctuation">,</span>
+                    path<span class="token operator">:</span> <span class="token string">'img/apple.png'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                    id<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                    title<span class="token operator">:</span> <span class="token string">'orange'</span><span class="token punctuation">,</span>
+                    path<span class="token operator">:</span> <span class="token string">'img/orange.png'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                    id<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+                    title<span class="token operator">:</span> <span class="token string">'lemon'</span><span class="token punctuation">,</span>
+                    path<span class="token operator">:</span> <span class="token string">'img/lemon.png'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h2 id="vue常用特性"><a href="#vue常用特性" class="headerlink" title="vue常用特性"></a>vue常用特性</h2><h3 id="表单操作"><a href="#表单操作" class="headerlink" title="表单操作"></a>表单操作</h3><p><img src="https://cdn.linxueya.cn/img/vue-form.png"></p>
+<p>通过v-model 获取单选框中的值</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"> 	<span class="token comment">&lt;!-- 
+		1、 两个单选框需要同时通过v-model 双向绑定 一个值 
+        2、 每一个单选框必须要有value属性  且value 值不能一样 
+		3、 当某一个单选框选中的时候 v-model  会将当前的 value值 改变 data 中的 数据
+		gender 的值就是选中的值，我们只需要实时监控他的值就可以了
+	--&gt;</span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>male<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>gender<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>male<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>男<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>female<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>gender<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>female<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>女<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+         data<span class="token operator">:</span> <span class="token punctuation">{</span>
+             <span class="token comment">// 默认会让当前的 value 值为 2 的单选框选中</span>
+                gender<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>  
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><p>自定义指令规则（获取元素焦点）</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">// 注册一个全局自定义指令 v-focus
+Vue.directive('focus', {
+  	// 当绑定元素插入到 DOM 中。 其中 el为dom元素
+  	inserted: function (el) {
+    		// 聚焦元素
+    		el.focus();
+ 	}
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>自定义指令规则</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">
+// bind - 只调用一次，在指令第一次绑定到元素上时候调用
+Vue.directive('color', {
+      // bind声明周期, 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置
+      // el 为当前自定义指令的DOM元素  
+      // binding 为自定义的函数形参   通过自定义属性传递过来的值 存在 binding.value 里面
+	bind: function(el, binding){
+	el.style.backgroundColor = binding.value.color;
+	}
+});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>局部指令,在vue实例中里面添加：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">directives: {
+  focus: {
+    // 指令的定义
+    inserted: function (el) {
+      el.focus()
+    }
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p>表达式的计算逻辑可能会比较复杂，使用计算属性可以使模板内容更加简洁。</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">
+computed: {
+//  reverseString   这个是我们自己定义的名字 
+	reverseString: function(){  
+	return xxx;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>计算属性是基于它们的依赖就行缓存的，方法不存在缓存</p>
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">vue.filter('过滤器名称',function(value){
+	xxx;
+})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<ul>
+<li>Vue.js允许自定义过滤器，可被用于一些常见的文本格式化。</li>
+<li>过滤器可以用在两个地方：双花括号插值和v-bind表达式。</li>
+<li>过滤器应该被添加在JavaScript表达式的尾部，由“管道”符号指示</li>
+<li>支持级联操作</li>
+<li>过滤器不改变真正的<code>data</code>，而只是改变渲染的结果，并返回过滤后的版本</li>
+<li>全局注册时是filter，没有s的。而局部过滤器是filters，是有s的</li>
+</ul>
+<h3 id="侦听器-watch"><a href="#侦听器-watch" class="headerlink" title="侦听器 watch"></a>侦听器 watch</h3><ul>
+<li>使用watch来响应数据的变化</li>
+<li>一般用于异步或者开销较大的操作</li>
+<li>watch 中的属性 一定是data 中 已经存在的数据 </li>
+<li><strong>当需要监听一个对象的改变时，普通的watch方法无法监听到对象内部属性的改变，只有data中的数据才能够监听到变化，此时就需要deep属性对对象进行深度监听</strong></li>
+</ul>
+<p>案例：验证用户名</p>
+<h2 id="vue项目目录结构"><a href="#vue项目目录结构" class="headerlink" title="vue项目目录结构"></a>vue项目目录结构</h2><table>
+<thead>
+<tr>
+<th>目录/文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>build</td>
+<td>项目构建(webpack)相关代码</td>
+</tr>
+<tr>
+<td>config</td>
+<td>配置目录，包括端口号等。我们初学可以使用默认的。静态资源目录，如图片、字体等。</td>
+</tr>
+<tr>
+<td>node_modules</td>
+<td>npm 加载的项目依赖模块</td>
+</tr>
+<tr>
+<td>src</td>
+<td>这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：assets: 放置一些图片，如logo等。components: 目录里面放了一个组件文件，可以不用。App.vue: 项目入口文件，我们也可以直接将组件写这里，而不使用 components 目录。main.js: 项目的核心文件。</td>
+</tr>
+<tr>
+<td>static</td>
+<td>静态资源目录，如图片、字体等。</td>
+</tr>
+<tr>
+<td>test</td>
+<td>初始测试目录，可删除</td>
+</tr>
+<tr>
+<td>.xxxx文件</td>
+<td>这些是一些配置文件，包括语法配置，git配置等。</td>
+</tr>
+<tr>
+<td>index.html</td>
+<td>首页入口文件，你可以添加一些 meta 信息或统计代码啥的。</td>
+</tr>
+<tr>
+<td>package.json</td>
+<td>项目配置文件。</td>
+</tr>
+<tr>
+<td>README.md</td>
+<td>项目的说明文档，markdown 格式</td>
+</tr>
+</tbody></table>
+<h2 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h2><p>图书管理</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>心之语</title>
     <url>/post/acd318ce.html</url>
     <content><![CDATA[<p>   你是精灵，生长自我的灵魂。<br>   许多年前，你走进我的梦境。我看的清楚记得分明。梦醒时分，我看到一束阳光，从瓦缝中斜斜的泻下来。在那最明亮的光束中，有无数的精灵。<br>    那是你吗，不可捉摸的精灵？</p>
@@ -4879,33 +4879,6 @@ zh-TW 中文 (繁体, 台湾)     对应 cmn-Hant-TW 普通话 (繁体, 台湾)<
       </categories>
       <tags>
         <tag>散文集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序算法汇总</title>
-    <url>/post/e31c83b1.html</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件开发工程师面经</title>
-    <url>/post/e540de51.html</url>
-    <content><![CDATA[<ul>
-<li>一个线程崩溃了，影响其他线程的正常运行吗</li>
-<li>视频通话所用到的协议</li>
-<li>虚拟内存</li>
-</ul>
-]]></content>
-      <categories>
-        <category>面经</category>
-      </categories>
-      <tags>
-        <tag>面经</tag>
       </tags>
   </entry>
   <entry>
@@ -4973,6 +4946,33 @@ int main(){
       </categories>
       <tags>
         <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>排序算法汇总</title>
+    <url>/post/e31c83b1.html</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件开发工程师面经</title>
+    <url>/post/e540de51.html</url>
+    <content><![CDATA[<ul>
+<li>一个线程崩溃了，影响其他线程的正常运行吗</li>
+<li>视频通话所用到的协议</li>
+<li>虚拟内存</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面经</category>
+      </categories>
+      <tags>
+        <tag>面经</tag>
       </tags>
   </entry>
   <entry>
